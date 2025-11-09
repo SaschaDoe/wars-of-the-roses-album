@@ -28,7 +28,16 @@
 			<ul class="nav-links" class:open={mobileMenuOpen}>
 				<li><a href="/" class:active={$page.url.pathname === '/'}>Home</a></li>
 				<li><a href="/songs" class:active={$page.url.pathname.startsWith('/songs')}>Songs</a></li>
-				<li><a href="/encyclopedia" class:active={$page.url.pathname.startsWith('/encyclopedia')}>Encyclopedia</a></li>
+				<li class="dropdown">
+					<a href="/encyclopedia" class:active={$page.url.pathname.startsWith('/encyclopedia')}>Encyclopedia</a>
+					<ul class="dropdown-menu">
+						<li><a href="/encyclopedia/timeline">📅 Timeline</a></li>
+						<li><a href="/encyclopedia#people">👤 People</a></li>
+						<li><a href="/encyclopedia#events">⚔️ Events</a></li>
+						<li><a href="/encyclopedia#places">📍 Locations</a></li>
+						<li><a href="/encyclopedia#concepts">📚 Concepts</a></li>
+					</ul>
+				</li>
 				<li><a href="/about" class:active={$page.url.pathname === '/about'}>About</a></li>
 			</ul>
 		</nav>
@@ -127,6 +136,10 @@
 		list-style: none;
 	}
 
+	.nav-links > li {
+		position: relative;
+	}
+
 	.nav-links a {
 		font-size: 1.1rem;
 		font-weight: 600;
@@ -136,7 +149,7 @@
 		padding: 0.5rem 0;
 	}
 
-	.nav-links a::after {
+	.nav-links > li > a::after {
 		content: '';
 		position: absolute;
 		bottom: 0;
@@ -147,9 +160,63 @@
 		transition: width 0.3s ease;
 	}
 
-	.nav-links a:hover::after,
-	.nav-links a.active::after {
+	.nav-links > li > a:hover::after,
+	.nav-links > li > a.active::after {
 		width: 100%;
+	}
+
+	.dropdown {
+		position: relative;
+	}
+
+	.dropdown-menu {
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		background: rgba(10, 10, 10, 0.98);
+		border: 2px solid var(--color-gold);
+		border-radius: 8px;
+		padding: 0.75rem 0;
+		min-width: 200px;
+		list-style: none;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease;
+		margin-top: 0.5rem;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+		z-index: 1000;
+	}
+
+	.dropdown:hover .dropdown-menu {
+		opacity: 1;
+		visibility: visible;
+		margin-top: 1rem;
+	}
+
+	.dropdown-menu li {
+		list-style: none;
+	}
+
+	.dropdown-menu a {
+		display: block;
+		padding: 0.75rem 1.5rem;
+		font-size: 1rem;
+		font-weight: 500;
+		text-transform: none;
+		color: var(--color-text);
+		transition: all 0.2s ease;
+		border-left: 3px solid transparent;
+	}
+
+	.dropdown-menu a::after {
+		display: none;
+	}
+
+	.dropdown-menu a:hover {
+		background: rgba(212, 175, 55, 0.1);
+		border-left-color: var(--color-gold);
+		padding-left: 2rem;
 	}
 
 	.main-content {
@@ -202,10 +269,31 @@
 			flex-direction: column;
 			padding: 100px 2rem 2rem;
 			transition: right 0.3s ease;
+			overflow-y: auto;
 		}
 
 		.nav-links.open {
 			right: 0;
+		}
+
+		.dropdown-menu {
+			position: static;
+			transform: none;
+			opacity: 1;
+			visibility: visible;
+			margin-top: 0.5rem;
+			margin-left: 1rem;
+			border: 1px solid var(--color-gold);
+			box-shadow: none;
+		}
+
+		.dropdown-menu a {
+			font-size: 0.95rem;
+			padding: 0.5rem 1rem;
+		}
+
+		.dropdown-menu a:hover {
+			padding-left: 1.5rem;
 		}
 
 		.footer-content {

@@ -17,24 +17,6 @@
 	<header class="encyclopedia-header">
 		<h1>Encyclopedia of the Wars</h1>
 		<p class="subtitle">People, places, and events that shaped England's bloodiest conflict</p>
-
-		<nav class="category-nav">
-			<a href="#timeline" class="nav-link timeline-link">
-				📅 Timeline
-			</a>
-			<a href="#people" class="nav-link">
-				👤 People
-			</a>
-			<a href="#events" class="nav-link">
-				⚔️ Battles & Events
-			</a>
-			<a href="#places" class="nav-link">
-				📍 Places
-			</a>
-			<a href="#concepts" class="nav-link">
-				📚 Concepts
-			</a>
-		</nav>
 	</header>
 
 	<section class="timeline-featured" id="timeline">
@@ -132,44 +114,6 @@
 		font-size: 1.2rem;
 		color: var(--color-text-secondary);
 		font-style: italic;
-		margin-bottom: 2rem;
-	}
-
-	.category-nav {
-		display: flex;
-		justify-content: center;
-		gap: 1rem;
-		flex-wrap: wrap;
-		margin-top: 2rem;
-	}
-
-	.nav-link {
-		padding: 0.75rem 1.5rem;
-		background: rgba(26, 26, 26, 0.5);
-		border: 2px solid rgba(212, 175, 55, 0.3);
-		border-radius: 8px;
-		font-size: 1.1rem;
-		font-weight: 600;
-		text-decoration: none;
-		color: var(--color-text);
-		transition: all 0.3s ease;
-	}
-
-	.nav-link:hover {
-		border-color: var(--color-gold);
-		background: rgba(26, 26, 26, 0.8);
-		transform: translateY(-3px);
-		box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
-	}
-
-	.timeline-link {
-		background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
-		border-color: var(--color-accent);
-	}
-
-	.timeline-link:hover {
-		background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
-		border-color: var(--color-accent-light);
 	}
 
 	.timeline-featured {
@@ -301,16 +245,6 @@
 	@media (max-width: 768px) {
 		.encyclopedia-header h1 {
 			font-size: 2rem;
-		}
-
-		.category-nav {
-			flex-direction: column;
-			gap: 0.75rem;
-		}
-
-		.nav-link {
-			width: 100%;
-			text-align: center;
 		}
 
 		.timeline-hero {
