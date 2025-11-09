@@ -52,17 +52,7 @@
 			{#if entry.location}
 				<section class="location-section">
 					<h2>Location</h2>
-					<p class="location-name">{entry.location.name}</p>
-					<div class="map-container">
-						<MapComponent
-							center={entry.location.coordinates}
-							zoom={12}
-							markers={[{
-								position: entry.location.coordinates,
-								title: entry.title
-							}]}
-						/>
-					</div>
+					<MapComponent location={entry.location} />
 				</section>
 			{/if}
 
@@ -188,19 +178,6 @@
 		padding-left: 1rem;
 	}
 
-	.location-name {
-		font-size: 1.1rem;
-		color: var(--color-text-secondary);
-		margin-bottom: 1rem;
-	}
-
-	.map-container {
-		height: 400px;
-		border-radius: 8px;
-		overflow: hidden;
-		border: 2px solid rgba(212, 175, 55, 0.3);
-	}
-
 	.section-description {
 		font-size: 1.1rem;
 		color: var(--color-text-secondary);
@@ -289,10 +266,6 @@
 
 		.related-grid {
 			grid-template-columns: 1fr;
-		}
-
-		.map-container {
-			height: 300px;
 		}
 	}
 </style>
