@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getEncyclopediaEntry } from '$lib/data/encyclopedia';
 	import MapComponent from '$lib/components/MapComponent.svelte';
+	import TimelineComponent from '$lib/components/TimelineComponent.svelte';
 	import { timelineEvents } from '$lib/data/timeline';
 	import type { PageData } from './$types';
 
@@ -69,16 +70,10 @@
 				<section class="timeline-section">
 					<h2>Timeline Events</h2>
 					<p class="section-description">This {entry.type.toLowerCase()} appears in the following timeline events:</p>
-					<div class="timeline-events-list">
-						{#each relatedTimelineEvents as event}
-							<a href="/encyclopedia/timeline#{event.year}-{event.title.toLowerCase().replace(/\s+/g, '-')}" class="timeline-event-card">
-								<div class="event-year">{event.year}{event.month ? ` • ${event.month}` : ''}</div>
-								<h3>{event.title}</h3>
-								<p>{event.description}</p>
-							</a>
-						{/each}
+					<TimelineComponent events={relatedTimelineEvents} showAll={false} />
+					<div class="view-full-timeline-container">
+						<a href="/encyclopedia/timeline" class="view-full-timeline">View Full Timeline →</a>
 					</div>
-					<a href="/encyclopedia/timeline" class="view-full-timeline">View Full Timeline →</a>
 				</section>
 			{/if}
 
@@ -212,51 +207,9 @@
 		margin-bottom: 1.5rem;
 	}
 
-	.timeline-events-list {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		margin-bottom: 1.5rem;
-	}
-
-	.timeline-event-card {
-		background: rgba(139, 0, 0, 0.1);
-		border: 1px solid rgba(212, 175, 55, 0.2);
-		border-left: 4px solid var(--color-accent);
-		border-radius: 8px;
-		padding: 1.5rem;
-		text-decoration: none;
-		color: var(--color-text);
-		transition: all 0.3s ease;
-	}
-
-	.timeline-event-card:hover {
-		transform: translateX(10px);
-		border-color: var(--color-gold);
-		background: rgba(139, 0, 0, 0.2);
-		box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
-	}
-
-	.event-year {
-		font-size: 0.95rem;
-		color: var(--color-accent-light);
-		font-weight: 600;
-		margin-bottom: 0.5rem;
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-	}
-
-	.timeline-event-card h3 {
-		font-size: 1.3rem;
-		color: var(--color-gold);
-		margin-bottom: 0.75rem;
-	}
-
-	.timeline-event-card p {
-		font-size: 1.05rem;
-		color: var(--color-text-secondary);
-		line-height: 1.6;
-		margin: 0;
+	.view-full-timeline-container {
+		margin-top: 2rem;
+		text-align: center;
 	}
 
 	.view-full-timeline {
