@@ -17,9 +17,40 @@
 	<header class="encyclopedia-header">
 		<h1>Encyclopedia of the Wars</h1>
 		<p class="subtitle">People, places, and events that shaped England's bloodiest conflict</p>
+
+		<nav class="category-nav">
+			<a href="#timeline" class="nav-link timeline-link">
+				📅 Timeline
+			</a>
+			<a href="#people" class="nav-link">
+				👤 People
+			</a>
+			<a href="#events" class="nav-link">
+				⚔️ Battles & Events
+			</a>
+			<a href="#places" class="nav-link">
+				📍 Places
+			</a>
+			<a href="#concepts" class="nav-link">
+				📚 Concepts
+			</a>
+		</nav>
 	</header>
 
-	<section class="category-section">
+	<section class="timeline-featured" id="timeline">
+		<div class="timeline-hero">
+			<h2>Interactive Timeline</h2>
+			<p class="timeline-description">
+				Explore the complete chronological journey through the Wars of the Roses (1455-1487).
+				Follow the key events, battles, and turning points that shaped this pivotal period in English history.
+			</p>
+			<a href="/encyclopedia/timeline" class="timeline-cta">
+				View Full Timeline →
+			</a>
+		</div>
+	</section>
+
+	<section class="category-section" id="people">
 		<h2>People</h2>
 		<div class="entry-grid">
 			{#each people as entry}
@@ -34,8 +65,11 @@
 		</div>
 	</section>
 
-	<section class="category-section">
-		<h2>Battles & Events</h2>
+	<section class="category-section" id="events">
+		<div class="section-header">
+			<h2>Battles & Events</h2>
+			<a href="/encyclopedia/timeline" class="section-timeline-link">View on Timeline →</a>
+		</div>
 		<div class="entry-grid">
 			{#each events as entry}
 				<a href="/encyclopedia/{entry.id}" class="entry-card">
@@ -49,7 +83,7 @@
 		</div>
 	</section>
 
-	<section class="category-section">
+	<section class="category-section" id="places">
 		<h2>Places</h2>
 		<div class="entry-grid">
 			{#each places as entry}
@@ -61,7 +95,7 @@
 		</div>
 	</section>
 
-	<section class="category-section">
+	<section class="category-section" id="concepts">
 		<h2>Concepts</h2>
 		<div class="entry-grid">
 			{#each concepts as entry}
@@ -83,7 +117,7 @@
 
 	.encyclopedia-header {
 		text-align: center;
-		margin-bottom: 4rem;
+		margin-bottom: 3rem;
 		padding: 2rem 0;
 		border-bottom: 2px solid var(--color-gold);
 	}
@@ -98,18 +132,128 @@
 		font-size: 1.2rem;
 		color: var(--color-text-secondary);
 		font-style: italic;
+		margin-bottom: 2rem;
+	}
+
+	.category-nav {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+		margin-top: 2rem;
+	}
+
+	.nav-link {
+		padding: 0.75rem 1.5rem;
+		background: rgba(26, 26, 26, 0.5);
+		border: 2px solid rgba(212, 175, 55, 0.3);
+		border-radius: 8px;
+		font-size: 1.1rem;
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--color-text);
+		transition: all 0.3s ease;
+	}
+
+	.nav-link:hover {
+		border-color: var(--color-gold);
+		background: rgba(26, 26, 26, 0.8);
+		transform: translateY(-3px);
+		box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+	}
+
+	.timeline-link {
+		background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+		border-color: var(--color-accent);
+	}
+
+	.timeline-link:hover {
+		background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+		border-color: var(--color-accent-light);
+	}
+
+	.timeline-featured {
+		margin-bottom: 4rem;
+		scroll-margin-top: 2rem;
+	}
+
+	.timeline-hero {
+		background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(212, 175, 55, 0.1));
+		border: 2px solid var(--color-gold);
+		border-radius: 12px;
+		padding: 3rem;
+		text-align: center;
+	}
+
+	.timeline-hero h2 {
+		font-size: 2.5rem;
+		color: var(--color-gold);
+		margin-bottom: 1rem;
+	}
+
+	.timeline-description {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		color: var(--color-text);
+		max-width: 800px;
+		margin: 0 auto 2rem;
+	}
+
+	.timeline-cta {
+		display: inline-block;
+		padding: 1rem 2.5rem;
+		background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+		color: var(--color-text);
+		font-size: 1.2rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		border-radius: 8px;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+	}
+
+	.timeline-cta:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 10px 30px rgba(139, 0, 0, 0.6);
 	}
 
 	.category-section {
 		margin-bottom: 4rem;
+		scroll-margin-top: 2rem;
+	}
+
+	.section-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1.5rem;
 	}
 
 	.category-section h2 {
 		font-size: 2rem;
-		margin-bottom: 1.5rem;
 		color: var(--color-gold);
 		border-left: 4px solid var(--color-accent);
 		padding-left: 1rem;
+		margin: 0;
+	}
+
+	.section-timeline-link {
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--color-gold);
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		border: 2px solid var(--color-gold);
+		border-radius: 4px;
+		transition: all 0.3s ease;
+	}
+
+	.section-timeline-link:hover {
+		background: var(--color-gold);
+		color: var(--color-bg);
+		transform: translateY(-2px);
 	}
 
 	.entry-grid {
@@ -157,6 +301,44 @@
 	@media (max-width: 768px) {
 		.encyclopedia-header h1 {
 			font-size: 2rem;
+		}
+
+		.category-nav {
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		.nav-link {
+			width: 100%;
+			text-align: center;
+		}
+
+		.timeline-hero {
+			padding: 2rem 1.5rem;
+		}
+
+		.timeline-hero h2 {
+			font-size: 1.8rem;
+		}
+
+		.timeline-description {
+			font-size: 1.1rem;
+		}
+
+		.timeline-cta {
+			padding: 0.75rem 2rem;
+			font-size: 1.1rem;
+		}
+
+		.section-header {
+			flex-direction: column;
+			gap: 1rem;
+			align-items: flex-start;
+		}
+
+		.section-timeline-link {
+			width: 100%;
+			text-align: center;
 		}
 
 		.entry-grid {
