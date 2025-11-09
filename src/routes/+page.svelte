@@ -45,50 +45,6 @@
 			</div>
 		</div>
 	</section>
-
-	<section class="features">
-		<div class="feature-grid">
-			<div class="feature-card">
-				<div class="feature-icon">🎵</div>
-				<h3>21 Epic Songs</h3>
-				<p>Each track chronicles a different chapter of the war — from the first battle at St. Albans to the final showdown at Bosworth Field</p>
-			</div>
-
-			<div class="feature-card">
-				<div class="feature-icon">📜</div>
-				<h3>Rich Historical Detail</h3>
-				<p>Full lyrics, historical context, and encyclopedia entries for every key figure, battle, and location mentioned in the songs</p>
-			</div>
-
-			<div class="feature-card">
-				<div class="feature-icon">🗺️</div>
-				<h3>Interactive Experience</h3>
-				<p>Explore maps showing where each event took place, browse the encyclopedia of the war, and dive deep into medieval England</p>
-			</div>
-		</div>
-	</section>
-
-	<section class="about-preview">
-		<h2>The Conflict That Shaped England</h2>
-		<div class="timeline">
-			<div class="timeline-item">
-				<span class="year">1455</span>
-				<p>The Wars Begin</p>
-			</div>
-			<div class="timeline-item">
-				<span class="year">1461</span>
-				<p>Battle of Towton</p>
-			</div>
-			<div class="timeline-item">
-				<span class="year">1485</span>
-				<p>Battle of Bosworth</p>
-			</div>
-			<div class="timeline-item">
-				<span class="year">1487</span>
-				<p>Wars End</p>
-			</div>
-		</div>
-	</section>
 </div>
 
 <style>
@@ -262,94 +218,6 @@
 		transform: translateY(-3px);
 	}
 
-	.features {
-		padding: 6rem 2rem;
-		background: linear-gradient(180deg, transparent, var(--color-bg-secondary), transparent);
-	}
-
-	.feature-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 2rem;
-		max-width: 1200px;
-		margin: 0 auto;
-	}
-
-	.feature-card {
-		text-align: center;
-		padding: 2rem;
-		background: rgba(26, 26, 26, 0.5);
-		border: 1px solid rgba(212, 175, 55, 0.2);
-		border-radius: 8px;
-		transition: all 0.3s ease;
-	}
-
-	.feature-card:hover {
-		transform: translateY(-10px);
-		border-color: var(--color-gold);
-		box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-	}
-
-	.feature-icon {
-		font-size: 3rem;
-		margin-bottom: 1rem;
-	}
-
-	.feature-card h3 {
-		margin-bottom: 1rem;
-		font-size: 1.5rem;
-	}
-
-	.feature-card p {
-		font-size: 1.1rem;
-		font-weight: 400;
-		line-height: 1.7;
-	}
-
-	.about-preview {
-		padding: 4rem 2rem;
-		text-align: center;
-	}
-
-	.about-preview h2 {
-		font-size: 3rem;
-		margin-bottom: 3rem;
-	}
-
-	.timeline {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 2rem;
-		max-width: 1000px;
-		margin: 0 auto;
-	}
-
-	.timeline-item {
-		padding: 2rem;
-		background: rgba(139, 0, 0, 0.1);
-		border-left: 3px solid var(--color-accent);
-		border-radius: 4px;
-		transition: all 0.3s ease;
-	}
-
-	.timeline-item:hover {
-		background: rgba(139, 0, 0, 0.2);
-		transform: scale(1.05);
-	}
-
-	.timeline-item p {
-		font-size: 1.15rem;
-		font-weight: 500;
-	}
-
-	.year {
-		font-size: 2rem;
-		font-weight: bold;
-		color: var(--color-gold);
-		display: block;
-		margin-bottom: 0.5rem;
-	}
-
 	@media (max-width: 768px) {
 		.hero-content {
 			grid-template-columns: 1fr;
@@ -370,14 +238,6 @@
 
 		.album-description {
 			font-size: 1.15rem;
-		}
-
-		.feature-card p {
-			font-size: 1.05rem;
-		}
-
-		.about-preview h2 {
-			font-size: 2rem;
 		}
 
 		.cta-buttons {
