@@ -699,11 +699,11 @@ export const songs: Song[] = [
 		historicalContext: {
 			title: 'Sanctifying the Throne - Religion as Weapon',
 			description: `Edward IV understood that military victory wasn't enough—he needed God's blessing. Warwick's brother, George Neville, Archbishop of York, became the key to legitimizing Edward's rule. This song explores how the Neville brothers weaponized religion: George's sermon at St Paul's declared Henry VI's oath-breaking justified Edward's claim, while the coronation ceremony at Westminster used sacred ritual to transform Edward from usurper to divinely anointed king. The incense, holy water, and consecrated oil "sanctified the lies." But some in the crowd saw through the manipulation—they'd learned that political power, not divine will, decided who wore the crown. The song captures a turning point in medieval thinking: faith was being eroded by cynical realpolitik.`,
-			year: '1455-1485',
+			year: '1461',
 			keyFigures: [
 				'Edward IV',
 				'Richard Neville, Earl of Warwick',
-				'George, Duke of Clarence'
+				'George Neville, Archbishop of York'
 			],
 			location: {
 				name: 'England',

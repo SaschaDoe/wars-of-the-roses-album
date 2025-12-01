@@ -206,6 +206,86 @@ export const encyclopediaEntries: Record<string, EncyclopediaEntry> = {
 		shortDescription: 'Edward V and his brother, who disappeared and were presumably murdered',
 		fullDescription: `When Edward IV died in 1483, his 12-year-old son became Edward V. The boy-king and his younger brother Richard, Duke of York (age 9), were lodged in the Tower of London by their uncle Richard Duke of Gloucester (the Lord Protector). Within months, Gloucester declared the boys illegitimate on dubious grounds and took the throne as Richard III. The princes were seen less and less frequently and eventually disappeared entirely. They were almost certainly murdered, though the killer's identity remains uncertain. Tudor propaganda blamed Richard III, but some historians suggest others might have ordered the deed. In 1674, workmen found two child skeletons under a staircase in the Tower. They were assumed to be the princes and reburied in Westminster Abbey. The mystery of the Princes in the Tower remains one of history's most famous cold cases.`,
 		relatedEntries: ['edward-iv', 'richard-iii', 'elizabeth-woodville', 'tower-of-london']
+	},
+	'george-duke-of-clarence': {
+		id: 'george-duke-of-clarence',
+		title: 'George, Duke of Clarence',
+		type: 'person',
+		dates: '1449-1478',
+		shortDescription: 'Edward IV\'s treacherous brother, allegedly drowned in wine',
+		fullDescription: `George, Duke of Clarence, was the middle brother between Edward IV and Richard III. Ambitious and easily swayed, George proved spectacularly disloyal. When Warwick the Kingmaker turned against Edward, George joined the rebellion and married Warwick's daughter Isabel. He even briefly supported restoring Henry VI. But when Warwick's cause faltered, George switched sides again, betraying his father-in-law at the Battle of Barnet. Edward forgave him, but George continued scheming. After Isabel's death, he accused one of her servants of poisoning her and had the woman executed without trial. When George began questioning the legitimacy of Edward's marriage and children, he went too far. Edward had him tried for treason and executed in 1478. Legend claims George chose to be drowned in a barrel of Malmsey wine—a death as theatrical as his life. Shakespeare immortalized him as the dream-haunted victim in Richard III.`,
+		relatedEntries: ['edward-iv', 'richard-iii', 'warwick-the-kingmaker', 'battle-of-barnet']
+	},
+	'edward-of-westminster': {
+		id: 'edward-of-westminster',
+		title: 'Edward of Westminster, Prince of Wales',
+		type: 'person',
+		dates: '1453-1471',
+		shortDescription: 'Henry VI\'s son, the last Lancastrian prince',
+		fullDescription: `Edward of Westminster was the only son of Henry VI and Margaret of Anjou, born during his father's first mental breakdown in 1453. His birth should have secured the Lancastrian succession, but instead intensified the conflict—Richard Duke of York had been named heir, and Edward's arrival displaced him. Margaret fought ferociously to protect her son's inheritance, earning her "She-Wolf" reputation. Edward grew up in exile after the Yorkist victory at Towton, living in France under his mother's guidance. In 1470, he married Anne Neville (Warwick's daughter) to seal the Warwick-Lancaster alliance. When this alliance collapsed at Barnet and Tewkesbury, Edward's fate was sealed. He was killed at the Battle of Tewkesbury in 1471, either in battle or executed shortly after—sources disagree. His death ended the direct Lancastrian line and Margaret's hopes forever.`,
+		relatedEntries: ['henry-vi', 'margaret-of-anjou', 'battle-of-tewkesbury', 'warwick-the-kingmaker']
+	},
+	'george-neville-archbishop': {
+		id: 'george-neville-archbishop',
+		title: 'George Neville, Archbishop of York',
+		type: 'person',
+		dates: '1432-1476',
+		shortDescription: 'Warwick\'s brother who used religion to legitimize Edward IV',
+		fullDescription: `George Neville was the younger brother of Warwick the Kingmaker and served as Archbishop of York from 1465. He played a crucial role in legitimizing Edward IV's claim to the throne. At St Paul's Cathedral, George preached sermons declaring that Henry VI had broken sacred oaths, thus forfeiting divine favor. He presided over Edward's coronation, using the full weight of religious ceremony to transform a usurper into God's anointed king. George hosted the most lavish feast in medieval English history at his enthronement as Archbishop. However, when Warwick turned against Edward, George followed his brother into rebellion. After Warwick's death at Barnet, George was arrested and stripped of his archbishopric. He died in 1476, impoverished and forgotten—a reminder that even princes of the Church could fall when they backed the wrong king.`,
+		relatedEntries: ['warwick-the-kingmaker', 'edward-iv', 'henry-vi']
+	},
+	'jasper-tudor': {
+		id: 'jasper-tudor',
+		title: 'Jasper Tudor, Earl of Pembroke',
+		type: 'person',
+		dates: '1431-1495',
+		shortDescription: 'Henry VII\'s uncle and lifelong protector',
+		fullDescription: `Jasper Tudor was the half-brother of Henry VI (through their mother Catherine of Valois) and uncle to the future Henry VII. A steadfast Lancastrian, Jasper fought at nearly every major battle of the wars. After the Lancastrian defeats, he dedicated his life to protecting his nephew Henry Tudor. When Edward IV's forces threatened, Jasper fled with young Henry to Brittany, where they spent 14 years in exile. Jasper never wavered in his belief that Henry could claim the throne. He helped organize the 1485 invasion, fought at Bosworth Field, and lived to see his nephew crowned. Henry VII rewarded his uncle's loyalty by making him Duke of Bedford. Jasper died in 1495, having accomplished his life's mission: putting a Tudor on the English throne.`,
+		relatedEntries: ['henry-vii', 'owen-tudor', 'henry-vi', 'battle-of-bosworth']
+	},
+	'owen-tudor': {
+		id: 'owen-tudor',
+		title: 'Owen Tudor',
+		type: 'person',
+		dates: 'c.1400-1461',
+		shortDescription: 'Welsh courtier who secretly married a queen and founded a dynasty',
+		fullDescription: `Owen Tudor was a Welsh courtier who achieved the impossible: he secretly married Catherine of Valois, the widow of Henry V and mother of Henry VI. This scandalous union produced Edmund and Jasper Tudor. Though Owen was no nobleman, his grandsons would include a king. Owen fought for Lancaster throughout the wars. At the Battle of Mortimer's Cross in 1461, he was captured by Edward IV's forces. Reportedly, Owen didn't believe he would be executed until the very moment the axe fell, supposedly saying "that head shall lie on the stock that was wont to lie on Queen Catherine's lap." His head was placed on the market cross, where a local woman combed his hair and lit candles around it. Owen's unlikely marriage created the Tudor bloodline that would eventually rule England.`,
+		relatedEntries: ['jasper-tudor', 'henry-vii', 'battle-of-mortimers-cross']
+	},
+	'jacquetta-of-luxembourg': {
+		id: 'jacquetta-of-luxembourg',
+		title: 'Jacquetta of Luxembourg',
+		type: 'person',
+		dates: '1415-1472',
+		shortDescription: 'Elizabeth Woodville\'s mother, accused of witchcraft',
+		fullDescription: `Jacquetta of Luxembourg was one of the most remarkable women of the Wars of the Roses. First married to the Duke of Bedford (Henry V's brother), she scandalized the court by secretly marrying his squire, Richard Woodville, for love. Their daughter Elizabeth would become queen. Jacquetta claimed descent from Melusine, a water fairy from medieval legend, and this association haunted her family. When Edward IV secretly married Elizabeth, Warwick accused Jacquetta of using witchcraft to ensnare the king. She was formally charged with making lead images to bewitch Edward. Jacquetta successfully defended herself, but the accusations persisted. Her family's rapid rise from minor gentry to royal in-laws made them targets of resentment. Jacquetta died in 1472, but the witchcraft rumors followed the Woodvilles for generations.`,
+		relatedEntries: ['elizabeth-woodville', 'edward-iv', 'warwick-the-kingmaker']
+	},
+	'battle-of-tewkesbury': {
+		id: 'battle-of-tewkesbury',
+		title: 'Battle of Tewkesbury',
+		type: 'event',
+		dates: 'May 4, 1471',
+		shortDescription: 'The battle that destroyed the Lancastrian cause',
+		fullDescription: `Three weeks after killing Warwick at Barnet, Edward IV faced Queen Margaret's army at Tewkesbury. Margaret had finally returned from France with her son Prince Edward, hoping to rally Lancastrian supporters in the west. But Edward IV moved with devastating speed, forcing battle before Margaret could gather more troops. The Lancastrian position was strong, but the Duke of Somerset's impetuous charge exposed his flank. Edward's forces routed the Lancastrians completely. Prince Edward of Westminster was killed—either in battle or executed shortly after, ending the direct Lancastrian line. Many Lancastrian nobles who fled into Tewkesbury Abbey were dragged out and executed. Margaret was captured and eventually ransomed to France. Tewkesbury ended the wars' second phase; only the threat of Henry Tudor remained.`,
+		location: {
+			name: 'Tewkesbury, Gloucestershire',
+			coordinates: { lat: 51.9927, lng: -2.1603 }
+		},
+		relatedEntries: ['edward-iv', 'margaret-of-anjou', 'edward-of-westminster', 'battle-of-barnet']
+	},
+	'battle-of-mortimers-cross': {
+		id: 'battle-of-mortimers-cross',
+		title: "Battle of Mortimer's Cross",
+		type: 'event',
+		dates: 'February 2, 1461',
+		shortDescription: 'Edward IV\'s first victory, marked by three suns in the sky',
+		fullDescription: `Just weeks after his father's death at Wakefield, the young Edward of York won his first battle at Mortimer's Cross in Herefordshire. Before the battle, his frightened troops witnessed a parhelion—a rare atmospheric phenomenon where three suns appeared in the sky. Edward brilliantly declared this the Holy Trinity blessing their cause and adopted the "Sun in Splendour" as his badge. His army, inspired by the omen, crushed the Lancastrian force led by Jasper Tudor. Among those captured and executed was Owen Tudor, Jasper's father and grandfather of the future Henry VII. Owen reportedly didn't believe he would die until the axe was raised. The victory established Edward as a military commander in his own right and set him on the path to kingship.`,
+		location: {
+			name: "Mortimer's Cross, Herefordshire",
+			coordinates: { lat: 52.2667, lng: -2.9167 }
+		},
+		relatedEntries: ['edward-iv', 'jasper-tudor', 'owen-tudor', 'richard-duke-of-york']
 	}
 };
 
@@ -248,7 +328,23 @@ export const linkableTerms: Record<string, string> = {
 	'Tudor Rose': 'tudor-rose',
 	'Tower of London': 'tower-of-london',
 	'the Tower': 'tower-of-london',
-	'Princes in the Tower': 'princes-in-the-tower'
+	'Princes in the Tower': 'princes-in-the-tower',
+	'George, Duke of Clarence': 'george-duke-of-clarence',
+	'Duke of Clarence': 'george-duke-of-clarence',
+	'Clarence': 'george-duke-of-clarence',
+	'Edward of Westminster': 'edward-of-westminster',
+	'Prince Edward of Westminster': 'edward-of-westminster',
+	'George Neville': 'george-neville-archbishop',
+	'Archbishop of York': 'george-neville-archbishop',
+	'Jasper Tudor': 'jasper-tudor',
+	'Earl of Pembroke': 'jasper-tudor',
+	'Owen Tudor': 'owen-tudor',
+	'Jacquetta of Luxembourg': 'jacquetta-of-luxembourg',
+	'Jacquetta': 'jacquetta-of-luxembourg',
+	'Battle of Tewkesbury': 'battle-of-tewkesbury',
+	'Tewkesbury': 'battle-of-tewkesbury',
+	"Battle of Mortimer's Cross": 'battle-of-mortimers-cross',
+	"Mortimer's Cross": 'battle-of-mortimers-cross'
 };
 
 export function getEncyclopediaEntry(id: string): EncyclopediaEntry | undefined {
