@@ -50,6 +50,18 @@
 		{/each}
 	</div>
 
+	<div class="download-section">
+		<h3>Download Album</h3>
+		<p>Get the full album to listen offline</p>
+		<a
+			href="https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/Uncivil-War-Full-Album.zip"
+			download
+			class="download-album-button"
+		>
+			Download Full Album (ZIP)
+		</a>
+	</div>
+
 	<div class="album-credits">
 		<h3>About This Album</h3>
 		<p>
@@ -214,6 +226,43 @@
 
 	.track-item:hover .play-indicator {
 		opacity: 1;
+	}
+
+	.download-section {
+		text-align: center;
+		padding: 2rem;
+		margin-bottom: 2rem;
+		background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 0, 0, 0.1));
+		border: 2px solid var(--color-gold);
+		border-radius: 8px;
+	}
+
+	.download-section h3 {
+		font-size: 1.8rem;
+		margin-bottom: 0.5rem;
+		color: var(--color-gold);
+	}
+
+	.download-section p {
+		color: var(--color-text-secondary);
+		margin-bottom: 1.5rem;
+	}
+
+	.download-album-button {
+		display: inline-block;
+		padding: 1rem 2rem;
+		background: linear-gradient(135deg, var(--color-gold), var(--color-accent));
+		color: var(--color-bg);
+		font-size: 1.2rem;
+		font-weight: bold;
+		border-radius: 4px;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.download-album-button:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
 	}
 
 	.album-credits {

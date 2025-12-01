@@ -36,6 +36,9 @@
 				<track kind="captions" />
 				Your browser does not support the audio element.
 			</audio>
+			<a href={song.audioUrl} download class="download-button">
+				Download Song
+			</a>
 		</div>
 	{/if}
 
@@ -170,6 +173,23 @@
 		width: 100%;
 		max-width: 600px;
 		filter: sepia(100%) hue-rotate(-50deg) saturate(300%);
+	}
+
+	.download-button {
+		display: inline-block;
+		margin-top: 1rem;
+		padding: 0.75rem 1.5rem;
+		background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+		color: var(--color-text);
+		border-radius: 4px;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.download-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
 	}
 
 	.tabs {

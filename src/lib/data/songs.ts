@@ -94,7 +94,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/01-white-rose-red-rose.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/01%20White%20Rose%2C%20Red%20Rose.mp3'
 	},
 	{
 		id: 'the-kingmakers-dawn',
@@ -187,7 +187,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 51.7519, lng: -0.3369 }
 			}
 		},
-		audioUrl: '/audio/02-the-kingmakers-dawn.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/02%20The%20Kingmaker%27s%20Dawn.mp3'
 	},
 	{
 		id: 'she-wolf-queen-and-the-king',
@@ -264,7 +264,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/03-she-wolf-queen-and-the-king.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/03%20She-Wolf%20Queen%20and%20the%20King.mp3'
 	},
 	{
 		id: 'the-paper-crown',
@@ -346,7 +346,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 53.6830, lng: -1.4990 }
 			}
 		},
-		audioUrl: '/audio/04-the-paper-crown.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/04%20The%20Paper%20Crown.mp3'
 	},
 	{
 		id: 'the-three-suns',
@@ -433,7 +433,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.2667, lng: -2.9167 }
 			}
 		},
-		audioUrl: '/audio/05-the-three-suns.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/05%20The%20Three%20Suns.mp3'
 	},
 	{
 		id: 'no-ransom-called',
@@ -476,7 +476,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/06-no-ransom-called.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/06%20No%20Ransom%20Called.mp3'
 	},
 	{
 		id: 'to-the-gates-of-london',
@@ -566,7 +566,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 51.5074, lng: -0.1278 }
 			}
 		},
-		audioUrl: '/audio/07-to-the-gates-of-london.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/07%20To%20the%20Gates%20of%20London.mp3'
 	},
 	{
 		id: 'towton-die-by-the-damned',
@@ -668,7 +668,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 53.8333, lng: -1.2833 }
 			}
 		},
-		audioUrl: '/audio/08-towton-die-by-the-damned.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/08%20Towton%20-%20Die%20by%20the%20Damned.mp3'
 	},
 	{
 		id: 'sacred-lies',
@@ -710,7 +710,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/09-sacred-lies.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/09%20Sacred%20Lies.mp3'
 	},
 	{
 		id: 'oh-god-see-our-plight',
@@ -758,7 +758,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/10-oh-god-see-our-plight.wav'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/10%20Oh%2C%20God%2C%20see%20our%20plight.wav'
 	},
 	{
 		id: 'reaving-river-rats',
@@ -875,7 +875,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 51.5074, lng: -0.1278 }
 			}
 		},
-		audioUrl: '/audio/11-reaving-river-rats.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/11%20Reaving%20River%20Rats.mp3'
 	},
 	{
 		id: 'the-kingmakers-scorn',
@@ -947,7 +947,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/12-the-kingmakers-scorn.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/12%20The%20Kingmakers%20Scorn.mp3'
 	},
 	{
 		id: 'le-temple-de-boccace',
@@ -1046,7 +1046,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/13-le-temple-de-boccace.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/13%20Le%20Temple%20de%20Boccace%20.mp3'
 	},
 	{
 		id: 'melusine',
@@ -1111,7 +1111,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/14-melusine.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/14%20Melusine.mp3'
 	},
 	{
 		id: 'the-kingmakers-pawn',
@@ -1201,7 +1201,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/15-the-kingmakers-pawn.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/15%20The%20Kingmakers%20Pawn.mp3'
 	},
 	{
 		id: 'epic-rap-battle-of-the-roses',
@@ -1334,7 +1334,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/16-epic-rap-battle-of-the-roses.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/16%20Epic%20Rap%20Battle%20of%20the%20Roses.mp3'
 	},
 	{
 		id: 'kaboom-2-0-live-wacken-2025',
@@ -1404,7 +1404,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/17-kaboom-2-0-live-wacken-2025.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/17%20Kaboom%202.0%20%28Live%20Wacken%202025%29.mp3'
 	},
 	{
 		id: 'the-kingmakers-fall',
@@ -1506,7 +1506,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 51.6514, lng: -0.2013 }
 			}
 		},
-		audioUrl: '/audio/18-the-kingmakers-fall.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/18%20The%20Kingmakers%20Fall.mp3'
 	},
 	{
 		id: 'the-winter-of-all-discontent',
@@ -1598,7 +1598,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/19-the-winter-of-all-discontent.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/19%20The%20Winter%20of%20all%20Discontent.mp3'
 	},
 	{
 		id: 'rejoice',
@@ -1677,7 +1677,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 51.4994, lng: -0.1273 }
 			}
 		},
-		audioUrl: '/audio/20-rejoice.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/20%20Rejoice%21.mp3'
 	},
 	{
 		id: 'happy-birthday-stomp',
@@ -1723,7 +1723,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: '/audio/21-happy-birthday-stomp.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/21%20Happy%20Birthday%20Stomp.mp3'
 	},
 	{
 		id: 'virgin-queen',
@@ -1811,7 +1811,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 51.5074, lng: -0.1278 }
 			}
 		},
-		audioUrl: '/audio/bonus-virgin-queen.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/Bonus%20Preview%20Song%20-%20Virgin%20Queen%20.mp3'
 	}
 ];
 
