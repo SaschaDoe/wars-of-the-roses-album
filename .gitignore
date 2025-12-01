@@ -1,6 +1,12 @@
 # Dependencies
 node_modules/
 
+# Resources (audio, lyrics source files)
+resources/
+
+# Netlify
+.netlify/
+
 # Build outputs
 .svelte-kit/
 build/
