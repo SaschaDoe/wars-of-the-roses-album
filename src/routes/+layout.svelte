@@ -38,6 +38,7 @@
 						<li><a href="/encyclopedia#concepts">📚 Concepts</a></li>
 					</ul>
 				</li>
+				<li><a href="/download" class:active={$page.url.pathname === '/download'}>Download</a></li>
 				<li><a href="/about" class:active={$page.url.pathname === '/about'}>About</a></li>
 			</ul>
 		</nav>
