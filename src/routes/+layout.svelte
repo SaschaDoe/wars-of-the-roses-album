@@ -3,6 +3,8 @@
 	import { page } from '$app/stores';
 	import { language, currentTranslations } from '$lib/i18n';
 	import { onMount } from 'svelte';
+	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
+	import { isPlayerVisible } from '$lib/stores/audioPlayer';
 
 	let mobileMenuOpen = $state(false);
 	let mounted = $state(false);
@@ -25,7 +27,7 @@
 	}
 </script>
 
-<div class="app">
+<div class="app" class:player-visible={$isPlayerVisible}>
 	<header class="header">
 		<nav class="nav">
 			<div class="nav-brand">
@@ -74,6 +76,8 @@
 			<p>{$currentTranslations.footer.copyright}</p>
 		</div>
 	</footer>
+
+	<AudioPlayer />
 </div>
 
 <style>
@@ -275,6 +279,10 @@
 		max-width: 1400px;
 		margin: 0 auto;
 		text-align: center;
+	}
+
+	.app.player-visible .footer {
+		padding-bottom: 5rem;
 	}
 
 	@media (max-width: 768px) {

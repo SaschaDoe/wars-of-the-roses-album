@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { songs } from '$lib/data/songs';
+	import { songs, type Song } from '$lib/data/songs';
 	import { onMount } from 'svelte';
 	import { language, currentTranslations } from '$lib/i18n';
+	import { audioPlayer } from '$lib/stores/audioPlayer';
 
 	let visible = $state(false);
 
@@ -10,6 +11,21 @@
 			visible = true;
 		}, 100);
 	});
+
+	function handlePlayClick(event: MouseEvent, song: Song) {
+		event.preventDefault();
+		event.stopPropagation();
+
+		if ($audioPlayer.currentSong?.id === song.id) {
+			audioPlayer.toggle();
+		} else {
+			audioPlayer.playSong(song);
+		}
+	}
+
+	function isPlaying(song: Song): boolean {
+		return $audioPlayer.currentSong?.id === song.id && $audioPlayer.isPlaying;
+	}
 </script>
 
 <svelte:head>
@@ -37,15 +53,34 @@
 
 	<div class="tracklist">
 		{#each songs as song, index}
-			<a href="/songs/{song.id}" class="track-item" style="animation-delay: {index * 0.1}s">
-				<div class="track-number">{song.trackNumber}</div>
-				<div class="track-info">
+			<div class="track-item" style="animation-delay: {index * 0.1}s" class:is-playing={isPlaying(song)}>
+				<button
+					class="track-play-btn"
+					onclick={(e) => handlePlayClick(e, song)}
+					aria-label={isPlaying(song) ? 'Pause' : 'Play'}
+				>
+					{#if isPlaying(song)}
+						<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+							<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+						</svg>
+					{:else}
+						<span class="track-number-text">{song.trackNumber}</span>
+						<svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+							<path d="M8 5v14l11-7z"/>
+						</svg>
+					{/if}
+				</button>
+				<a href="/songs/{song.id}" class="track-info">
 					<h3 class="track-title">{song.title}</h3>
 					<p class="track-context">{song.historicalContext.year} • {song.historicalContext.location.name}</p>
-				</div>
+				</a>
 				<div class="track-duration">{song.duration}</div>
-				<div class="play-indicator">▶</div>
-			</a>
+				<a href="/songs/{song.id}" class="track-link-icon" aria-label="View song details">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+						<path d="M9 18l6-6-6-6"/>
+					</svg>
+				</a>
+			</div>
 		{/each}
 	</div>
 
@@ -161,7 +196,6 @@
 		border: 1px solid transparent;
 		border-radius: 8px;
 		transition: all 0.3s ease;
-		cursor: pointer;
 		opacity: 0;
 		animation: fadeInSlide 0.6s ease-out forwards;
 	}
@@ -180,25 +214,69 @@
 	.track-item:hover {
 		background: rgba(26, 26, 26, 0.8);
 		border-color: var(--color-gold);
-		transform: translateX(10px);
 		box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
 	}
 
-	.track-number {
-		font-size: 1.5rem;
-		font-weight: bold;
+	.track-item.is-playing {
+		background: rgba(139, 0, 0, 0.2);
+		border-color: var(--color-accent);
+	}
+
+	.track-play-btn {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		border: none;
+		background: transparent;
 		color: var(--color-gold);
-		text-align: center;
+		font-size: 1.3rem;
+		font-weight: bold;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.2s ease;
+		position: relative;
+	}
+
+	.track-play-btn:hover {
+		background: var(--color-gold);
+		color: var(--color-bg);
+	}
+
+	.track-play-btn .play-icon {
+		display: none;
+		position: absolute;
+	}
+
+	.track-play-btn:hover .track-number-text {
+		display: none;
+	}
+
+	.track-play-btn:hover .play-icon {
+		display: block;
+	}
+
+	.track-item.is-playing .track-play-btn {
+		background: var(--color-accent);
+		color: var(--color-text);
 	}
 
 	.track-info {
 		min-width: 0;
+		text-decoration: none;
+		display: block;
 	}
 
 	.track-title {
 		font-size: 1.5rem;
 		margin-bottom: 0.25rem;
 		color: var(--color-text);
+		transition: color 0.2s ease;
+	}
+
+	.track-info:hover .track-title {
+		color: var(--color-gold);
 	}
 
 	.track-context {
@@ -213,15 +291,18 @@
 		font-family: 'Courier New', monospace;
 	}
 
-	.play-indicator {
-		color: var(--color-accent);
+	.track-link-icon {
+		color: var(--color-text-secondary);
 		opacity: 0;
-		transition: opacity 0.3s ease;
-		font-size: 1.2rem;
+		transition: all 0.3s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
-	.track-item:hover .play-indicator {
+	.track-item:hover .track-link-icon {
 		opacity: 1;
+		color: var(--color-gold);
 	}
 
 	.download-section {
@@ -293,14 +374,19 @@
 		}
 
 		.track-item {
-			grid-template-columns: 40px 1fr;
+			grid-template-columns: 50px 1fr;
 			gap: 1rem;
 			padding: 1rem;
 		}
 
 		.track-duration,
-		.play-indicator {
+		.track-link-icon {
 			display: none;
+		}
+
+		.track-play-btn {
+			width: 40px;
+			height: 40px;
 		}
 
 		.track-title {

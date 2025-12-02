@@ -4,11 +4,23 @@
 	import LinkifiedText from '$lib/components/LinkifiedText.svelte';
 	import { getSongByTrackNumber, songs } from '$lib/data/songs';
 	import { language, currentTranslations } from '$lib/i18n';
+	import { audioPlayer } from '$lib/stores/audioPlayer';
 
 	let { data }: { data: PageData } = $props();
 	let song = $derived(data.song);
 
 	let activeTab = $state<'lyrics' | 'history'>('lyrics');
+
+	const isCurrentSong = $derived($audioPlayer.currentSong?.id === song.id);
+	const isPlaying = $derived(isCurrentSong && $audioPlayer.isPlaying);
+
+	function handlePlay() {
+		if (isCurrentSong) {
+			audioPlayer.toggle();
+		} else {
+			audioPlayer.playSong(song);
+		}
+	}
 
 	function getHistoricalTitle() {
 		return $language === 'de' && song.historicalContext.titleDe
@@ -41,12 +53,20 @@
 	</div>
 
 	{#if song.audioUrl}
-		<div class="audio-player">
-			<audio controls>
-				<source src={song.audioUrl} type="audio/mpeg" />
-				<track kind="captions" />
-				Your browser does not support the audio element.
-			</audio>
+		<div class="audio-controls">
+			<button class="play-button" class:playing={isPlaying} onclick={handlePlay}>
+				{#if isPlaying}
+					<svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+						<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+					</svg>
+					<span>{$language === 'de' ? 'Pause' : 'Pause'}</span>
+				{:else}
+					<svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+						<path d="M8 5v14l11-7z"/>
+					</svg>
+					<span>{$language === 'de' ? 'Abspielen' : 'Play Song'}</span>
+				{/if}
+			</button>
 			<a href={song.audioUrl} download class="download-button" title="Download Song">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 					<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -186,7 +206,7 @@
 		margin: 0 1rem;
 	}
 
-	.audio-player {
+	.audio-controls {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -194,10 +214,34 @@
 		margin-bottom: 3rem;
 	}
 
-	.audio-player audio {
-		width: 100%;
-		max-width: 600px;
-		filter: sepia(100%) hue-rotate(-50deg) saturate(300%);
+	.play-button {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 1rem 2rem;
+		background: linear-gradient(135deg, var(--color-gold), var(--color-accent));
+		color: var(--color-bg);
+		border: none;
+		border-radius: 50px;
+		font-size: 1.1rem;
+		font-weight: 700;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.play-button:hover {
+		transform: scale(1.05);
+		box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+	}
+
+	.play-button.playing {
+		background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+	}
+
+	.play-button svg {
+		flex-shrink: 0;
 	}
 
 	.download-button {
