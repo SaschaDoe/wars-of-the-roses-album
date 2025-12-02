@@ -2,7 +2,7 @@
 	import type { PageData } from './$types';
 	import MapComponent from '$lib/components/MapComponent.svelte';
 	import LinkifiedText from '$lib/components/LinkifiedText.svelte';
-	import { getSongByTrackNumber } from '$lib/data/songs';
+	import { getSongByTrackNumber, songs } from '$lib/data/songs';
 	import { language, currentTranslations } from '$lib/i18n';
 
 	let { data }: { data: PageData } = $props();
@@ -130,7 +130,7 @@
 				{$currentTranslations.song.previousSong}
 			</a>
 		{/if}
-		{#if song.trackNumber < 5}
+		{#if song.trackNumber < songs.length}
 			<a href="/songs/{getSongByTrackNumber(song.trackNumber + 1)?.id}" class="nav-button next">
 				{$currentTranslations.song.nextSong}
 			</a>
