@@ -781,7 +781,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/10%20Oh%2C%20God%2C%20see%20our%20plight.wav'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/10%20Oh%2C%20God%2C%20see%20our%20plight.mp3'
 	},
 	{
 		id: 'reaving-river-rats',
