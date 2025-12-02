@@ -53,13 +53,19 @@
 		</div>
 	</section>
 
-	<section class="live-section">
-		<h2>{$language === 'de' ? 'Live auf Wacken 2025' : 'Live at Wacken 2025'}</h2>
-		<div class="live-content">
-			<div class="live-image">
+	<section class="band-section">
+		<h2>{$currentTranslations.about.bandSection}</h2>
+		<div class="band-content">
+			<div class="band-image">
 				<img src="/images/wacken-2025.png" alt="Uncivil War live at Wacken Open Air 2025" />
 			</div>
-			<div class="section-content">
+			<div class="band-text">
+				<p>
+					{@html aboutText[$language].bandDesc1}
+				</p>
+				<p>
+					{aboutText[$language].bandDesc2}
+				</p>
 				<p>
 					{@html aboutText[$language].liveDesc1}
 				</p>
@@ -67,18 +73,6 @@
 					{aboutText[$language].liveDesc2}
 				</p>
 			</div>
-		</div>
-	</section>
-
-	<section class="band-section">
-		<h2>{$currentTranslations.about.bandSection}</h2>
-		<div class="section-content">
-			<p>
-				{@html aboutText[$language].bandDesc1}
-			</p>
-			<p>
-				{aboutText[$language].bandDesc2}
-			</p>
 		</div>
 
 		<div class="quote-block">
@@ -150,14 +144,12 @@
 	}
 
 	.content-section,
-	.live-section,
 	.band-section,
 	.features-section {
 		margin-bottom: 5rem;
 	}
 
 	.content-section h2,
-	.live-section h2,
 	.band-section h2,
 	.features-section h2 {
 		font-size: 3rem;
@@ -165,24 +157,31 @@
 		text-align: center;
 	}
 
-	.live-content {
+	.band-content {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 3rem;
-		align-items: center;
+		align-items: start;
 	}
 
-	.live-image {
+	.band-image {
 		border-radius: 12px;
 		overflow: hidden;
 		border: 3px solid var(--color-gold);
 		box-shadow: 0 10px 40px rgba(139, 0, 0, 0.4);
 	}
 
-	.live-image img {
+	.band-image img {
 		width: 100%;
 		height: auto;
 		display: block;
+	}
+
+	.band-text p {
+		font-size: 1.2rem;
+		line-height: 1.8;
+		margin-bottom: 1.5rem;
+		color: var(--color-text-secondary);
 	}
 
 	.section-content {
@@ -195,11 +194,6 @@
 		line-height: 1.8;
 		margin-bottom: 1.5rem;
 		color: var(--color-text-secondary);
-	}
-
-	.live-section .section-content {
-		max-width: none;
-		margin: 0;
 	}
 
 	.quote-block {
@@ -295,13 +289,12 @@
 		}
 
 		.content-section h2,
-		.live-section h2,
 		.band-section h2,
 		.features-section h2 {
 			font-size: 2rem;
 		}
 
-		.live-content {
+		.band-content {
 			grid-template-columns: 1fr;
 			gap: 2rem;
 		}
