@@ -6,15 +6,9 @@
 	import { language, currentTranslations } from '$lib/i18n';
 
 	let { data }: { data: PageData } = $props();
-	let { song } = data;
+	let song = $derived(data.song);
 
 	let activeTab = $state<'lyrics' | 'history'>('lyrics');
-
-	// Get translated content based on language
-	$effect(() => {
-		// Re-render when language changes
-		$language;
-	});
 
 	function getHistoricalTitle() {
 		return $language === 'de' && song.historicalContext.titleDe
