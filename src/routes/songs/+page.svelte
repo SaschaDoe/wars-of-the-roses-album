@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { songs } from '$lib/data/songs';
 	import { onMount } from 'svelte';
+	import { language, currentTranslations } from '$lib/i18n';
 
 	let visible = $state(false);
 
@@ -12,26 +13,24 @@
 </script>
 
 <svelte:head>
-	<title>Songs - Wars of the Roses</title>
+	<title>{$currentTranslations.songs.pageTitle}</title>
 </svelte:head>
 
 <div class="songs-page" class:visible>
 	<div class="page-header">
-		<h1 class="page-title">Wars of the Roses</h1>
-		<p class="page-subtitle">Complete Tracklist</p>
+		<h1 class="page-title">{$currentTranslations.songs.title}</h1>
+		<p class="page-subtitle">{$currentTranslations.songs.subtitle}</p>
 	</div>
 
 	<div class="album-info">
 		<div class="album-cover-small">
-			<img src="/images/album-cover.jpg" alt="Wars of the Roses" />
+			<img src="/images/album-cover.jpg" alt={$currentTranslations.songs.title} />
 		</div>
 		<div class="album-details">
 			<h2>Uncivil War</h2>
-			<p class="release-info">2025 • {songs.length} tracks</p>
+			<p class="release-info">2025 • {songs.length} {$currentTranslations.songs.tracks}</p>
 			<p class="album-description">
-				An epic musical journey through England's most brutal civil war.
-				Each song chronicles a pivotal moment in the thirty-year conflict
-				between the Houses of Lancaster and York.
+				{$currentTranslations.songs.albumDescription}
 			</p>
 		</div>
 	</div>
@@ -51,24 +50,21 @@
 	</div>
 
 	<div class="download-section">
-		<h3>Download Album</h3>
-		<p>Get the full album to listen offline</p>
+		<h3>{$currentTranslations.songs.downloadAlbum}</h3>
+		<p>{$currentTranslations.songs.downloadDescription}</p>
 		<a
 			href="https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/Uncivil-War-Full-Album.zip"
 			download
 			class="download-album-button"
 		>
-			Download Full Album (ZIP)
+			{$currentTranslations.songs.downloadButton}
 		</a>
 	</div>
 
 	<div class="album-credits">
-		<h3>About This Album</h3>
+		<h3>{$currentTranslations.songs.aboutAlbum}</h3>
 		<p>
-			Wars of the Roses combines powerful metal soundscapes with historically
-			accurate storytelling. Each track is accompanied by detailed historical
-			context, interactive maps, and complete lyrics to immerse you in the
-			medieval conflict that shaped England.
+			{$currentTranslations.songs.aboutDescription}
 		</p>
 	</div>
 </div>

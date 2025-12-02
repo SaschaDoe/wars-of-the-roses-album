@@ -1,11 +1,27 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/stores';
+	import { language, currentTranslations } from '$lib/i18n';
+	import { onMount } from 'svelte';
 
 	let mobileMenuOpen = $state(false);
+	let mounted = $state(false);
+
+	onMount(() => {
+		// Restore language from localStorage on mount
+		const stored = localStorage.getItem('language');
+		if (stored === 'de') {
+			language.set('de');
+		}
+		mounted = true;
+	});
 
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
+	}
+
+	function toggleLanguage() {
+		language.toggle();
 	}
 </script>
 
@@ -15,7 +31,7 @@
 			<div class="nav-brand">
 				<a href="/" class="brand-link">
 					<h1 class="brand-title">Uncivil War</h1>
-					<span class="brand-subtitle">Wars of the Roses</span>
+					<span class="brand-subtitle">{$language === 'de' ? 'Rosenkriege' : 'Wars of the Roses'}</span>
 				</a>
 			</div>
 
@@ -26,20 +42,25 @@
 			</button>
 
 			<ul class="nav-links" class:open={mobileMenuOpen}>
-				<li><a href="/" class:active={$page.url.pathname === '/'}>Home</a></li>
-				<li><a href="/songs" class:active={$page.url.pathname.startsWith('/songs')}>Songs</a></li>
+				<li><a href="/" class:active={$page.url.pathname === '/'}>{$currentTranslations.nav.home}</a></li>
+				<li><a href="/songs" class:active={$page.url.pathname.startsWith('/songs')}>{$currentTranslations.nav.songs}</a></li>
 				<li class="dropdown">
-					<a href="/encyclopedia" class:active={$page.url.pathname.startsWith('/encyclopedia')}>Encyclopedia</a>
+					<a href="/encyclopedia" class:active={$page.url.pathname.startsWith('/encyclopedia')}>{$currentTranslations.nav.encyclopedia}</a>
 					<ul class="dropdown-menu">
-						<li><a href="/encyclopedia/timeline">📅 Timeline</a></li>
-						<li><a href="/encyclopedia#people">👤 People</a></li>
-						<li><a href="/encyclopedia#events">⚔️ Events</a></li>
-						<li><a href="/encyclopedia#places">📍 Locations</a></li>
-						<li><a href="/encyclopedia#concepts">📚 Concepts</a></li>
+						<li><a href="/encyclopedia/timeline">📅 {$currentTranslations.nav.timeline}</a></li>
+						<li><a href="/encyclopedia#people">👤 {$currentTranslations.nav.people}</a></li>
+						<li><a href="/encyclopedia#events">⚔️ {$currentTranslations.nav.events}</a></li>
+						<li><a href="/encyclopedia#places">📍 {$currentTranslations.nav.locations}</a></li>
+						<li><a href="/encyclopedia#concepts">📚 {$currentTranslations.nav.concepts}</a></li>
 					</ul>
 				</li>
-				<li><a href="/download" class:active={$page.url.pathname === '/download'}>Download</a></li>
-				<li><a href="/about" class:active={$page.url.pathname === '/about'}>About</a></li>
+				<li><a href="/download" class:active={$page.url.pathname === '/download'}>{$currentTranslations.nav.download}</a></li>
+				<li><a href="/about" class:active={$page.url.pathname === '/about'}>{$currentTranslations.nav.about}</a></li>
+				<li class="lang-switch">
+					<button onclick={toggleLanguage} class="lang-btn" aria-label="Switch language">
+						{$language === 'en' ? 'DE' : 'EN'}
+					</button>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -50,12 +71,7 @@
 
 	<footer class="footer">
 		<div class="footer-content">
-			<p>&copy; 2025 Uncivil War. All rights reserved.</p>
-			<div class="social-links">
-				<a href="#" aria-label="Spotify">🎵</a>
-				<a href="#" aria-label="YouTube">📺</a>
-				<a href="#" aria-label="Instagram">📷</a>
-			</div>
+			<p>{$currentTranslations.footer.copyright}</p>
 		</div>
 	</footer>
 </div>
@@ -220,6 +236,28 @@
 		padding-left: 2rem;
 	}
 
+	.lang-switch {
+		margin-left: 1rem;
+	}
+
+	.lang-btn {
+		background: transparent;
+		border: 2px solid var(--color-gold);
+		color: var(--color-gold);
+		padding: 0.4rem 0.8rem;
+		font-size: 0.9rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		cursor: pointer;
+		border-radius: 4px;
+		transition: all 0.3s ease;
+	}
+
+	.lang-btn:hover {
+		background: var(--color-gold);
+		color: var(--color-bg);
+	}
+
 	.main-content {
 		flex: 1;
 		margin-top: 100px;
@@ -236,23 +274,7 @@
 	.footer-content {
 		max-width: 1400px;
 		margin: 0 auto;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.social-links {
-		display: flex;
-		gap: 1.5rem;
-		font-size: 1.5rem;
-	}
-
-	.social-links a {
-		transition: transform 0.3s ease;
-	}
-
-	.social-links a:hover {
-		transform: scale(1.2);
+		text-align: center;
 	}
 
 	@media (max-width: 768px) {
@@ -295,12 +317,6 @@
 
 		.dropdown-menu a:hover {
 			padding-left: 1.5rem;
-		}
-
-		.footer-content {
-			flex-direction: column;
-			gap: 1rem;
-			text-align: center;
 		}
 	}
 </style>

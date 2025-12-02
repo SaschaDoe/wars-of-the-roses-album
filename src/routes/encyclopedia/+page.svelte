@@ -1,47 +1,78 @@
 <script lang="ts">
-	import { getAllEntries, getEntriesByType, type EncyclopediaEntry } from '$lib/data/encyclopedia';
+	import { getAllEntries, getEntriesByType, getEncyclopediaEntry, type EncyclopediaEntry } from '$lib/data/encyclopedia';
+	import { language, currentTranslations } from '$lib/i18n';
 
 	const allEntries = getAllEntries();
 	const people = getEntriesByType('person');
 	const places = getEntriesByType('place');
 	const events = getEntriesByType('event');
-	const concepts = getEntriesByType('concept');
+	const concepts = getEntriesByType('concept').filter(c => c.id !== 'wars-of-the-roses');
+	const warsOverview = getEncyclopediaEntry('wars-of-the-roses');
+
+	function getTitle(entry: EncyclopediaEntry) {
+		return $language === 'de' && entry.titleDe ? entry.titleDe : entry.title;
+	}
+
+	function getShortDescription(entry: EncyclopediaEntry) {
+		return $language === 'de' && entry.shortDescriptionDe ? entry.shortDescriptionDe : entry.shortDescription;
+	}
 </script>
 
 <svelte:head>
-	<title>Encyclopedia - Wars of the Roses</title>
-	<meta name="description" content="Explore the people, places, and events of the Wars of the Roses" />
+	<title>{$currentTranslations.encyclopedia.pageTitle}</title>
+	<meta name="description" content={$currentTranslations.encyclopedia.subtitle} />
 </svelte:head>
 
 <div class="encyclopedia-container">
 	<header class="encyclopedia-header">
-		<h1>Encyclopedia of the Wars</h1>
-		<p class="subtitle">People, places, and events that shaped England's bloodiest conflict</p>
+		<h1>{$currentTranslations.encyclopedia.title}</h1>
+		<p class="subtitle">{$currentTranslations.encyclopedia.subtitle}</p>
 	</header>
+
+	{#if warsOverview}
+		<section class="overview-section" id="overview">
+			<div class="overview-content">
+				<div class="overview-text">
+					<h2>{getTitle(warsOverview)}</h2>
+					<p class="overview-dates">{warsOverview.dates}</p>
+					<p class="overview-description">{getShortDescription(warsOverview)}</p>
+					<a href="/encyclopedia/{warsOverview.id}" class="overview-link">
+						{$currentTranslations.encyclopedia.readFullOverview}
+					</a>
+				</div>
+			</div>
+		</section>
+	{/if}
 
 	<section class="timeline-featured" id="timeline">
 		<div class="timeline-hero">
-			<h2>Interactive Timeline</h2>
+			<h2>{$currentTranslations.encyclopedia.timelineSection}</h2>
 			<p class="timeline-description">
-				Explore the complete chronological journey through the Wars of the Roses (1455-1487).
-				Follow the key events, battles, and turning points that shaped this pivotal period in English history.
+				{$currentTranslations.encyclopedia.timelineDescription}
 			</p>
 			<a href="/encyclopedia/timeline" class="timeline-cta">
-				View Full Timeline →
+				{$currentTranslations.encyclopedia.viewTimeline}
 			</a>
 		</div>
 	</section>
 
 	<section class="category-section" id="people">
-		<h2>People</h2>
+		<h2>{$currentTranslations.encyclopedia.people}</h2>
 		<div class="entry-grid">
 			{#each people as entry}
-				<a href="/encyclopedia/{entry.id}" class="entry-card">
-					<h3>{entry.title}</h3>
-					{#if entry.dates}
-						<span class="dates">{entry.dates}</span>
+				<a href="/encyclopedia/{entry.id}" class="entry-card" class:has-image={entry.imageUrl}>
+					{#if entry.imageUrl}
+						<div class="card-image">
+							<img src={entry.imageUrl} alt={getTitle(entry)} loading="lazy" decoding="async" />
+						</div>
 					{/if}
-					<p>{entry.shortDescription}</p>
+					<div class="card-content">
+						<h3>{getTitle(entry)}</h3>
+						{#if entry.dates}
+							<span class="dates">{entry.dates}</span>
+						{/if}
+						<p>{getShortDescription(entry)}</p>
+					</div>
 				</a>
 			{/each}
 		</div>
@@ -49,41 +80,62 @@
 
 	<section class="category-section" id="events">
 		<div class="section-header">
-			<h2>Battles & Events</h2>
-			<a href="/encyclopedia/timeline" class="section-timeline-link">View on Timeline →</a>
+			<h2>{$currentTranslations.encyclopedia.events}</h2>
+			<a href="/encyclopedia/timeline" class="section-timeline-link">{$currentTranslations.encyclopedia.viewOnTimeline}</a>
 		</div>
 		<div class="entry-grid">
 			{#each events as entry}
-				<a href="/encyclopedia/{entry.id}" class="entry-card">
-					<h3>{entry.title}</h3>
-					{#if entry.dates}
-						<span class="dates">{entry.dates}</span>
+				<a href="/encyclopedia/{entry.id}" class="entry-card" class:has-image={entry.imageUrl}>
+					{#if entry.imageUrl}
+						<div class="card-image">
+							<img src={entry.imageUrl} alt={getTitle(entry)} loading="lazy" decoding="async" />
+						</div>
 					{/if}
-					<p>{entry.shortDescription}</p>
+					<div class="card-content">
+						<h3>{getTitle(entry)}</h3>
+						{#if entry.dates}
+							<span class="dates">{entry.dates}</span>
+						{/if}
+						<p>{getShortDescription(entry)}</p>
+					</div>
 				</a>
 			{/each}
 		</div>
 	</section>
 
 	<section class="category-section" id="places">
-		<h2>Places</h2>
+		<h2>{$currentTranslations.encyclopedia.places}</h2>
 		<div class="entry-grid">
 			{#each places as entry}
-				<a href="/encyclopedia/{entry.id}" class="entry-card">
-					<h3>{entry.title}</h3>
-					<p>{entry.shortDescription}</p>
+				<a href="/encyclopedia/{entry.id}" class="entry-card" class:has-image={entry.imageUrl}>
+					{#if entry.imageUrl}
+						<div class="card-image">
+							<img src={entry.imageUrl} alt={getTitle(entry)} loading="lazy" decoding="async" />
+						</div>
+					{/if}
+					<div class="card-content">
+						<h3>{getTitle(entry)}</h3>
+						<p>{getShortDescription(entry)}</p>
+					</div>
 				</a>
 			{/each}
 		</div>
 	</section>
 
 	<section class="category-section" id="concepts">
-		<h2>Concepts</h2>
+		<h2>{$currentTranslations.encyclopedia.concepts}</h2>
 		<div class="entry-grid">
 			{#each concepts as entry}
-				<a href="/encyclopedia/{entry.id}" class="entry-card">
-					<h3>{entry.title}</h3>
-					<p>{entry.shortDescription}</p>
+				<a href="/encyclopedia/{entry.id}" class="entry-card" class:has-image={entry.imageUrl}>
+					{#if entry.imageUrl}
+						<div class="card-image">
+							<img src={entry.imageUrl} alt={getTitle(entry)} loading="lazy" decoding="async" />
+						</div>
+					{/if}
+					<div class="card-content">
+						<h3>{getTitle(entry)}</h3>
+						<p>{getShortDescription(entry)}</p>
+					</div>
 				</a>
 			{/each}
 		</div>
@@ -114,6 +166,54 @@
 		font-size: 1.2rem;
 		color: var(--color-text-secondary);
 		font-style: italic;
+	}
+
+	.overview-section {
+		margin-bottom: 4rem;
+		scroll-margin-top: 2rem;
+	}
+
+	.overview-content {
+		background: linear-gradient(135deg, rgba(139, 0, 0, 0.15), rgba(212, 175, 55, 0.08));
+		border: 2px solid var(--color-gold);
+		border-radius: 12px;
+		padding: 2.5rem;
+	}
+
+	.overview-text h2 {
+		font-size: 2.2rem;
+		color: var(--color-gold);
+		margin-bottom: 0.5rem;
+	}
+
+	.overview-dates {
+		font-size: 1.3rem;
+		color: var(--color-accent);
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+
+	.overview-description {
+		font-size: 1.15rem;
+		line-height: 1.7;
+		color: var(--color-text);
+		margin-bottom: 1.5rem;
+	}
+
+	.overview-link {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+		color: var(--color-text);
+		font-weight: 600;
+		border-radius: 6px;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.overview-link:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
 	}
 
 	.timeline-featured {
@@ -216,6 +316,32 @@
 		color: var(--color-text);
 	}
 
+	.entry-card.has-image {
+		display: flex;
+		gap: 1rem;
+		align-items: flex-start;
+	}
+
+	.card-image {
+		flex-shrink: 0;
+		width: 80px;
+		height: 80px;
+		overflow: hidden;
+		border-radius: 6px;
+		border: 2px solid var(--color-gold);
+	}
+
+	.card-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.card-content {
+		flex: 1;
+		min-width: 0;
+	}
+
 	.entry-card:hover {
 		transform: translateY(-5px);
 		border-color: var(--color-gold);
@@ -245,6 +371,24 @@
 	@media (max-width: 768px) {
 		.encyclopedia-header h1 {
 			font-size: 2rem;
+		}
+
+		.overview-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			padding: 1.5rem;
+		}
+
+		.overview-text h2 {
+			font-size: 1.8rem;
+		}
+
+		.overview-dates {
+			font-size: 1.1rem;
+		}
+
+		.overview-description {
+			font-size: 1.05rem;
 		}
 
 		.timeline-hero {

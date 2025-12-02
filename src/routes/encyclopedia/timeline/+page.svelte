@@ -1,22 +1,23 @@
 <script lang="ts">
 	import { timelineEvents } from '$lib/data/timeline';
 	import TimelineComponent from '$lib/components/TimelineComponent.svelte';
+	import { language, currentTranslations } from '$lib/i18n';
 </script>
 
 <svelte:head>
-	<title>Timeline - Wars of the Roses Encyclopedia</title>
-	<meta name="description" content="Complete interactive timeline of the Wars of the Roses (1455-1487)" />
+	<title>{$currentTranslations.timeline.pageTitle}</title>
+	<meta name="description" content={$currentTranslations.timeline.subtitle} />
 </svelte:head>
 
 <div class="timeline-page">
 	<header class="page-header">
 		<nav class="breadcrumb">
-			<a href="/">Home</a> →
-			<a href="/encyclopedia">Encyclopedia</a> →
-			<span>Timeline</span>
+			<a href="/">{$currentTranslations.nav.home}</a> →
+			<a href="/encyclopedia">{$currentTranslations.nav.encyclopedia}</a> →
+			<span>{$currentTranslations.nav.timeline}</span>
 		</nav>
-		<h1>Timeline of the Wars</h1>
-		<p class="subtitle">A chronological journey through the Wars of the Roses (1455-1487)</p>
+		<h1>{$currentTranslations.timeline.title}</h1>
+		<p class="subtitle">{$currentTranslations.timeline.subtitle}</p>
 	</header>
 
 	<TimelineComponent events={timelineEvents} showAll={true} />

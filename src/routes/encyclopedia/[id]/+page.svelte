@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { getEncyclopediaEntry } from '$lib/data/encyclopedia';
+	import { getEncyclopediaEntry, type EncyclopediaEntry } from '$lib/data/encyclopedia';
 	import MapComponent from '$lib/components/MapComponent.svelte';
 	import TimelineComponent from '$lib/components/TimelineComponent.svelte';
 	import { timelineEvents } from '$lib/data/timeline';
+	import { language, currentTranslations } from '$lib/i18n';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -20,63 +21,93 @@
 			return peopleIds.includes(entry.id) || placeIds.includes(entry.id);
 		})
 	);
+
+	function getTitle(e: EncyclopediaEntry) {
+		return $language === 'de' && e.titleDe ? e.titleDe : e.title;
+	}
+
+	function getShortDescription(e: EncyclopediaEntry) {
+		return $language === 'de' && e.shortDescriptionDe ? e.shortDescriptionDe : e.shortDescription;
+	}
+
+	function getFullDescription(e: EncyclopediaEntry) {
+		return $language === 'de' && e.fullDescriptionDe ? e.fullDescriptionDe : e.fullDescription;
+	}
+
+	const typeLabels = {
+		en: { person: 'Person', place: 'Place', concept: 'Concept', event: 'Event' },
+		de: { person: 'Person', place: 'Ort', concept: 'Konzept', event: 'Ereignis' }
+	};
+
+	function getTypeLabel(type: string) {
+		return typeLabels[$language][type as keyof typeof typeLabels.en] || type;
+	}
 </script>
 
 <svelte:head>
-	<title>{entry.title} - Encyclopedia - Wars of the Roses</title>
-	<meta name="description" content={entry.shortDescription} />
+	<title>{getTitle(entry)} - {$currentTranslations.encyclopedia.pageTitle}</title>
+	<meta name="description" content={getShortDescription(entry)} />
 </svelte:head>
 
 <div class="entry-container">
 	<nav class="breadcrumb">
-		<a href="/">Home</a> →
-		<a href="/encyclopedia">Encyclopedia</a> →
-		<span>{entry.title}</span>
+		<a href="/">{$currentTranslations.nav.home}</a> →
+		<a href="/encyclopedia">{$currentTranslations.nav.encyclopedia}</a> →
+		<span>{getTitle(entry)}</span>
 	</nav>
 
 	<article class="entry">
 		<header class="entry-header">
-			<div class="entry-type">{entry.type}</div>
-			<h1>{entry.title}</h1>
+			{#if entry.imageUrl}
+				<div class="entry-image" class:wide-image={entry.imageUrl.includes('map')}>
+					<img
+						src={entry.imageUrl}
+						alt={getTitle(entry)}
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+			{/if}
+			<div class="entry-type">{getTypeLabel(entry.type)}</div>
+			<h1>{getTitle(entry)}</h1>
 			{#if entry.dates}
 				<div class="dates">{entry.dates}</div>
 			{/if}
-			<p class="short-description">{entry.shortDescription}</p>
+			<p class="short-description">{getShortDescription(entry)}</p>
 		</header>
 
 		<div class="entry-content">
 			<section class="description">
-				<p>{entry.fullDescription}</p>
+				<p>{getFullDescription(entry)}</p>
 			</section>
 
 			{#if entry.location}
 				<section class="location-section">
-					<h2>Location</h2>
+					<h2>{$currentTranslations.encyclopedia.location}</h2>
 					<MapComponent location={entry.location} />
 				</section>
 			{/if}
 
 			{#if relatedTimelineEvents.length > 0}
 				<section class="timeline-section">
-					<h2>Timeline Events</h2>
-					<p class="section-description">This {entry.type.toLowerCase()} appears in the following timeline events:</p>
+					<h2>{$currentTranslations.encyclopedia.timelineEvents}</h2>
 					<TimelineComponent events={relatedTimelineEvents} showAll={false} />
 					<div class="view-full-timeline-container">
-						<a href="/encyclopedia/timeline" class="view-full-timeline">View Full Timeline →</a>
+						<a href="/encyclopedia/timeline" class="view-full-timeline">{$currentTranslations.encyclopedia.viewTimeline}</a>
 					</div>
 				</section>
 			{/if}
 
 			{#if relatedEntries.length > 0}
 				<section class="related-section">
-					<h2>Related Entries</h2>
+					<h2>{$currentTranslations.encyclopedia.relatedEntries}</h2>
 					<div class="related-grid">
 						{#each relatedEntries as related}
 							{#if related}
 								<a href="/encyclopedia/{related.id}" class="related-card">
-									<h3>{related.title}</h3>
-									<span class="related-type">{related.type}</span>
-									<p>{related.shortDescription}</p>
+									<h3>{getTitle(related)}</h3>
+									<span class="related-type">{getTypeLabel(related.type)}</span>
+									<p>{getShortDescription(related)}</p>
 								</a>
 							{/if}
 						{/each}
@@ -122,6 +153,23 @@
 		padding-bottom: 2rem;
 		border-bottom: 2px solid var(--color-gold);
 		margin-bottom: 2rem;
+	}
+
+	.entry-image {
+		max-width: 400px;
+		margin: 0 auto 1.5rem;
+	}
+
+	.entry-image.wide-image {
+		max-width: 700px;
+	}
+
+	.entry-image img {
+		width: 100%;
+		height: auto;
+		border-radius: 8px;
+		border: 3px solid var(--color-gold);
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 	}
 
 	.entry-type {

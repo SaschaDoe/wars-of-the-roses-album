@@ -1,7 +1,16 @@
 <script lang="ts">
 	import type { TimelineEvent } from '$lib/data/timeline';
+	import { language, currentTranslations } from '$lib/i18n';
 
 	let { events, showAll = false }: { events: TimelineEvent[]; showAll?: boolean } = $props();
+
+	function getTitle(event: TimelineEvent) {
+		return $language === 'de' && event.titleDe ? event.titleDe : event.title;
+	}
+
+	function getDescription(event: TimelineEvent) {
+		return $language === 'de' && event.descriptionDe ? event.descriptionDe : event.description;
+	}
 </script>
 
 <div class="timeline-component">
@@ -19,13 +28,13 @@
 			</div>
 
 			<div class="event-content">
-				<h3>{event.title}</h3>
-				<p class="event-description">{event.description}</p>
+				<h3>{getTitle(event)}</h3>
+				<p class="event-description">{getDescription(event)}</p>
 
 				{#if showAll}
 					{#if event.people && event.people.length > 0}
 						<div class="event-links">
-							<h4>Key Figures:</h4>
+							<h4>{$currentTranslations.timeline.keyFigures}</h4>
 							<div class="link-group">
 								{#each event.people as person}
 									<span class="encyclopedia-link person-link" onclick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/encyclopedia/${person.id}`; }}>
@@ -38,7 +47,7 @@
 
 					{#if event.places && event.places.length > 0}
 						<div class="event-links">
-							<h4>Locations:</h4>
+							<h4>{$currentTranslations.timeline.locations}</h4>
 							<div class="link-group">
 								{#each event.places as place}
 									<span class="encyclopedia-link place-link" onclick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/encyclopedia/${place.id}`; }}>

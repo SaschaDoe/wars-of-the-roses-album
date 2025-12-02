@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { language, currentTranslations } from '$lib/i18n';
 
 	let loaded = $state(false);
 
@@ -9,8 +10,8 @@
 </script>
 
 <svelte:head>
-	<title>Uncivil War - Wars of the Roses</title>
-	<meta name="description" content="Wars of the Roses - A musical journey through medieval history by Uncivil War" />
+	<title>{$currentTranslations.home.title}</title>
+	<meta name="description" content={$currentTranslations.home.metaDescription} />
 </svelte:head>
 
 <div class="home-container">
@@ -32,15 +33,15 @@
 			</div>
 
 			<div class="hero-text">
-				<p class="artist-name">Uncivil War</p>
-				<h1 class="album-title">Wars of the Roses</h1>
-				<p class="album-subtitle">A Concept Album • 21 Songs</p>
+				<p class="artist-name">{$currentTranslations.home.artistName}</p>
+				<h1 class="album-title">{$language === 'de' ? 'Rosenkriege' : 'Wars of the Roses'}</h1>
+				<p class="album-subtitle">{$currentTranslations.home.albumSubtitle}</p>
 				<p class="album-description">
-					Experience England's bloodiest civil war through music. This concept album tells the complete story of the Wars of the Roses (1455-1487) — the brutal 30-year conflict between the House of Lancaster and the House of York that tore medieval England apart and ended with the rise of the Tudor dynasty.
+					{$currentTranslations.home.albumDescription}
 				</p>
 				<div class="cta-buttons">
-					<a href="/songs" class="btn btn-primary">Listen to the Songs</a>
-					<a href="/encyclopedia" class="btn btn-secondary">Explore the Encyclopedia</a>
+					<a href="/songs" class="btn btn-primary">{$currentTranslations.home.listenButton}</a>
+					<a href="/encyclopedia" class="btn btn-secondary">{$currentTranslations.home.exploreButton}</a>
 				</div>
 			</div>
 		</div>

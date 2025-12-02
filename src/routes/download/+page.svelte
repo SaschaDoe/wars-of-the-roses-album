@@ -1,44 +1,45 @@
 <script lang="ts">
 	import { songs } from '$lib/data/songs';
+	import { language, currentTranslations } from '$lib/i18n';
 
 	const r2BaseUrl = 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev';
 	const albumZipUrl = `${r2BaseUrl}/Uncivil-War-Full-Album.zip`;
 </script>
 
 <svelte:head>
-	<title>Download - Uncivil War</title>
-	<meta name="description" content="Download the full Wars of the Roses album" />
+	<title>{$currentTranslations.download.pageTitle}</title>
+	<meta name="description" content={$currentTranslations.download.subtitle} />
 </svelte:head>
 
 <div class="download-page">
-	<h1 class="page-title">Download Album</h1>
-	<p class="page-subtitle">Get the full Wars of the Roses experience</p>
+	<h1 class="page-title">{$currentTranslations.download.title}</h1>
+	<p class="page-subtitle">{$currentTranslations.download.subtitle}</p>
 
 	<section class="full-album-section">
 		<div class="album-artwork">
 			<div class="artwork-placeholder">
 				<span class="rose-icon">🌹</span>
-				<span class="album-name">Wars of the Roses</span>
-				<span class="track-count">22 Tracks</span>
+				<span class="album-name">{$language === 'de' ? 'Rosenkriege' : 'Wars of the Roses'}</span>
+				<span class="track-count">22 {$currentTranslations.songs.tracks}</span>
 			</div>
 		</div>
 		<div class="album-info">
-			<h2>Full Album Download</h2>
-			<p>Download all 22 tracks in one ZIP file, including the bonus track "Virgin Queen" - a preview of the next album.</p>
+			<h2>{$currentTranslations.download.fullAlbum}</h2>
+			<p>{$currentTranslations.download.fullAlbumDescription}</p>
 			<ul class="album-features">
-				<li>22 high-quality MP3 tracks</li>
-				<li>Complete Wars of the Roses story</li>
-				<li>Bonus: Virgin Queen preview track</li>
+				<li>{$currentTranslations.download.feature1}</li>
+				<li>{$currentTranslations.download.feature2}</li>
+				<li>{$currentTranslations.download.feature3}</li>
 			</ul>
 			<a href={albumZipUrl} download class="download-button primary">
-				Download Full Album (ZIP)
+				{$currentTranslations.download.downloadButton}
 			</a>
 		</div>
 	</section>
 
 	<section class="individual-tracks">
-		<h2>Individual Tracks</h2>
-		<p class="section-description">Download songs individually</p>
+		<h2>{$currentTranslations.download.individualTracks}</h2>
+		<p class="section-description">{$currentTranslations.download.individualDescription}</p>
 
 		<div class="tracks-grid">
 			{#each songs as song}
@@ -49,8 +50,8 @@
 						<span class="track-duration">{song.duration}</span>
 					</div>
 					<div class="track-actions">
-						<a href="/songs/{song.id}" class="action-button view">View</a>
-						<a href={song.audioUrl} download class="action-button download">Download</a>
+						<a href="/songs/{song.id}" class="action-button view">{$currentTranslations.download.view}</a>
+						<a href={song.audioUrl} download class="action-button download">{$currentTranslations.download.downloadTrack}</a>
 					</div>
 				</div>
 			{/each}

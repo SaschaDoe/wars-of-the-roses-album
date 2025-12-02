@@ -3,22 +3,41 @@
 	import MapComponent from '$lib/components/MapComponent.svelte';
 	import LinkifiedText from '$lib/components/LinkifiedText.svelte';
 	import { getSongByTrackNumber } from '$lib/data/songs';
+	import { language, currentTranslations } from '$lib/i18n';
 
 	let { data }: { data: PageData } = $props();
 	let { song } = data;
 
 	let activeTab = $state<'lyrics' | 'history'>('lyrics');
+
+	// Get translated content based on language
+	$effect(() => {
+		// Re-render when language changes
+		$language;
+	});
+
+	function getHistoricalTitle() {
+		return $language === 'de' && song.historicalContext.titleDe
+			? song.historicalContext.titleDe
+			: song.historicalContext.title;
+	}
+
+	function getHistoricalDescription() {
+		return $language === 'de' && song.historicalContext.descriptionDe
+			? song.historicalContext.descriptionDe
+			: song.historicalContext.description;
+	}
 </script>
 
 <svelte:head>
-	<title>{song.title} - Wars of the Roses</title>
+	<title>{song.title} - {$language === 'de' ? 'Rosenkriege' : 'Wars of the Roses'}</title>
 </svelte:head>
 
 <div class="song-page">
-	<a href="/songs" class="back-link">← Back to all songs</a>
+	<a href="/songs" class="back-link">{$currentTranslations.song.backToSongs}</a>
 
 	<div class="song-header">
-		<div class="song-number">Track {song.trackNumber}</div>
+		<div class="song-number">{$currentTranslations.song.track} {song.trackNumber}</div>
 		<h1 class="song-title">{song.title}</h1>
 		<div class="song-meta">
 			<span class="year">{song.historicalContext.year}</span>
@@ -36,8 +55,12 @@
 				<track kind="captions" />
 				Your browser does not support the audio element.
 			</audio>
-			<a href={song.audioUrl} download class="download-button">
-				Download Song
+			<a href={song.audioUrl} download class="download-button" title="Download Song">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+					<polyline points="7 10 12 15 17 10"/>
+					<line x1="12" y1="15" x2="12" y2="3"/>
+				</svg>
 			</a>
 		</div>
 	{/if}
@@ -48,14 +71,14 @@
 			class:active={activeTab === 'lyrics'}
 			onclick={() => activeTab = 'lyrics'}
 		>
-			Lyrics
+			{$currentTranslations.song.lyrics}
 		</button>
 		<button
 			class="tab-button"
 			class:active={activeTab === 'history'}
 			onclick={() => activeTab = 'history'}
 		>
-			Historical Context
+			{$currentTranslations.song.historicalContext}
 		</button>
 	</div>
 
@@ -76,16 +99,16 @@
 			</div>
 		{:else}
 			<div class="history-section animate-fade-in">
-				<h2>{song.historicalContext.title}</h2>
+				<h2>{getHistoricalTitle()}</h2>
 
 				<div class="history-content">
-					{#each song.historicalContext.description.split('\n\n') as paragraph}
+					{#each getHistoricalDescription().split('\n\n') as paragraph}
 						<p><LinkifiedText text={paragraph} /></p>
 					{/each}
 				</div>
 
 				<div class="key-figures">
-					<h3>Key Figures</h3>
+					<h3>{$currentTranslations.song.keyFigures}</h3>
 					<ul>
 						{#each song.historicalContext.keyFigures as figure}
 							<li>{figure}</li>
@@ -94,7 +117,7 @@
 				</div>
 
 				<div class="map-section">
-					<h3>Location</h3>
+					<h3>{$currentTranslations.encyclopedia.location}</h3>
 					<MapComponent location={song.historicalContext.location} />
 				</div>
 			</div>
@@ -104,12 +127,12 @@
 	<div class="song-navigation">
 		{#if song.trackNumber > 1}
 			<a href="/songs/{getSongByTrackNumber(song.trackNumber - 1)?.id}" class="nav-button prev">
-				← Previous Song
+				{$currentTranslations.song.previousSong}
 			</a>
 		{/if}
 		{#if song.trackNumber < 5}
 			<a href="/songs/{getSongByTrackNumber(song.trackNumber + 1)?.id}" class="nav-button next">
-				Next Song →
+				{$currentTranslations.song.nextSong}
 			</a>
 		{/if}
 	</div>
@@ -152,7 +175,8 @@
 	.song-title {
 		font-size: 4rem;
 		margin-bottom: 1rem;
-		animation: glow 3s ease-in-out infinite;
+		color: var(--color-gold);
+		text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
 	}
 
 	.song-meta {
@@ -165,8 +189,11 @@
 	}
 
 	.audio-player {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
 		margin-bottom: 3rem;
-		text-align: center;
 	}
 
 	.audio-player audio {
@@ -176,19 +203,21 @@
 	}
 
 	.download-button {
-		display: inline-block;
-		margin-top: 1rem;
-		padding: 0.75rem 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
 		background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
 		color: var(--color-text);
-		border-radius: 4px;
-		font-weight: 600;
+		border-radius: 50%;
 		text-decoration: none;
 		transition: all 0.3s ease;
+		flex-shrink: 0;
 	}
 
 	.download-button:hover {
-		transform: translateY(-2px);
+		transform: scale(1.1);
 		box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
 	}
 
