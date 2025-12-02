@@ -119,6 +119,17 @@
 					</div>
 				{/if}
 
+				{#if song.historicalContext.images && song.historicalContext.images.length > 0}
+					<div class="history-gallery">
+						{#each song.historicalContext.images as image}
+							<figure class="gallery-item">
+								<img src={image.url} alt={$language === 'de' ? image.captionDe : image.caption} />
+								<figcaption>{$language === 'de' ? image.captionDe : image.caption}</figcaption>
+							</figure>
+						{/each}
+					</div>
+				{/if}
+
 				<div class="history-content">
 					{#each getHistoricalDescription().split('\n\n') as paragraph}
 						<p><LinkifiedText text={paragraph} /></p>
@@ -134,10 +145,12 @@
 					</ul>
 				</div>
 
-				<div class="map-section">
-					<h3>{$currentTranslations.encyclopedia.location}</h3>
-					<MapComponent location={song.historicalContext.location} />
-				</div>
+				{#if song.historicalContext.location}
+					<div class="map-section">
+						<h3>{$currentTranslations.encyclopedia.location}</h3>
+						<MapComponent location={song.historicalContext.location} />
+					</div>
+				{/if}
 			</div>
 		{/if}
 	</div>
@@ -347,6 +360,38 @@
 		display: block;
 	}
 
+	.history-gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.gallery-item {
+		margin: 0;
+		border-radius: 12px;
+		overflow: hidden;
+		border: 3px solid var(--color-gold);
+		box-shadow: 0 10px 40px rgba(139, 0, 0, 0.4);
+		background: rgba(26, 26, 26, 0.5);
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: 250px;
+		object-fit: cover;
+		display: block;
+	}
+
+	.gallery-item figcaption {
+		padding: 1rem;
+		font-size: 0.95rem;
+		color: var(--color-text-secondary);
+		text-align: center;
+		font-style: italic;
+		border-top: 1px solid rgba(212, 175, 55, 0.3);
+	}
+
 	.history-content p {
 		font-size: 1.2rem;
 		line-height: 1.8;
@@ -475,6 +520,15 @@
 
 		.nav-button.next {
 			margin-left: 0;
+		}
+
+		.history-gallery {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		.gallery-item img {
+			height: 200px;
 		}
 	}
 </style>

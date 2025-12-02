@@ -1,3 +1,9 @@
+export interface HistoricalImage {
+	url: string;
+	caption: string;
+	captionDe: string;
+}
+
 export interface Song {
 	id: string;
 	title: string;
@@ -11,7 +17,7 @@ export interface Song {
 		descriptionDe: string;
 		year: string;
 		keyFigures: string[];
-		location: {
+		location?: {
 			name: string;
 			coordinates: {
 				lat: number;
@@ -19,6 +25,7 @@ export interface Song {
 			};
 		};
 		imageUrl?: string;
+		images?: HistoricalImage[];
 	};
 	audioUrl?: string;
 }
@@ -1124,19 +1131,32 @@ export const songs: Song[] = [
 		],
 		historicalContext: {
 			title: 'Witchcraft Accusations - The Melusine Legend',
-			titleDe: 'Lizenzierte Piraterie - Freibeuter auf der Themse',
+			titleDe: 'Hexerei-Anschuldigungen - Die Melusine-Legende',
 			description: `How did a commoner's widow bewitch a king? Warwick and his allies spread rumors that Elizabeth Woodville and her mother Jacquetta practiced witchcraft. The Woodvilles claimed descent from Melusine, a water fairy from medieval French legend. The song retells the legend: a knight encountered Melusine at a fountain and married her, gaining wealth and power. But she made him promise never to see her on Saturdays. When he broke his vow, he discovered she transformed into a serpent from the waist down. Her shriek—the "Cri de Fae"—cursed the bloodline forever. Warwick argued that Jacquetta used this same fairy magic to ensnare Edward IV with "leaden dolls and twisted charms." These witchcraft accusations were political weapons, attempting to delegitimize Edward's marriage and the Woodville family's power through supernatural conspiracy theories.`,
-			descriptionDe: `Während Adlige auf dem Land kämpften, beschäftigte Warwick „Freibeuter" – offiziell sanktionierte Piraten – um Schiffe auf der Themse und im Ärmelkanal zu überfallen. Dieses dunkel-komische Lied zeigt die Absurdität des Krieges durch die Augen dieser Flussratten. Es ist ihnen egal, wer gewinnt – Lancaster oder York, sie werden von beiden stehlen. Warwick bekommt seinen Anteil an ihrer Beute, während er plausible Leugnung aufrechterhält. Das Lied ist voller farbenfroher Piratennamen und Galgenhumor über Execution Dock in Wapping, wo Piraten gehängt und drei Gezeiten lang hängen gelassen wurden. Dies waren keine edlen Helden – sie waren Opportunisten, die ihre kriminellen Künste erlernten, indem sie Adlige bei Verrat und Mord beobachteten. Der fröhliche Ton des Liedes maskiert eine bittere Wahrheit: Krieg korrumpiert alles, was er berührt, und die Mächtigen lehrten die Machtlosen, dass Macht Recht schafft.`,
+			descriptionDe: `Wie verhexte die Witwe eines Bürgerlichen einen König? Warwick und seine Verbündeten verbreiteten Gerüchte, dass Elizabeth Woodville und ihre Mutter Jacquetta Hexerei praktizierten. Die Woodvilles beanspruchten Abstammung von Melusine, einer Wasserfee aus mittelalterlicher französischer Legende. Das Lied erzählt die Legende nach: Ein Ritter begegnete Melusine an einem Brunnen und heiratete sie, wodurch er Reichtum und Macht gewann. Aber sie ließ ihn versprechen, sie samstags nie zu sehen. Als er sein Gelübde brach, entdeckte er, dass sie sich von der Hüfte abwärts in eine Schlange verwandelte. Ihr Schrei—der „Cri de Fae"—verfluchte die Blutlinie für immer. Warwick behauptete, Jacquetta habe dieselbe Feenmagie benutzt, um Eduard IV. mit „bleiernen Puppen und verdrehten Zaubern" zu verführen. Diese Hexerei-Anschuldigungen waren politische Waffen, die versuchten, Eduards Ehe und die Macht der Familie Woodville durch übernatürliche Verschwörungstheorien zu delegitimieren.`,
 			year: '1464-1483',
 			keyFigures: [
 				'Elizabeth Woodville',
 				'Edward IV',
 				'Jacquetta of Luxembourg'
 			],
-			location: {
-				name: 'England',
-				coordinates: { lat: 52.3555, lng: -1.1743 }
-			}
+			images: [
+				{
+					url: '/images/encyclopedia/melusine-hubner.jpg',
+					caption: 'Melusine by Julius Hübner (1844) - The moment Raymond discovers his wife\'s serpent form',
+					captionDe: 'Melusine von Julius Hübner (1844) - Der Moment, in dem Raymond die Schlangengestalt seiner Frau entdeckt'
+				},
+				{
+					url: '/images/encyclopedia/melusine-discovered.jpg',
+					caption: 'Medieval depiction of Melusine being discovered in her bath',
+					captionDe: 'Mittelalterliche Darstellung von Melusine, wie sie in ihrem Bad entdeckt wird'
+				},
+				{
+					url: '/images/encyclopedia/melusine-book.jpg',
+					caption: 'Illustration from the Book of Melusine (15th century)',
+					captionDe: 'Illustration aus dem Buch der Melusine (15. Jahrhundert)'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/14%20Melusine.mp3'
 	},
