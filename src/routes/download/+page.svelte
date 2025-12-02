@@ -17,11 +17,7 @@
 
 	<section class="full-album-section">
 		<div class="album-artwork">
-			<div class="artwork-placeholder">
-				<span class="rose-icon">🌹</span>
-				<span class="album-name">{$language === 'de' ? 'Rosenkriege' : 'Wars of the Roses'}</span>
-				<span class="track-count">22 {$currentTranslations.songs.tracks}</span>
-			</div>
+			<img src="/images/album-cover.jpg" alt="Wars of the Roses Album Cover" class="cover-image" />
 		</div>
 		<div class="album-info">
 			<h2>{$currentTranslations.download.fullAlbum}</h2>
@@ -97,33 +93,13 @@
 		aspect-ratio: 1;
 	}
 
-	.artwork-placeholder {
+	.cover-image {
 		width: 100%;
 		height: 100%;
-		background: linear-gradient(135deg, var(--color-accent), #4a0000);
+		object-fit: cover;
 		border-radius: 8px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1rem;
 		border: 2px solid var(--color-gold);
-	}
-
-	.rose-icon {
-		font-size: 4rem;
-	}
-
-	.album-name {
-		font-size: 1.2rem;
-		font-weight: bold;
-		color: var(--color-gold);
-		text-align: center;
-	}
-
-	.track-count {
-		font-size: 0.9rem;
-		color: var(--color-text-secondary);
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 	}
 
 	.album-info h2 {
@@ -276,6 +252,10 @@
 	}
 
 	@media (max-width: 768px) {
+		.download-page {
+			padding: 1rem;
+		}
+
 		.page-title {
 			font-size: 2rem;
 		}
@@ -283,6 +263,7 @@
 		.full-album-section {
 			grid-template-columns: 1fr;
 			gap: 2rem;
+			padding: 1rem;
 		}
 
 		.album-artwork {

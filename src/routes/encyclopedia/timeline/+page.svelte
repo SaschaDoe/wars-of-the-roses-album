@@ -66,6 +66,10 @@
 	}
 
 	@media (max-width: 768px) {
+		.timeline-page {
+			padding: 1rem;
+		}
+
 		.page-header h1 {
 			font-size: 2.5rem;
 		}

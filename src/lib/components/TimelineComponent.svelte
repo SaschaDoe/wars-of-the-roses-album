@@ -216,37 +216,68 @@
 		}
 
 		.timeline-component::before {
-			left: 20px;
+			left: 35px;
+			width: 3px;
 		}
 
 		.timeline-event-item {
 			flex-direction: column;
-			gap: 1rem;
-			padding-left: 3rem;
+			gap: 0.75rem;
+			padding-left: 5.5rem;
+			margin-bottom: 2.5rem;
 		}
 
 		.event-marker {
 			position: absolute;
 			left: 0;
-			top: 1.5rem;
-			width: auto;
+			top: 0;
+			width: 70px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
 
 		.year-badge {
-			font-size: 1rem;
-			padding: 0.5rem 0.75rem;
+			font-size: 0.95rem;
+			padding: 0.5rem 0.6rem;
+			margin-bottom: 0.25rem;
+		}
+
+		.month-badge {
+			font-size: 0.75rem;
 		}
 
 		.event-content {
-			padding: 1rem;
+			padding: 1.25rem;
 		}
 
 		.event-content h3 {
-			font-size: 1.2rem;
+			font-size: 1.15rem;
+			margin-bottom: 0.5rem;
 		}
 
 		.event-description {
-			font-size: 1rem;
+			font-size: 0.95rem;
+			line-height: 1.5;
+			margin-bottom: 0.75rem;
+		}
+
+		.event-links {
+			margin-top: 0.75rem;
+		}
+
+		.event-links h4 {
+			font-size: 0.8rem;
+			margin-bottom: 0.4rem;
+		}
+
+		.link-group {
+			gap: 0.4rem;
+		}
+
+		.encyclopedia-link {
+			padding: 0.35rem 0.6rem;
+			font-size: 0.8rem;
 		}
 	}
 </style>

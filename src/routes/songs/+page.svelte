@@ -119,6 +119,12 @@
 		transform: translateY(0);
 	}
 
+	@media (max-width: 768px) {
+		.songs-page {
+			padding: 1rem;
+		}
+	}
+
 	.page-header {
 		text-align: center;
 		margin-bottom: 3rem;

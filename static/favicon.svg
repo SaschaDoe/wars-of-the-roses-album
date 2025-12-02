@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#0a0a0a"/>
+  <g transform="translate(16, 16)">
+    <!-- Rose petals -->
+    <ellipse cx="0" cy="-4" rx="5" ry="6" fill="#8B0000" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-4" rx="5" ry="6" fill="#a00000" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-4" rx="5" ry="6" fill="#8B0000" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-4" rx="5" ry="6" fill="#a00000" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-4" rx="5" ry="6" fill="#8B0000" transform="rotate(288)"/>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="3" fill="#d4af37"/>
+  </g>
+</svg>

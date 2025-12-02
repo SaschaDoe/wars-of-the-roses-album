@@ -22,6 +22,10 @@
 		mobileMenuOpen = !mobileMenuOpen;
 	}
 
+	function closeMobileMenu() {
+		mobileMenuOpen = false;
+	}
+
 	function toggleLanguage() {
 		language.toggle();
 	}
@@ -44,22 +48,22 @@
 			</button>
 
 			<ul class="nav-links" class:open={mobileMenuOpen}>
-				<li><a href="/" class:active={$page.url.pathname === '/'}>{$currentTranslations.nav.home}</a></li>
-				<li><a href="/songs" class:active={$page.url.pathname.startsWith('/songs')}>{$currentTranslations.nav.songs}</a></li>
+				<li><a href="/" class:active={$page.url.pathname === '/'} onclick={closeMobileMenu}>{$currentTranslations.nav.home}</a></li>
+				<li><a href="/songs" class:active={$page.url.pathname.startsWith('/songs')} onclick={closeMobileMenu}>{$currentTranslations.nav.songs}</a></li>
 				<li class="dropdown">
-					<a href="/encyclopedia" class:active={$page.url.pathname.startsWith('/encyclopedia')}>{$currentTranslations.nav.encyclopedia}</a>
+					<a href="/encyclopedia" class:active={$page.url.pathname.startsWith('/encyclopedia')} onclick={closeMobileMenu}>{$currentTranslations.nav.encyclopedia}</a>
 					<ul class="dropdown-menu">
-						<li><a href="/encyclopedia/timeline">📅 {$currentTranslations.nav.timeline}</a></li>
-						<li><a href="/encyclopedia#people">👤 {$currentTranslations.nav.people}</a></li>
-						<li><a href="/encyclopedia#events">⚔️ {$currentTranslations.nav.events}</a></li>
-						<li><a href="/encyclopedia#places">📍 {$currentTranslations.nav.locations}</a></li>
-						<li><a href="/encyclopedia#concepts">📚 {$currentTranslations.nav.concepts}</a></li>
+						<li><a href="/encyclopedia/timeline" onclick={closeMobileMenu}>📅 {$currentTranslations.nav.timeline}</a></li>
+						<li><a href="/encyclopedia#people" onclick={closeMobileMenu}>👤 {$currentTranslations.nav.people}</a></li>
+						<li><a href="/encyclopedia#events" onclick={closeMobileMenu}>⚔️ {$currentTranslations.nav.events}</a></li>
+						<li><a href="/encyclopedia#places" onclick={closeMobileMenu}>📍 {$currentTranslations.nav.locations}</a></li>
+						<li><a href="/encyclopedia#concepts" onclick={closeMobileMenu}>📚 {$currentTranslations.nav.concepts}</a></li>
 					</ul>
 				</li>
-				<li><a href="/download" class:active={$page.url.pathname === '/download'}>{$currentTranslations.nav.download}</a></li>
-				<li><a href="/about" class:active={$page.url.pathname === '/about'}>{$currentTranslations.nav.about}</a></li>
+				<li><a href="/download" class:active={$page.url.pathname === '/download'} onclick={closeMobileMenu}>{$currentTranslations.nav.download}</a></li>
+				<li><a href="/about" class:active={$page.url.pathname === '/about'} onclick={closeMobileMenu}>{$currentTranslations.nav.about}</a></li>
 				<li class="lang-switch">
-					<button onclick={toggleLanguage} class="lang-btn" aria-label="Switch language">
+					<button onclick={() => { toggleLanguage(); closeMobileMenu(); }} class="lang-btn" aria-label="Switch language">
 						{$language === 'en' ? 'DE' : 'EN'}
 					</button>
 				</li>
@@ -286,6 +290,10 @@
 	}
 
 	@media (max-width: 768px) {
+		.nav {
+			padding: 0.75rem 1rem;
+		}
+
 		.mobile-menu-btn {
 			display: flex;
 		}
@@ -301,6 +309,10 @@
 			padding: 100px 2rem 2rem;
 			transition: right 0.3s ease;
 			overflow-y: auto;
+		}
+
+		.nav-links a {
+			font-size: 1rem;
 		}
 
 		.nav-links.open {
@@ -325,6 +337,13 @@
 
 		.dropdown-menu a:hover {
 			padding-left: 1.5rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.main-content {
+			margin-top: 80px;
+			padding: 1rem;
 		}
 	}
 </style>

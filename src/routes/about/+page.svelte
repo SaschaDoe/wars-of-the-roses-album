@@ -280,12 +280,21 @@
 	}
 
 	@media (max-width: 768px) {
+		.about-page {
+			padding: 1rem;
+		}
+
 		.hero-section h1 {
 			font-size: 3rem;
 		}
 
 		.tagline {
 			font-size: 1.3rem;
+		}
+
+		.hero-section {
+			padding: 2rem 0;
+			margin-bottom: 2rem;
 		}
 
 		.content-section h2,
@@ -301,6 +310,15 @@
 
 		.features-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.feature-box {
+			padding: 1.25rem;
+		}
+
+		.cta-section {
+			padding: 2rem 1rem;
+			margin-top: 2rem;
 		}
 	}
 </style>

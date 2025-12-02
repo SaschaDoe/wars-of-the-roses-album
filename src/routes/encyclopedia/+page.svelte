@@ -426,6 +426,10 @@
 	}
 
 	@media (max-width: 768px) {
+		.encyclopedia-container {
+			padding: 1rem;
+		}
+
 		.encyclopedia-header h1 {
 			font-size: 2rem;
 		}
@@ -480,6 +484,17 @@
 
 		.entry-grid {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.entry-card.has-image {
+			flex-direction: column;
+		}
+
+		.card-image {
+			width: 100%;
+			height: 160px;
 		}
 	}
 </style>

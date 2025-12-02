@@ -330,6 +330,11 @@
 			flex-wrap: wrap;
 		}
 
+		.play-btn {
+			width: 36px;
+			height: 36px;
+		}
+
 		.song-info {
 			min-width: auto;
 			flex: 1;
@@ -348,6 +353,16 @@
 
 		.close-btn {
 			order: 2;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.player-controls {
+			gap: 0.25rem;
+		}
+
+		.time {
+			min-width: 36px;
 		}
 	}
 </style>

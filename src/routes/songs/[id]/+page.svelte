@@ -423,6 +423,10 @@
 	}
 
 	@media (max-width: 768px) {
+		.song-page {
+			padding: 1rem;
+		}
+
 		.song-title {
 			font-size: 2.5rem;
 		}
@@ -448,6 +452,20 @@
 		.lyrics-section,
 		.history-section {
 			padding: 1rem;
+		}
+
+		.audio-controls {
+			gap: 0.5rem;
+		}
+
+		.play-button {
+			padding: 0.75rem 1.25rem;
+			font-size: 1rem;
+		}
+
+		.download-button {
+			width: 44px;
+			height: 44px;
 		}
 
 		.song-navigation {
