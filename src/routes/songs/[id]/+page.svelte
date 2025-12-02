@@ -93,6 +93,12 @@
 			<div class="history-section animate-fade-in">
 				<h2>{getHistoricalTitle()}</h2>
 
+				{#if song.historicalContext.imageUrl}
+					<div class="history-image">
+						<img src={song.historicalContext.imageUrl} alt={getHistoricalTitle()} />
+					</div>
+				{/if}
+
 				<div class="history-content">
 					{#each getHistoricalDescription().split('\n\n') as paragraph}
 						<p><LinkifiedText text={paragraph} /></p>
@@ -281,6 +287,20 @@
 		font-size: 2.5rem;
 		margin-bottom: 2rem;
 		color: var(--color-gold);
+	}
+
+	.history-image {
+		margin-bottom: 2rem;
+		border-radius: 12px;
+		overflow: hidden;
+		border: 3px solid var(--color-gold);
+		box-shadow: 0 10px 40px rgba(139, 0, 0, 0.4);
+	}
+
+	.history-image img {
+		width: 100%;
+		height: auto;
+		display: block;
 	}
 
 	.history-content p {

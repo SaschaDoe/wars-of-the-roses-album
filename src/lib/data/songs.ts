@@ -18,6 +18,7 @@ export interface Song {
 				lng: number;
 			};
 		};
+		imageUrl?: string;
 	};
 	audioUrl?: string;
 }
@@ -1447,7 +1448,8 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 			location: {
 				name: 'Wacken Open Air, Germany',
 				coordinates: { lat: 54.0167, lng: 9.3667 }
-			}
+			},
+			imageUrl: '/images/wacken-2025.png'
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/17%20Kaboom%202.0%20%28Live%20Wacken%202025%29.mp3'
 	},
