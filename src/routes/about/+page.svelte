@@ -57,7 +57,7 @@
 		<h2>{$language === 'de' ? 'Live auf Wacken 2025' : 'Live at Wacken 2025'}</h2>
 		<div class="live-content">
 			<div class="live-image">
-				<img src="/images/wacken-2025.jpg" alt="Uncivil War live at Wacken Open Air 2025" />
+				<img src="/images/wacken-2025.png" alt="Uncivil War live at Wacken Open Air 2025" />
 			</div>
 			<div class="section-content">
 				<p>
