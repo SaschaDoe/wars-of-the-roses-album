@@ -5,30 +5,28 @@
 		en: {
 			albumDesc1: '<strong>Wars of the Roses</strong> is an epic concept album that chronicles one of England\'s most brutal and complex civil wars. Through powerful music and meticulously researched lyrics, we bring to life the three-decade conflict between the Houses of Lancaster and York.',
 			albumDesc2: 'Each song is a chapter in this medieval saga, exploring not just the battles, but the human stories behind them - the ambition, betrayal, loyalty, and tragedy that defined this era.',
-			warsDesc1: 'For over three decades, England tore itself apart in a brutal civil war between two branches of the royal Plantagenet family. The House of Lancaster (symbolized by the red rose) and the House of York (white rose) fought for control of the English throne in a conflict that saw kings made and unmade, entire noble families destroyed, and the medieval order collapse.',
-			warsDesc2: "This wasn't just a war of battles—it was a war of betrayals, shifting alliances, and political intrigue. Brothers fought brothers, fathers turned against sons, and powerful nobles like Warwick the Kingmaker manipulated monarchs like chess pieces. The conflict only ended when Henry Tudor defeated Richard III at Bosworth Field in 1485, founding the Tudor dynasty and uniting the two roses.",
 			bandDesc1: '<strong>Uncivil War</strong> is dedicated to bringing historical narratives to life through heavy, atmospheric music. We believe that history\'s greatest stories deserve to be told with the power and intensity they demand.',
 			bandDesc2: 'Our music combines the brutality of modern metal with orchestral elements and historical authenticity. Every lyric is researched, every song tells a true story, and every note aims to transport you to another time.',
+			liveDesc1: 'In 2025, Uncivil War made history at <strong>Wacken Open Air</strong> - the world\'s largest heavy metal festival. Our performance featured something no other band has ever brought to a metal stage: <strong>real medieval cannons</strong>.',
+			liveDesc2: 'When we performed "Kaboom 2.0", the audience witnessed actual 15th-century replica cannons firing across the stage, recreating the chaos of the Battle of Barnet. The ground shook, the smoke billowed, and 85,000 metalheads experienced the Wars of the Roses like never before.',
 			quote: '"We don\'t just sing about history - we resurrect it, give it a voice, and let it scream through the ages."',
-			feature1Desc: '21 epic tracks of historical metal',
+			feature1Desc: '22 epic tracks of historical metal',
 			feature2Desc: 'Every song includes full lyrics with historical references',
 			feature3Desc: 'Detailed descriptions of the events, people, and places',
-			feature4Desc: 'Explore the actual locations where history unfolded',
-			exploreTimeline: 'Explore the Complete Timeline →'
+			feature4Desc: 'Explore the actual locations where history unfolded'
 		},
 		de: {
 			albumDesc1: '<strong>Rosenkriege</strong> ist ein episches Konzeptalbum, das einen der brutalsten und komplexesten Bürgerkriege Englands dokumentiert. Durch kraftvolle Musik und sorgfältig recherchierte Texte erwecken wir den drei Jahrzehnte andauernden Konflikt zwischen den Häusern Lancaster und York zum Leben.',
 			albumDesc2: 'Jedes Lied ist ein Kapitel in dieser mittelalterlichen Saga und erforscht nicht nur die Schlachten, sondern auch die menschlichen Geschichten dahinter - den Ehrgeiz, den Verrat, die Loyalität und die Tragödie, die diese Ära prägten.',
-			warsDesc1: 'Über drei Jahrzehnte lang zerriss sich England in einem brutalen Bürgerkrieg zwischen zwei Zweigen der königlichen Plantagenet-Familie. Das Haus Lancaster (symbolisiert durch die rote Rose) und das Haus York (weiße Rose) kämpften um die Kontrolle des englischen Throns in einem Konflikt, der Könige machte und stürzte, ganze Adelsfamilien zerstörte und die mittelalterliche Ordnung zum Einsturz brachte.',
-			warsDesc2: 'Dies war nicht nur ein Krieg der Schlachten - es war ein Krieg der Verräte, wechselnden Allianzen und politischen Intrigen. Brüder kämpften gegen Brüder, Väter wandten sich gegen Söhne, und mächtige Adlige wie Warwick der Königsmacher manipulierten Monarchen wie Schachfiguren. Der Konflikt endete erst, als Heinrich Tudor Richard III. 1485 bei Bosworth Field besiegte, die Tudor-Dynastie gründete und die beiden Rosen vereinte.',
 			bandDesc1: '<strong>Uncivil War</strong> widmet sich der Aufgabe, historische Erzählungen durch schwere, atmosphärische Musik zum Leben zu erwecken. Wir glauben, dass die größten Geschichten der Geschichte es verdienen, mit der Kraft und Intensität erzählt zu werden, die sie verlangen.',
 			bandDesc2: 'Unsere Musik verbindet die Brutalität des modernen Metals mit orchestralen Elementen und historischer Authentizität. Jeder Text ist recherchiert, jedes Lied erzählt eine wahre Geschichte, und jede Note zielt darauf ab, Sie in eine andere Zeit zu versetzen.',
+			liveDesc1: '2025 schrieb Uncivil War Geschichte beim <strong>Wacken Open Air</strong> - dem größten Heavy-Metal-Festival der Welt. Unsere Performance bot etwas, das noch keine andere Band auf eine Metal-Bühne gebracht hat: <strong>echte mittelalterliche Kanonen</strong>.',
+			liveDesc2: 'Als wir "Kaboom 2.0" spielten, erlebte das Publikum echte Nachbildungen von Kanonen aus dem 15. Jahrhundert, die über die Bühne feuerten und das Chaos der Schlacht von Barnet nachstellten. Der Boden bebte, der Rauch wallte, und 85.000 Metalheads erlebten die Rosenkriege wie nie zuvor.',
 			quote: '„Wir singen nicht nur über Geschichte - wir erwecken sie wieder zum Leben, geben ihr eine Stimme und lassen sie durch die Zeitalter schreien."',
-			feature1Desc: '21 epische Titel historischen Metals',
+			feature1Desc: '22 epische Titel historischen Metals',
 			feature2Desc: 'Jedes Lied enthält vollständige Texte mit historischen Bezügen',
 			feature3Desc: 'Detaillierte Beschreibungen der Ereignisse, Personen und Orte',
-			feature4Desc: 'Erkunden Sie die tatsächlichen Orte, an denen Geschichte geschrieben wurde',
-			exploreTimeline: 'Zur vollständigen Zeitleiste →'
+			feature4Desc: 'Erkunden Sie die tatsächlichen Orte, an denen Geschichte geschrieben wurde'
 		}
 	};
 </script>
@@ -55,18 +53,20 @@
 		</div>
 	</section>
 
-	<section class="history-section">
-		<h2>{$currentTranslations.about.warsSection}</h2>
-		<div class="section-content">
-			<p>
-				{aboutText[$language].warsDesc1}
-			</p>
-			<p>
-				{aboutText[$language].warsDesc2}
-			</p>
-			<p class="timeline-link">
-				<a href="/encyclopedia/timeline">{aboutText[$language].exploreTimeline}</a>
-			</p>
+	<section class="live-section">
+		<h2>{$language === 'de' ? 'Live auf Wacken 2025' : 'Live at Wacken 2025'}</h2>
+		<div class="live-content">
+			<div class="live-image">
+				<img src="/images/wacken-2025.jpg" alt="Uncivil War live at Wacken Open Air 2025" />
+			</div>
+			<div class="section-content">
+				<p>
+					{@html aboutText[$language].liveDesc1}
+				</p>
+				<p>
+					{aboutText[$language].liveDesc2}
+				</p>
+			</div>
 		</div>
 	</section>
 
@@ -150,19 +150,39 @@
 	}
 
 	.content-section,
-	.history-section,
+	.live-section,
 	.band-section,
 	.features-section {
 		margin-bottom: 5rem;
 	}
 
 	.content-section h2,
-	.history-section h2,
+	.live-section h2,
 	.band-section h2,
 	.features-section h2 {
 		font-size: 3rem;
 		margin-bottom: 2rem;
 		text-align: center;
+	}
+
+	.live-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.live-image {
+		border-radius: 12px;
+		overflow: hidden;
+		border: 3px solid var(--color-gold);
+		box-shadow: 0 10px 40px rgba(139, 0, 0, 0.4);
+	}
+
+	.live-image img {
+		width: 100%;
+		height: auto;
+		display: block;
 	}
 
 	.section-content {
@@ -177,27 +197,9 @@
 		color: var(--color-text-secondary);
 	}
 
-	.timeline-link {
-		text-align: center;
-		margin-top: 2rem;
-	}
-
-	.timeline-link a {
-		display: inline-block;
-		font-size: 1.3rem;
-		font-weight: 600;
-		color: var(--color-gold);
-		padding: 1rem 2rem;
-		border: 2px solid var(--color-gold);
-		border-radius: 4px;
-		transition: all 0.3s ease;
-	}
-
-	.timeline-link a:hover {
-		background: var(--color-gold);
-		color: var(--color-bg);
-		transform: translateY(-3px);
-		box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+	.live-section .section-content {
+		max-width: none;
+		margin: 0;
 	}
 
 	.quote-block {
@@ -293,10 +295,15 @@
 		}
 
 		.content-section h2,
-		.history-section h2,
+		.live-section h2,
 		.band-section h2,
 		.features-section h2 {
 			font-size: 2rem;
+		}
+
+		.live-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
 		}
 
 		.features-grid {

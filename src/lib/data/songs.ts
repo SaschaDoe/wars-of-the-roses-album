@@ -1426,18 +1426,27 @@ export const songs: Song[] = [
 			"\"That's IT! I'm going back to the damn longbows!\""
 		],
 		historicalContext: {
-			title: 'Gunpowder Folly - When Technology Fails',
-			titleDe: 'Der tragische König - Heinrich VI. durch Margaretes Augen',
-			description: `At the Battle of Barnet in 1471, Warwick brought French cannons, confident that modern artillery would defeat Edward IV. But the battle was fought in thick fog on Easter morning. Warwick's gunners fired blindly into the mist, hitting nothing. Worse, when the Earl of Oxford's troops returned from pursuing enemies, Warwick's forces mistook Oxford's star-and-streams banner for Edward's sun-and-roses in the fog. Warwick's own cannons fired on his allies, causing panic and breaking his lines. This darkly comic song tells the story of early gunpowder weapons' unreliability. The "fancy guns" caused more problems than they solved, accidentally bombarding cows, barns, and Warwick's own troops. Technology doesn't automatically bring victory—sometimes you're better off with a longbow.`,
-			descriptionDe: `Dieses intime Lied gibt Königin Margaretes privaten Gedanken über ihren Ehemann Heinrich VI. Stimme. Der Titel bezieht sich auf Boccaccios „De Casibus Virorum Illustrium" (Der Fall der Fürsten), das tragische Herrscher chronisierte, die vom Schicksal zerstört wurden. Margarete beobachtet Heinrich beim Beten und Schriftlesen – ein sanfter, gelehrter Mann, völlig ungeeignet für die brutale Welt der Machtpolitik des 15. Jahrhunderts. Er ist ein „Winterlamm, verloren im bittersten Wind". Während Heinrich sich in religiöse Hingabe zurückzieht, muss Margarete die Rüstung anlegen und die Schlachten schlagen. Das eindringlichste Element des Liedes ist Margaretes Vision: Heinrichs VI. friedliche Natur wird indirekt zur englischen Reformation und schließlich zu Königin Elisabeth I. führen – einer Jungfrauenkönigin, die über ein goldenes Zeitalter präsidiert. Aber in der Gegenwart kann Margarete nur beklagen, wie sie ihren sanften Ehemann von einem Zeitalter zermalmt sieht, das Rücksichtslosigkeit forderte.`,
-			year: '1455-1485',
+			title: 'Live at Wacken 2025 - Real Medieval Cannons on Stage',
+			titleDe: 'Live auf Wacken 2025 - Echte mittelalterliche Kanonen auf der Bühne',
+			description: `This live recording captures Uncivil War's legendary performance at Wacken Open Air 2025, where we became the only band in metal history to use real medieval cannons on stage. When we performed "Kaboom 2.0", the audience witnessed actual 15th-century replica cannons firing across the stage, recreating the chaos of the Battle of Barnet.
+
+The song itself tells the darkly comic story of Warwick's gunpowder folly at Barnet in 1471. Warwick brought French cannons, confident that modern artillery would defeat Edward IV. But the battle was fought in thick fog on Easter morning. His gunners fired blindly into the mist, hitting nothing but cows, barns, and eventually their own allies when they mistook Oxford's banner for Edward's in the fog.
+
+At Wacken, 85,000 metalheads experienced this chaos firsthand as the ground shook and smoke billowed across the stage. Technology doesn't automatically bring victory—but it makes for one hell of a show.`,
+			descriptionDe: `Diese Live-Aufnahme fängt Uncivil Wars legendäre Performance beim Wacken Open Air 2025 ein, bei der wir als einzige Band in der Metal-Geschichte echte mittelalterliche Kanonen auf der Bühne einsetzten. Als wir "Kaboom 2.0" spielten, erlebte das Publikum echte Nachbildungen von Kanonen aus dem 15. Jahrhundert, die über die Bühne feuerten und das Chaos der Schlacht von Barnet nachstellten.
+
+Das Lied selbst erzählt die schwarz-humorige Geschichte von Warwicks Schießpulver-Torheit bei Barnet 1471. Warwick brachte französische Kanonen mit, überzeugt, dass moderne Artillerie Eduard IV. besiegen würde. Aber die Schlacht wurde im dichten Nebel am Ostermorgen geschlagen. Seine Kanoniere feuerten blind in den Nebel und trafen nur Kühe, Scheunen und schließlich ihre eigenen Verbündeten, als sie Oxfords Banner im Nebel mit Edwards verwechselten.
+
+Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden bebte und Rauch über die Bühne wallte. Technologie bringt nicht automatisch den Sieg—aber sie macht eine verdammt gute Show.`,
+			year: '2025',
 			keyFigures: [
-				'Military commanders',
-				'Gunners and artillery crews'
+				'Uncivil War',
+				'85,000 Wacken attendees',
+				'Medieval cannon crew'
 			],
 			location: {
-				name: 'Various battlefields across England',
-				coordinates: { lat: 52.3555, lng: -1.1743 }
+				name: 'Wacken Open Air, Germany',
+				coordinates: { lat: 54.0167, lng: 9.3667 }
 			}
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/17%20Kaboom%202.0%20%28Live%20Wacken%202025%29.mp3'
