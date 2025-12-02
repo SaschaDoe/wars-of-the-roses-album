@@ -31,12 +31,10 @@
 	<a href="/songs" class="back-link">{$currentTranslations.song.backToSongs}</a>
 
 	<div class="song-header">
-		<div class="song-number">{$currentTranslations.song.track} {song.trackNumber}</div>
+		<div class="song-number">{$currentTranslations.song.track} {song.trackNumber} • {song.duration}</div>
 		<h1 class="song-title">{song.title}</h1>
 		<div class="song-meta">
 			<span class="year">{song.historicalContext.year}</span>
-			<span class="separator">•</span>
-			<span class="duration">{song.duration}</span>
 			<span class="separator">•</span>
 			<span class="location">{song.historicalContext.location.name}</span>
 		</div>
