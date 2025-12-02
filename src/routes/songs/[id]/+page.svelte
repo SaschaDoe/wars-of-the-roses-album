@@ -47,8 +47,10 @@
 		<h1 class="song-title">{song.title}</h1>
 		<div class="song-meta">
 			<span class="year">{song.historicalContext.year}</span>
-			<span class="separator">•</span>
-			<span class="location">{song.historicalContext.location.name}</span>
+			{#if song.historicalContext.location}
+				<span class="separator">•</span>
+				<span class="location">{song.historicalContext.location.name}</span>
+			{/if}
 		</div>
 	</div>
 
