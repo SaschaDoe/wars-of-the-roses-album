@@ -104,10 +104,17 @@
 					<div class="related-grid">
 						{#each relatedEntries as related}
 							{#if related}
-								<a href="/encyclopedia/{related.id}" class="related-card">
-									<h3>{getTitle(related)}</h3>
-									<span class="related-type">{getTypeLabel(related.type)}</span>
-									<p>{getShortDescription(related)}</p>
+								<a href="/encyclopedia/{related.id}" class="related-card" class:has-image={related.imageUrl}>
+									{#if related.imageUrl}
+										<div class="related-image">
+											<img src={related.imageUrl} alt={getTitle(related)} loading="lazy" decoding="async" />
+										</div>
+									{/if}
+									<div class="related-content">
+										<h3>{getTitle(related)}</h3>
+										<span class="related-type">{getTypeLabel(related.type)}</span>
+										<p>{getShortDescription(related)}</p>
+									</div>
 								</a>
 							{/if}
 						{/each}
@@ -270,6 +277,32 @@
 		text-decoration: none;
 		color: var(--color-text);
 		transition: all 0.3s ease;
+	}
+
+	.related-card.has-image {
+		display: flex;
+		gap: 1rem;
+		align-items: flex-start;
+	}
+
+	.related-image {
+		flex-shrink: 0;
+		width: 70px;
+		height: 70px;
+		overflow: hidden;
+		border-radius: 6px;
+		border: 2px solid var(--color-gold);
+	}
+
+	.related-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.related-content {
+		flex: 1;
+		min-width: 0;
 	}
 
 	.related-card:hover {

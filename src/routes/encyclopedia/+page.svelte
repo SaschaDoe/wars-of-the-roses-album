@@ -16,6 +16,39 @@
 	function getShortDescription(entry: EncyclopediaEntry) {
 		return $language === 'de' && entry.shortDescriptionDe ? entry.shortDescriptionDe : entry.shortDescription;
 	}
+
+	function getFullDescription(entry: EncyclopediaEntry) {
+		return $language === 'de' && entry.fullDescriptionDe ? entry.fullDescriptionDe : entry.fullDescription;
+	}
+
+	function addLinksToText(text: string): string {
+		const linkMap: [RegExp, string][] = [
+			[/House of Lancaster/g, '<a href="/encyclopedia/house-of-lancaster">House of Lancaster</a>'],
+			[/House of York/g, '<a href="/encyclopedia/house-of-york">House of York</a>'],
+			[/Richard, Duke of York/g, '<a href="/encyclopedia/richard-duke-of-york">Richard, Duke of York</a>'],
+			[/King Henry VI/g, '<a href="/encyclopedia/henry-vi">King Henry VI</a>'],
+			[/Henry VI/g, '<a href="/encyclopedia/henry-vi">Henry VI</a>'],
+			[/Warwick the Kingmaker's/g, '<a href="/encyclopedia/warwick-the-kingmaker">Warwick the Kingmaker\'s</a>'],
+			[/Edward IV/g, '<a href="/encyclopedia/edward-iv">Edward IV</a>'],
+			[/Henry Tudor's/g, '<a href="/encyclopedia/henry-vii">Henry Tudor\'s</a>'],
+			[/Henry Tudor/g, '<a href="/encyclopedia/henry-vii">Henry Tudor</a>'],
+			[/First Battle of St Albans/g, '<a href="/encyclopedia/st-albans">First Battle of St Albans</a>'],
+			[/St Albans \(1455, 1461\)/g, '<a href="/encyclopedia/st-albans">St Albans</a> (1455, 1461)'],
+			[/Wakefield \(1460\)/g, '<a href="/encyclopedia/battle-of-wakefield">Wakefield</a> (1460)'],
+			[/Towton \(1461\)/g, '<a href="/encyclopedia/battle-of-towton">Towton</a> (1461)'],
+			[/Towton(?![^<]*>)/g, '<a href="/encyclopedia/battle-of-towton">Towton</a>'],
+			[/Barnet \(1471\)/g, '<a href="/encyclopedia/battle-of-barnet">Barnet</a> (1471)'],
+			[/Bosworth Field \(1485\)/g, '<a href="/encyclopedia/battle-of-bosworth">Bosworth Field</a> (1485)'],
+			[/Bosworth Field(?![^<]*>)/g, '<a href="/encyclopedia/battle-of-bosworth">Bosworth Field</a>'],
+			[/the Tudors/g, 'the <a href="/encyclopedia/tudor-rose">Tudors</a>'],
+		];
+
+		let result = text;
+		for (const [pattern, replacement] of linkMap) {
+			result = result.replace(pattern, replacement);
+		}
+		return result;
+	}
 </script>
 
 <svelte:head>
@@ -29,21 +62,6 @@
 		<p class="subtitle">{$currentTranslations.encyclopedia.subtitle}</p>
 	</header>
 
-	{#if warsOverview}
-		<section class="overview-section" id="overview">
-			<div class="overview-content">
-				<div class="overview-text">
-					<h2>{getTitle(warsOverview)}</h2>
-					<p class="overview-dates">{warsOverview.dates}</p>
-					<p class="overview-description">{getShortDescription(warsOverview)}</p>
-					<a href="/encyclopedia/{warsOverview.id}" class="overview-link">
-						{$currentTranslations.encyclopedia.readFullOverview}
-					</a>
-				</div>
-			</div>
-		</section>
-	{/if}
-
 	<section class="timeline-featured" id="timeline">
 		<div class="timeline-hero">
 			<h2>{$currentTranslations.encyclopedia.timelineSection}</h2>
@@ -55,6 +73,24 @@
 			</a>
 		</div>
 	</section>
+
+	{#if warsOverview}
+		<section class="overview-section" id="overview">
+			<div class="overview-content">
+				<h2>{getTitle(warsOverview)}</h2>
+				<p class="overview-dates">{warsOverview.dates}</p>
+				<p class="overview-subtitle">{getShortDescription(warsOverview)}</p>
+				{#each getFullDescription(warsOverview).split('\n\n') as paragraph}
+					<p class="overview-text">{@html addLinksToText(paragraph)}</p>
+				{/each}
+				{#if warsOverview.imageUrl}
+					<div class="overview-map">
+						<img src={warsOverview.imageUrl} alt="Map of the Wars of the Roses" loading="lazy" decoding="async" />
+					</div>
+				{/if}
+			</div>
+		</section>
+	{/if}
 
 	<section class="category-section" id="people">
 		<h2>{$currentTranslations.encyclopedia.people}</h2>
@@ -168,22 +204,29 @@
 		font-style: italic;
 	}
 
+	.timeline-featured {
+		margin-bottom: 4rem;
+		scroll-margin-top: 2rem;
+	}
+
 	.overview-section {
 		margin-bottom: 4rem;
 		scroll-margin-top: 2rem;
 	}
 
 	.overview-content {
-		background: linear-gradient(135deg, rgba(139, 0, 0, 0.15), rgba(212, 175, 55, 0.08));
-		border: 2px solid var(--color-gold);
+		background: linear-gradient(135deg, rgba(139, 0, 0, 0.1), rgba(212, 175, 55, 0.05));
+		border: 1px solid rgba(212, 175, 55, 0.3);
 		border-radius: 12px;
 		padding: 2.5rem;
 	}
 
-	.overview-text h2 {
+	.overview-content h2 {
 		font-size: 2.2rem;
 		color: var(--color-gold);
 		margin-bottom: 0.5rem;
+		border-left: 4px solid var(--color-accent);
+		padding-left: 1rem;
 	}
 
 	.overview-dates {
@@ -191,34 +234,48 @@
 		color: var(--color-accent);
 		font-weight: 600;
 		margin-bottom: 1rem;
+		padding-left: 1.25rem;
 	}
 
-	.overview-description {
-		font-size: 1.15rem;
-		line-height: 1.7;
-		color: var(--color-text);
+	.overview-subtitle {
+		font-size: 1.2rem;
+		font-style: italic;
+		color: var(--color-text-secondary);
 		margin-bottom: 1.5rem;
+		padding-left: 1.25rem;
 	}
 
-	.overview-link {
-		display: inline-block;
-		padding: 0.75rem 1.5rem;
-		background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+	.overview-text {
+		font-size: 1.1rem;
+		line-height: 1.8;
 		color: var(--color-text);
-		font-weight: 600;
-		border-radius: 6px;
+		margin-bottom: 1rem;
+	}
+
+	.overview-text :global(a) {
+		color: var(--color-gold);
 		text-decoration: none;
-		transition: all 0.3s ease;
+		border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+		transition: all 0.2s ease;
 	}
 
-	.overview-link:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+	.overview-text :global(a:hover) {
+		color: var(--color-accent-light);
+		border-bottom-color: var(--color-accent-light);
 	}
 
-	.timeline-featured {
-		margin-bottom: 4rem;
-		scroll-margin-top: 2rem;
+	.overview-map {
+		margin-top: 2rem;
+		text-align: center;
+	}
+
+	.overview-map img {
+		max-width: 600px;
+		width: 100%;
+		height: auto;
+		border-radius: 8px;
+		border: 3px solid var(--color-gold);
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 	}
 
 	.timeline-hero {
@@ -374,12 +431,10 @@
 		}
 
 		.overview-content {
-			grid-template-columns: 1fr;
-			gap: 2rem;
 			padding: 1.5rem;
 		}
 
-		.overview-text h2 {
+		.overview-content h2 {
 			font-size: 1.8rem;
 		}
 
@@ -387,8 +442,12 @@
 			font-size: 1.1rem;
 		}
 
-		.overview-description {
+		.overview-subtitle {
 			font-size: 1.05rem;
+		}
+
+		.overview-text {
+			font-size: 1rem;
 		}
 
 		.timeline-hero {

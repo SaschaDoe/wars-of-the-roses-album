@@ -5,33 +5,19 @@
 	let audioElement: HTMLAudioElement;
 	let progressBar: HTMLDivElement;
 
-	// Sync audio element with store state
+	// Reactive audio source
+	const audioSrc = $derived($audioPlayer.currentSong?.audioUrl || '');
+
+	// Handle play/pause state
 	$effect(() => {
 		if (!audioElement) return;
 
-		if ($audioPlayer.isPlaying) {
+		if ($audioPlayer.isPlaying && audioSrc) {
 			audioElement.play().catch(() => {
-				// Handle autoplay restrictions
 				audioPlayer.pause();
 			});
 		} else {
 			audioElement.pause();
-		}
-	});
-
-	// Handle song change
-	$effect(() => {
-		if (!audioElement || !$audioPlayer.currentSong?.audioUrl) return;
-
-		// Only reload if the source actually changed
-		if (audioElement.src !== $audioPlayer.currentSong.audioUrl) {
-			audioElement.src = $audioPlayer.currentSong.audioUrl;
-			audioElement.load();
-			if ($audioPlayer.isPlaying) {
-				audioElement.play().catch(() => {
-					audioPlayer.pause();
-				});
-			}
 		}
 	});
 
@@ -47,10 +33,21 @@
 
 	function handleLoadedMetadata() {
 		audioPlayer.setDuration(audioElement.duration);
+		// Auto-play when metadata is loaded and we're supposed to be playing
+		if ($audioPlayer.isPlaying) {
+			audioElement.play().catch(() => audioPlayer.pause());
+		}
 	}
 
 	function handleEnded() {
 		audioPlayer.nextSong();
+	}
+
+	function handleCanPlay() {
+		// Start playing when audio can play
+		if ($audioPlayer.isPlaying) {
+			audioElement.play().catch(() => audioPlayer.pause());
+		}
 	}
 
 	function formatTime(seconds: number): string {
@@ -73,27 +70,19 @@
 		audioPlayer.stop();
 	}
 
-	$effect(() => {
-		// Create audio element on mount
-		if (typeof window !== 'undefined' && !audioElement) {
-			audioElement = new Audio();
-			audioElement.addEventListener('timeupdate', handleTimeUpdate);
-			audioElement.addEventListener('loadedmetadata', handleLoadedMetadata);
-			audioElement.addEventListener('ended', handleEnded);
-		}
-
-		return () => {
-			if (audioElement) {
-				audioElement.pause();
-				audioElement.removeEventListener('timeupdate', handleTimeUpdate);
-				audioElement.removeEventListener('loadedmetadata', handleLoadedMetadata);
-				audioElement.removeEventListener('ended', handleEnded);
-			}
-		};
-	});
-
 	const progress = $derived($audioPlayer.duration > 0 ? ($audioPlayer.currentTime / $audioPlayer.duration) * 100 : 0);
 </script>
+
+<!-- Hidden audio element that persists -->
+<audio
+	bind:this={audioElement}
+	src={audioSrc}
+	ontimeupdate={handleTimeUpdate}
+	onloadedmetadata={handleLoadedMetadata}
+	onended={handleEnded}
+	oncanplay={handleCanPlay}
+	preload="auto"
+></audio>
 
 {#if $isPlayerVisible && $audioPlayer.currentSong}
 	<div class="audio-player-bar">
