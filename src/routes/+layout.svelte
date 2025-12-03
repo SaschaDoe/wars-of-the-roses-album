@@ -5,6 +5,7 @@
 	import { onMount } from 'svelte';
 	import AudioPlayer from '$lib/components/AudioPlayer.svelte';
 	import { isPlayerVisible } from '$lib/stores/audioPlayer';
+	import { albums } from '$lib/data/albums';
 
 	let mobileMenuOpen = $state(false);
 	let mounted = $state(false);
@@ -29,6 +30,10 @@
 	function toggleLanguage() {
 		language.toggle();
 	}
+
+	function getAlbumTitle(album: typeof albums[0]) {
+		return $language === 'de' ? album.titleDe : album.title;
+	}
 </script>
 
 <div class="app" class:player-visible={$isPlayerVisible}>
@@ -37,7 +42,7 @@
 			<div class="nav-brand">
 				<a href="/" class="brand-link">
 					<h1 class="brand-title">Uncivil War</h1>
-					<span class="brand-subtitle">{$language === 'de' ? 'Rosenkriege' : 'Wars of the Roses'}</span>
+					<span class="brand-subtitle">{$language === 'de' ? 'Wo Geschichte auf Metal trifft' : 'Where History Meets Metal'}</span>
 				</a>
 			</div>
 
@@ -49,18 +54,14 @@
 
 			<ul class="nav-links" class:open={mobileMenuOpen}>
 				<li><a href="/" class:active={$page.url.pathname === '/'} onclick={closeMobileMenu}>{$currentTranslations.nav.home}</a></li>
-				<li><a href="/songs" class:active={$page.url.pathname.startsWith('/songs')} onclick={closeMobileMenu}>{$currentTranslations.nav.songs}</a></li>
 				<li class="dropdown">
-					<a href="/encyclopedia" class:active={$page.url.pathname.startsWith('/encyclopedia')} onclick={closeMobileMenu}>{$currentTranslations.nav.encyclopedia}</a>
+					<a href="/#albums" class:active={$page.url.pathname.startsWith('/albums')} onclick={closeMobileMenu}>{$currentTranslations.nav.albums}</a>
 					<ul class="dropdown-menu">
-						<li><a href="/encyclopedia/timeline" onclick={closeMobileMenu}>📅 {$currentTranslations.nav.timeline}</a></li>
-						<li><a href="/encyclopedia#people" onclick={closeMobileMenu}>👤 {$currentTranslations.nav.people}</a></li>
-						<li><a href="/encyclopedia#events" onclick={closeMobileMenu}>⚔️ {$currentTranslations.nav.events}</a></li>
-						<li><a href="/encyclopedia#places" onclick={closeMobileMenu}>📍 {$currentTranslations.nav.locations}</a></li>
-						<li><a href="/encyclopedia#concepts" onclick={closeMobileMenu}>📚 {$currentTranslations.nav.concepts}</a></li>
+						{#each albums as album}
+							<li><a href="/albums/{album.slug}" onclick={closeMobileMenu}>{getAlbumTitle(album)}</a></li>
+						{/each}
 					</ul>
 				</li>
-				<li><a href="/download" class:active={$page.url.pathname === '/download'} onclick={closeMobileMenu}>{$currentTranslations.nav.download}</a></li>
 				<li><a href="/about" class:active={$page.url.pathname === '/about'} onclick={closeMobileMenu}>{$currentTranslations.nav.about}</a></li>
 				<li class="lang-switch">
 					<button onclick={() => { toggleLanguage(); closeMobileMenu(); }} class="lang-btn" aria-label="Switch language">

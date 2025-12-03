@@ -38,6 +38,7 @@ export const translations = {
 		// Navigation
 		nav: {
 			home: 'Home',
+			albums: 'Albums',
 			songs: 'Songs',
 			encyclopedia: 'Encyclopedia',
 			download: 'Download',
@@ -52,7 +53,28 @@ export const translations = {
 		footer: {
 			copyright: '© 2025 Uncivil War. All rights reserved.'
 		},
-		// Home page
+		// Band Home page (new root)
+		bandHome: {
+			title: 'Uncivil War - Where History Meets Heavy Metal',
+			metaDescription: 'Uncivil War - Historical concept albums bringing medieval warfare to life through powerful metal music',
+			heroTitle: 'Uncivil War',
+			heroSubtitle: 'Where History Meets Heavy Metal',
+			heroDescription: 'We bring the epic battles, legendary figures, and dramatic turning points of medieval history to life through powerful concept albums. Each song is a gateway to the past, combining historically accurate storytelling with thundering metal soundscapes.',
+			albumsTitle: 'Our Albums',
+			albumsSubtitle: 'Epic Musical Journeys Through History',
+			listenNow: 'Listen Now',
+			learnMore: 'Learn More',
+			tracks: 'tracks',
+			aboutTitle: 'About the Band',
+			aboutText: 'Uncivil War creates historically-inspired metal concept albums that transport listeners to pivotal moments in medieval history. Our music combines meticulous historical research with powerful compositions, complete lyrics, and rich storytelling.',
+			featureHistory: 'Historical Accuracy',
+			featureHistoryDesc: 'Every song is backed by extensive research',
+			featureMusic: 'Powerful Music',
+			featureMusicDesc: 'Epic metal soundscapes that bring history alive',
+			featureStory: 'Complete Stories',
+			featureStoryDesc: 'Each album tells a cohesive narrative'
+		},
+		// Home page (kept for album pages)
 		home: {
 			title: 'Uncivil War - Wars of the Roses',
 			metaDescription: 'Wars of the Roses - A musical journey through medieval history by Uncivil War',
@@ -167,6 +189,7 @@ export const translations = {
 		// Navigation
 		nav: {
 			home: 'Start',
+			albums: 'Alben',
 			songs: 'Lieder',
 			encyclopedia: 'Enzyklopädie',
 			download: 'Download',
@@ -180,6 +203,27 @@ export const translations = {
 		// Footer
 		footer: {
 			copyright: '© 2025 Uncivil War. Alle Rechte vorbehalten.'
+		},
+		// Band Home page (new root)
+		bandHome: {
+			title: 'Uncivil War - Wo Geschichte auf Heavy Metal trifft',
+			metaDescription: 'Uncivil War - Historische Konzeptalben, die mittelalterliche Kriegsführung durch kraftvolle Metal-Musik zum Leben erwecken',
+			heroTitle: 'Uncivil War',
+			heroSubtitle: 'Wo Geschichte auf Heavy Metal trifft',
+			heroDescription: 'Wir erwecken die epischen Schlachten, legendären Persönlichkeiten und dramatischen Wendepunkte der mittelalterlichen Geschichte durch kraftvolle Konzeptalben zum Leben. Jedes Lied ist ein Tor zur Vergangenheit und verbindet historisch genaues Storytelling mit donnernden Metal-Klanglandschaften.',
+			albumsTitle: 'Unsere Alben',
+			albumsSubtitle: 'Epische musikalische Reisen durch die Geschichte',
+			listenNow: 'Jetzt anhören',
+			learnMore: 'Mehr erfahren',
+			tracks: 'Titel',
+			aboutTitle: 'Über die Band',
+			aboutText: 'Uncivil War erschafft historisch inspirierte Metal-Konzeptalben, die Zuhörer zu entscheidenden Momenten der mittelalterlichen Geschichte transportieren. Unsere Musik kombiniert sorgfältige historische Recherche mit kraftvollen Kompositionen, vollständigen Texten und reichhaltigen Erzählungen.',
+			featureHistory: 'Historische Genauigkeit',
+			featureHistoryDesc: 'Jedes Lied basiert auf umfassender Recherche',
+			featureMusic: 'Kraftvolle Musik',
+			featureMusicDesc: 'Epische Metal-Klänge, die Geschichte lebendig machen',
+			featureStory: 'Vollständige Geschichten',
+			featureStoryDesc: 'Jedes Album erzählt eine zusammenhängende Erzählung'
 		},
 		// Home page
 		home: {
