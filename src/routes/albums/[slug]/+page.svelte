@@ -9,6 +9,7 @@
 	const albumTitle = $derived($language === 'de' ? album.titleDe : album.title);
 	const albumSubtitle = $derived($language === 'de' ? album.subtitleDe : album.subtitle);
 	const albumDescription = $derived($language === 'de' ? album.descriptionDe : album.description);
+	const encyclopediaUrl = $derived(album.slug === 'wars-of-the-roses' ? '/encyclopedia' : `/albums/${album.slug}/encyclopedia`);
 
 	let loaded = $state(false);
 
@@ -49,7 +50,7 @@
 				<div class="cta-buttons">
 					<a href="/albums/{album.slug}/songs" class="btn btn-primary">{$currentTranslations.home.listenButton}</a>
 					{#if album.hasEncyclopedia}
-						<a href="/albums/{album.slug}/encyclopedia" class="btn btn-secondary">{$currentTranslations.home.exploreButton}</a>
+						<a href={encyclopediaUrl} class="btn btn-secondary">{$currentTranslations.home.exploreButton}</a>
 					{/if}
 				</div>
 			</div>
