@@ -4,17 +4,17 @@
 
 	const aboutText = {
 		en: {
-			missionTitle: 'Our Mission',
-			missionDesc1: '<strong>Uncivil War</strong> was born from a simple belief: history\'s greatest stories deserve to be told with the power and intensity they demand. We don\'t just write songs about the past - we resurrect it, breathe life into forgotten warriors, and let their stories thunder through the ages.',
-			missionDesc2: 'Our music combines the brutality of modern metal with orchestral grandeur and unwavering historical authenticity. Every lyric is meticulously researched, every song tells a true story, and every note aims to transport you to another time - to the clash of steel, the roar of cannons, and the cries of battle.',
+			missionTitle: 'My Mission',
+			missionDesc1: '<strong>Uncivil War</strong> is a one-person project born from a simple belief: history\'s greatest stories deserve to be told with the power and intensity they demand. I don\'t just write songs about the past - I resurrect it, breathe life into forgotten warriors, and let their stories thunder through the ages.',
+			missionDesc2: 'All music is created using AI music generation, primarily <a href="https://suno.com" target="_blank" rel="noopener noreferrer" class="external-link">Suno.com</a>. The combination of AI-generated metal with orchestral grandeur allows for an unprecedented fusion of historical storytelling and sonic intensity. Every lyric is meticulously researched, every song tells a true story, and every note aims to transport you to another time - to the clash of steel, the roar of cannons, and the cries of battle.',
 			discographyTitle: 'Discography',
 			discographyDesc: 'Each album is a complete journey through a pivotal era of history, crafted as a cohesive narrative experience:',
-			bandDesc1: '<strong>Uncivil War</strong> is more than a band - we are historians with guitars, storytellers with drum kits, and time travelers with microphones. We believe that the warriors, kings, and ordinary people who shaped our world deserve to have their stories told with fire and thunder.',
-			bandDesc2: 'From the muddy fields of Crécy to the blood-soaked plains of Towton, from the visionary flames of Jeanne d\'Arc to the scheming courts of medieval England - we bring these moments to vivid, visceral life.',
-			liveTitle: 'Live Experience',
-			liveDesc1: 'In 2025, Uncivil War made history at <strong>Wacken Open Air</strong> - the world\'s largest heavy metal festival. Our performance featured something no other band has ever brought to a metal stage: <strong>real medieval cannons</strong>.',
-			liveDesc2: 'When we performed "Kaboom 2.0", the audience witnessed actual 15th-century replica cannons firing across the stage, recreating the chaos of medieval warfare. The ground shook, the smoke billowed, and 85,000 metalheads experienced history like never before.',
-			quote: '"We don\'t just sing about history - we resurrect it, give it a voice, and let it scream through the ages."',
+			bandDesc1: '<strong>Uncivil War</strong> is more than a music project - I am a historian with AI tools, a storyteller exploring what modern technology can create, and a time traveler with a microphone. I believe that the warriors, kings, and ordinary people who shaped our world deserve to have their stories told with fire and thunder.',
+			bandDesc2: 'From the muddy fields of Crécy to the blood-soaked plains of Towton, from the visionary flames of Jeanne d\'Arc to the scheming courts of medieval England - I bring these moments to vivid, visceral life.',
+			liveTitle: 'Live Experience - A Vision',
+			liveDesc1: 'This is what it <em>could</em> look like if Uncivil War were a real touring band. Imagine: <strong>Wacken Open Air</strong> - the world\'s largest heavy metal festival - with <strong>real medieval cannons</strong> on stage.',
+			liveDesc2: 'In just one year, AI music generation evolved to the point where creating "live" versions of songs became possible - complete with crowd noise, stage banter, and the raw energy of a festival performance. "Kaboom 2.0 (Live Wacken 2025)" imagines 85,000 metalheads experiencing history as the ground shakes and smoke billows across the stage. Perhaps one day, this vision will become reality.',
+			quote: '"I don\'t just sing about history - I resurrect it, give it a voice, and let it scream through the ages."',
 			websiteTitle: 'This Website',
 			websiteDesc: 'More than just a music site, this is your gateway to medieval history:',
 			feature1Desc: 'Stream and download all our albums',
@@ -27,17 +27,17 @@
 			feature6Desc: 'Follow the chronological journey through history'
 		},
 		de: {
-			missionTitle: 'Unsere Mission',
-			missionDesc1: '<strong>Uncivil War</strong> entstand aus einer einfachen Überzeugung: Die größten Geschichten der Geschichte verdienen es, mit der Kraft und Intensität erzählt zu werden, die sie verlangen. Wir schreiben nicht nur Lieder über die Vergangenheit - wir erwecken sie wieder zum Leben, hauchen vergessenen Kriegern Leben ein und lassen ihre Geschichten durch die Zeitalter donnern.',
-			missionDesc2: 'Unsere Musik verbindet die Brutalität des modernen Metals mit orchestraler Größe und kompromissloser historischer Authentizität. Jeder Text ist sorgfältig recherchiert, jedes Lied erzählt eine wahre Geschichte, und jede Note zielt darauf ab, Sie in eine andere Zeit zu versetzen - zum Klirren von Stahl, zum Donnern der Kanonen und zu den Schreien der Schlacht.',
+			missionTitle: 'Meine Mission',
+			missionDesc1: '<strong>Uncivil War</strong> ist ein Ein-Personen-Projekt, entstanden aus einer einfachen Überzeugung: Die größten Geschichten der Geschichte verdienen es, mit der Kraft und Intensität erzählt zu werden, die sie verlangen. Ich schreibe nicht nur Lieder über die Vergangenheit - ich erwecke sie wieder zum Leben, hauche vergessenen Kriegern Leben ein und lasse ihre Geschichten durch die Zeitalter donnern.',
+			missionDesc2: 'Alle Musik wird mit KI-Musikgenerierung erstellt, hauptsächlich <a href="https://suno.com" target="_blank" rel="noopener noreferrer" class="external-link">Suno.com</a>. Die Kombination aus KI-generiertem Metal mit orchestraler Größe ermöglicht eine beispiellose Fusion aus historischem Storytelling und klanglicher Intensität. Jeder Text ist sorgfältig recherchiert, jedes Lied erzählt eine wahre Geschichte, und jede Note zielt darauf ab, Sie in eine andere Zeit zu versetzen - zum Klirren von Stahl, zum Donnern der Kanonen und zu den Schreien der Schlacht.',
 			discographyTitle: 'Diskografie',
 			discographyDesc: 'Jedes Album ist eine komplette Reise durch eine entscheidende Ära der Geschichte, gestaltet als zusammenhängendes Erzählerlebnis:',
-			bandDesc1: '<strong>Uncivil War</strong> ist mehr als eine Band - wir sind Historiker mit Gitarren, Geschichtenerzähler mit Schlagzeugen und Zeitreisende mit Mikrofonen. Wir glauben, dass die Krieger, Könige und einfachen Menschen, die unsere Welt geformt haben, es verdienen, dass ihre Geschichten mit Feuer und Donner erzählt werden.',
-			bandDesc2: 'Von den schlammigen Feldern von Crécy bis zu den blutgetränkten Ebenen von Towton, von den visionären Flammen der Jeanne d\'Arc bis zu den intriganten Höfen des mittelalterlichen Englands - wir erwecken diese Momente zum lebendigen, packenden Leben.',
-			liveTitle: 'Live-Erlebnis',
-			liveDesc1: '2025 schrieb Uncivil War Geschichte beim <strong>Wacken Open Air</strong> - dem größten Heavy-Metal-Festival der Welt. Unsere Performance bot etwas, das noch keine andere Band auf eine Metal-Bühne gebracht hat: <strong>echte mittelalterliche Kanonen</strong>.',
-			liveDesc2: 'Als wir "Kaboom 2.0" spielten, erlebte das Publikum echte Nachbildungen von Kanonen aus dem 15. Jahrhundert, die über die Bühne feuerten und das Chaos der mittelalterlichen Kriegsführung nachstellten. Der Boden bebte, der Rauch wallte, und 85.000 Metalheads erlebten Geschichte wie nie zuvor.',
-			quote: '„Wir singen nicht nur über Geschichte - wir erwecken sie wieder zum Leben, geben ihr eine Stimme und lassen sie durch die Zeitalter schreien."',
+			bandDesc1: '<strong>Uncivil War</strong> ist mehr als ein Musikprojekt - ich bin ein Historiker mit KI-Werkzeugen, ein Geschichtenerzähler, der erkundet, was moderne Technologie erschaffen kann, und ein Zeitreisender mit einem Mikrofon. Ich glaube, dass die Krieger, Könige und einfachen Menschen, die unsere Welt geformt haben, es verdienen, dass ihre Geschichten mit Feuer und Donner erzählt werden.',
+			bandDesc2: 'Von den schlammigen Feldern von Crécy bis zu den blutgetränkten Ebenen von Towton, von den visionären Flammen der Jeanne d\'Arc bis zu den intriganten Höfen des mittelalterlichen Englands - ich erwecke diese Momente zum lebendigen, packenden Leben.',
+			liveTitle: 'Live-Erlebnis - Eine Vision',
+			liveDesc1: 'So <em>könnte</em> es aussehen, wenn Uncivil War eine echte tourende Band wäre. Stellen Sie sich vor: <strong>Wacken Open Air</strong> - das größte Heavy-Metal-Festival der Welt - mit <strong>echten mittelalterlichen Kanonen</strong> auf der Bühne.',
+			liveDesc2: 'In nur einem Jahr hat sich die KI-Musikgenerierung so weit entwickelt, dass "Live"-Versionen von Songs möglich wurden - komplett mit Publikumsgeräuschen, Bühnengeplänkel und der rohen Energie einer Festival-Performance. "Kaboom 2.0 (Live Wacken 2025)" stellt sich vor, wie 85.000 Metalheads Geschichte erleben, während der Boden bebt und Rauch über die Bühne wallt. Vielleicht wird diese Vision eines Tages Wirklichkeit.',
+			quote: '„Ich singe nicht nur über Geschichte - ich erwecke sie wieder zum Leben, gebe ihr eine Stimme und lasse sie durch die Zeitalter schreien."',
 			websiteTitle: 'Diese Website',
 			websiteDesc: 'Mehr als nur eine Musikseite - dies ist Ihr Tor zur mittelalterlichen Geschichte:',
 			feature1Desc: 'Streamen und laden Sie alle unsere Alben herunter',
@@ -75,7 +75,7 @@
 		<div class="section-content">
 			<h2>{aboutText[$language].missionTitle}</h2>
 			<p>{@html aboutText[$language].missionDesc1}</p>
-			<p>{aboutText[$language].missionDesc2}</p>
+			<p>{@html aboutText[$language].missionDesc2}</p>
 		</div>
 	</section>
 
@@ -248,6 +248,18 @@
 		line-height: 1.8;
 		margin-bottom: 1.5rem;
 		color: var(--color-text-secondary);
+	}
+
+	:global(.external-link) {
+		color: var(--color-gold);
+		text-decoration: none;
+		border-bottom: 1px solid var(--color-gold);
+		transition: all 0.2s ease;
+	}
+
+	:global(.external-link:hover) {
+		color: var(--color-accent-light);
+		border-bottom-color: var(--color-accent-light);
 	}
 
 	/* Discography Section */

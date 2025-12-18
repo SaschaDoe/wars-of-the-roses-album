@@ -33,7 +33,7 @@ export const albums: Album[] = [
 		description: "Experience England's bloodiest civil war through music. This concept album tells the complete story of the Wars of the Roses (1455-1487) — the brutal 30-year conflict between the House of Lancaster and the House of York that tore medieval England apart and ended with the rise of the Tudor dynasty.",
 		descriptionDe: "Erleben Sie Englands blutigsten Bürgerkrieg durch Musik. Dieses Konzeptalbum erzählt die vollständige Geschichte der Rosenkriege (1455-1487) — des brutalen 30-jährigen Konflikts zwischen dem Haus Lancaster und dem Haus York, der das mittelalterliche England zerriss und mit dem Aufstieg der Tudor-Dynastie endete.",
 		year: '2025',
-		trackCount: 22,
+		trackCount: 23,
 		coverImage: '/images/albums/wars-of-the-roses/cover.jpg',
 		theme: {
 			accentColor: '#8b0000',

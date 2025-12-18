@@ -2,6 +2,9 @@ export interface HistoricalImage {
 	url: string;
 	caption: string;
 	captionDe: string;
+	alternateUrl?: string;
+	alternateCaption?: string;
+	alternateCaptionDe?: string;
 }
 
 export interface Song {
@@ -187,19 +190,53 @@ export const songs: Song[] = [
 		historicalContext: {
 			title: 'First Blood at St Albans',
 			titleDe: 'Erstes Blutvergießen bei St Albans',
-			description: `On May 22, 1455, Richard Neville, Earl of Warwick, led 3,000 Yorkist troops through the streets of St Albans. The song captures Warwick's perspective as he attacks King Henry VI's forces in what would become the first battle of the wars. Warwick led his men through gardens and narrow lanes, seizing the high ground. The battle lasted barely an hour, but its significance was immense—the Yorkists had shed royal blood and killed the Duke of Somerset, the king's chief minister. This wasn't rebellion against a foreign enemy; this was Englishmen killing Englishmen over who should control the crown. The divine right of kings had been challenged with steel, and the "heaven's promise" of untouchable monarchy died that day. Warwick's tactical brilliance at St Albans launched his career as the most powerful nobleman in England—the man who would make and break kings.`,
-			descriptionDe: `Am 22. Mai 1455 führte Richard Neville, Earl of Warwick, 3.000 Yorkistische Truppen durch die Straßen von St Albans. Das Lied fängt Warwicks Perspektive ein, als er die Streitkräfte von König Heinrich VI. in der ersten Schlacht der Rosenkriege angreift. Warwick führte seine Männer durch Gärten und enge Gassen und eroberte die Höhen. Die Schlacht dauerte kaum eine Stunde, aber ihre Bedeutung war immens – die Yorkisten hatten königliches Blut vergossen und den Herzog von Somerset, den Hauptminister des Königs, getötet. Dies war keine Rebellion gegen einen ausländischen Feind; dies waren Engländer, die Engländer töteten, um zu entscheiden, wer die Krone kontrollieren sollte. Das göttliche Königsrecht wurde mit Stahl herausgefordert, und das „Himmelsversprechen" einer unantastbaren Monarchie starb an jenem Tag. Warwicks taktische Brillanz bei St Albans begründete seine Karriere als mächtigster Adliger Englands – der Mann, der Könige machen und stürzen würde.`,
+			description: `The First Battle of St Albans on May 22, 1455, marked the violent beginning of the Wars of the Roses. Before the battle, the Duke of York had made his intentions clear: he wanted Somerset punished, then executed. In a message to Henry VI, York demanded:
+
+"...surrender to us such as we will accuse, and not to resist til we have him which deserves death."
+
+Demanding so much from the king and setting such rules was a dangerous move—the very act of displaying such an aggressive front to the king was treasonous. But York's popularity kept him confident. In a fit of uncharacteristic defiance, Henry VI refused, replying with shocking force:
+
+"By the faith that I owe to St. Edward and the crown of England I shall destroy every mother's son and they shall be hanged, and drawn and quartered."
+
+The battle itself was brief but brutal. The Lancastrian forces under King Henry, the Duke of Somerset, and the Earl of Northumberland held the town center, with Lord Clifford defending the barriers at the town ditch. The Yorkist army, led by Richard of York and the Earl of Warwick, found the barricades too strong for a frontal assault. Warwick's tactical brilliance saved the day: he led his men through the back gardens and narrow lanes, breaking through between houses to attack from unexpected angles.
+
+The fighting lasted barely an hour. Somerset was cut down in the street outside a tavern. Northumberland and Clifford also fell. King Henry himself was wounded by an arrow to the neck and captured. The Yorkists had shed royal blood and killed the king's chief ministers. The divine right of kings had been challenged with steel, and the "heaven's promise" of untouchable monarchy died that day. This wasn't war against a foreign enemy—this was Englishmen killing Englishmen over who should control the crown.
+
+Warwick's tactical brilliance at St Albans launched his career as the most powerful nobleman in England—the man who would make and break kings, earning him the immortal title: the Kingmaker.`,
+			descriptionDe: `Die Erste Schlacht von St Albans am 22. Mai 1455 markierte den gewaltsamen Beginn der Rosenkriege. Vor der Schlacht hatte der Herzog von York seine Absichten klargemacht: Er wollte Somerset bestraft und dann hingerichtet sehen. In einer Nachricht an Heinrich VI. forderte York:
+
+„...übergebt uns jene, die wir anklagen werden, und leistet keinen Widerstand, bis wir den haben, der den Tod verdient."
+
+So viel vom König zu fordern und solche Regeln aufzustellen war ein gefährlicher Schritt—allein die Zurschaustellung einer so aggressiven Haltung gegenüber dem König war Verrat. Aber Yorks Beliebtheit gab ihm Zuversicht. In einem Anfall ungewöhnlicher Entschlossenheit weigerte sich Heinrich VI. und antwortete mit schockierender Härte:
+
+„Bei dem Glauben, den ich dem Heiligen Eduard und der Krone von England schulde, werde ich jeden Muttersohn vernichten, und sie sollen gehängt, gezogen und gevierteilt werden."
+
+Die Schlacht selbst war kurz, aber brutal. Die Lancaster-Truppen unter König Heinrich, dem Herzog von Somerset und dem Earl of Northumberland hielten das Stadtzentrum, während Lord Clifford die Barrikaden am Stadtgraben verteidigte. Die yorkistische Armee unter Richard von York und dem Earl of Warwick fand die Barrikaden zu stark für einen Frontalangriff. Warwicks taktische Brillanz rettete den Tag: Er führte seine Männer durch Hintergärten und enge Gassen und brach zwischen den Häusern durch, um aus unerwarteten Winkeln anzugreifen.
+
+Die Kämpfe dauerten kaum eine Stunde. Somerset wurde auf der Straße vor einer Taverne niedergestreckt. Auch Northumberland und Clifford fielen. König Heinrich selbst wurde von einem Pfeil in den Hals verwundet und gefangen genommen. Die Yorkisten hatten königliches Blut vergossen und die Hauptminister des Königs getötet. Das göttliche Königsrecht wurde mit Stahl herausgefordert, und das „Himmelsversprechen" einer unantastbaren Monarchie starb an jenem Tag. Dies war kein Krieg gegen einen ausländischen Feind—dies waren Engländer, die Engländer töteten, um zu entscheiden, wer die Krone kontrollieren sollte.
+
+Warwicks taktische Brillanz bei St Albans begründete seine Karriere als mächtigster Adliger Englands—der Mann, der Könige machen und stürzen würde und sich den unsterblichen Titel verdiente: der Königsmacher.`,
 			year: '1455',
 			keyFigures: [
 				'Richard Neville, Earl of Warwick',
 				'Richard, Duke of York',
 				'King Henry VI',
-				'Edmund Beaufort, Duke of Somerset'
+				'Edmund Beaufort, Duke of Somerset',
+				'Henry Percy, Earl of Northumberland',
+				'Lord Clifford'
 			],
 			location: {
 				name: 'St Albans, Hertfordshire',
 				coordinates: { lat: 51.7519, lng: -0.3369 }
-			}
+			},
+			imageUrl: '/images/encyclopedia/st-albans.jpg',
+			images: [
+				{
+					url: '/images/encyclopedia/st-albans-battle-map.png',
+					caption: 'Battle map of the First Battle of St Albans (1455). The Lancastrian forces (red) held the town center: King Henry VI and Somerset in the market area, with Northumberland nearby, while Lord Clifford defended the barriers at the town ditch. The Yorkist forces (blue) under the Duke of York approached from the south, with Warwick leading the flanking attack through gardens and back lanes that broke the Lancastrian defenses.',
+					captionDe: 'Schlachtplan der Ersten Schlacht von St Albans (1455). Die Lancaster-Truppen (rot) hielten das Stadtzentrum: König Heinrich VI. und Somerset im Marktbereich, mit Northumberland in der Nähe, während Lord Clifford die Barrikaden am Stadtgraben verteidigte. Die yorkistischen Truppen (blau) unter dem Herzog von York näherten sich von Süden, wobei Warwick den Flankenangriff durch Gärten und Hintergassen führte, der die Lancaster-Verteidigung durchbrach.'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/02%20The%20Kingmaker%27s%20Dawn.mp3'
 	},
@@ -266,26 +303,184 @@ export const songs: Song[] = [
 		historicalContext: {
 			title: 'The She-Wolf Takes Command',
 			titleDe: 'Die Wölfin übernimmt das Kommando',
-			description: `With Henry VI's mind "gone astray," Queen Margaret of Anjou emerged as the true power behind the Lancastrian throne. Unlike the passive queens expected in medieval England, Margaret personally led armies, negotiated alliances, and fought with fierce determination to protect her son's inheritance. The Yorkists called her the "She-Wolf of France"—meant as an insult, but Margaret embraced it. While kings on a chessboard move one square at a time, the queen moves anywhere she wishes. This song captures Margaret's defiant voice: she needs no man to save her, she'll defend the red rose with steel and blood. Her indomitable will kept the Lancastrian cause alive even when her husband could not. The war wasn't just York versus Lancaster—it was also a gender battle, as male nobles struggled to accept a woman wielding such military and political power.`,
-			descriptionDe: `Mit Heinrichs VI. „verirrtem Geist" trat Königin Margarete von Anjou als wahre Macht hinter dem Lancaster-Thron hervor. Anders als die passiven Königinnen, die im mittelalterlichen England erwartet wurden, führte Margarete persönlich Armeen, verhandelte Bündnisse und kämpfte mit entschlossener Entschlossenheit, um das Erbe ihres Sohnes zu schützen. Die Yorkisten nannten sie die „Wölfin von Frankreich" – als Beleidigung gemeint, aber Margarete nahm sie an. Während Könige auf einem Schachbrett nur ein Feld auf einmal ziehen, bewegt sich die Königin überallhin, wo sie will. Dieses Lied fängt Margaretes trotzige Stimme ein: Sie braucht keinen Mann, der sie rettet, sie wird die rote Rose mit Stahl und Blut verteidigen. Ihr unbeugsamer Wille hielt die Lancaster-Sache am Leben, selbst als ihr Ehemann es nicht konnte. Der Krieg war nicht nur York gegen Lancaster – es war auch ein Geschlechterkampf, da männliche Adlige Schwierigkeiten hatten, eine Frau zu akzeptieren, die solche militärische und politische Macht ausübte.`,
+			description: `Queen Margaret of Anjou was unlike any queen England had seen before—or would see again for centuries. Born in 1430 as the daughter of René of Anjou, she was married to Henry VI at just 15 years old in 1445, as part of a peace treaty with France. The marriage was controversial from the start: England received no dowry and actually surrendered the territories of Maine and Anjou to France.
+
+When Henry VI descended into madness in 1453—becoming virtually catatonic for over a year—Margaret transformed from queen consort to military commander. She gave birth to their son Edward during Henry's illness, and many Yorkists whispered that the child was illegitimate, born of an affair with the Duke of Somerset. Margaret's fierce defense of her son's inheritance only convinced her enemies she was hiding something.
+
+The Yorkists called her the "She-Wolf of France"—an insult comparing her to Isabella of France, Edward II's queen who had deposed her own husband a century earlier. But Margaret wore the insult as a badge of honor. She raised armies, negotiated alliances with Scotland and France, and personally commanded troops in battle. At the Battle of Wakefield in 1460, her forces killed Richard of York and mocked his corpse with a paper crown. At the Second Battle of St Albans in 1461, she rescued her husband from Yorkist captivity.
+
+Her most controversial act came after Wakefield: she reportedly allowed her seven-year-old son Edward to decide the fate of captured Yorkist prisoners, teaching him to order executions. The chronicles describe the young prince personally condemning men to death.
+
+Margaret fought for seventeen years, even after the Lancastrian cause seemed lost. After Edward IV seized the throne, she fled to France with her son, returning in 1471 for one final campaign. The Battle of Tewkesbury ended her dreams forever: her son Edward was killed—the only heir to the throne of England ever to die in battle. Margaret was captured and eventually ransomed back to France, where she died in poverty in 1482.
+
+Shakespeare immortalized her as a cursing, vengeful queen, but history remembers a woman who simply refused to accept that power was only for men. On the chessboard of medieval politics, kings could only move one square at a time—but Margaret proved that a queen could strike anywhere.`,
+			descriptionDe: `Königin Margarete von Anjou war anders als jede Königin, die England zuvor gesehen hatte – oder für Jahrhunderte danach sehen würde. 1430 als Tochter von René von Anjou geboren, wurde sie 1445 im Alter von nur 15 Jahren mit Heinrich VI. verheiratet, als Teil eines Friedensvertrags mit Frankreich. Die Ehe war von Anfang an umstritten: England erhielt keine Mitgift und übergab sogar die Territorien Maine und Anjou an Frankreich.
+
+Als Heinrich VI. 1453 in den Wahnsinn verfiel – über ein Jahr lang praktisch katatonisch wurde – verwandelte sich Margarete von der Königsgemahlin zur Feldherrin. Sie gebar ihren Sohn Edward während Heinrichs Krankheit, und viele Yorkisten flüsterten, das Kind sei illegitim, geboren aus einer Affäre mit dem Herzog von Somerset. Margaretes erbitterte Verteidigung des Erbes ihres Sohnes überzeugte ihre Feinde nur davon, dass sie etwas verbarg.
+
+Die Yorkisten nannten sie die „Wölfin von Frankreich" – eine Beleidigung, die sie mit Isabella von Frankreich verglich, der Königin von Eduard II., die ein Jahrhundert zuvor ihren eigenen Ehemann abgesetzt hatte. Aber Margarete trug die Beleidigung als Ehrenzeichen. Sie stellte Armeen auf, verhandelte Bündnisse mit Schottland und Frankreich und kommandierte persönlich Truppen in der Schlacht. In der Schlacht von Wakefield 1460 töteten ihre Streitkräfte Richard von York und verspotteten seine Leiche mit einer Papierkrone. In der Zweiten Schlacht von St Albans 1461 rettete sie ihren Ehemann aus yorkistischer Gefangenschaft.
+
+Ihre umstrittenste Tat kam nach Wakefield: Sie erlaubte Berichten zufolge ihrem siebenjährigen Sohn Edward, über das Schicksal gefangener yorkistischer Gefangener zu entscheiden, und lehrte ihn, Hinrichtungen anzuordnen. Die Chroniken beschreiben, wie der junge Prinz persönlich Männer zum Tode verurteilte.
+
+Margarete kämpfte siebzehn Jahre lang, selbst als die Lancaster-Sache verloren schien. Nachdem Eduard IV. den Thron ergriffen hatte, floh sie mit ihrem Sohn nach Frankreich und kehrte 1471 für einen letzten Feldzug zurück. Die Schlacht von Tewkesbury beendete ihre Träume für immer: Ihr Sohn Edward wurde getötet – der einzige Thronerbe von England, der jemals in der Schlacht starb. Margarete wurde gefangen genommen und schließlich nach Frankreich ausgelöst, wo sie 1482 in Armut starb.
+
+Shakespeare verewigte sie als fluchende, rachsüchtige Königin, aber die Geschichte erinnert sich an eine Frau, die sich einfach weigerte zu akzeptieren, dass Macht nur für Männer war. Auf dem Schachbrett der mittelalterlichen Politik konnten Könige sich nur ein Feld auf einmal bewegen – aber Margarete bewies, dass eine Königin überall zuschlagen konnte.`,
 			year: '1455-1471',
 			keyFigures: [
 				'Queen Margaret of Anjou',
 				'King Henry VI',
 				'Prince Edward of Westminster',
-				'Richard, Duke of York'
+				'Richard, Duke of York',
+				'Edmund Beaufort, Duke of Somerset'
 			],
 			location: {
 				name: 'England',
 				coordinates: { lat: 52.3555, lng: -1.1743 }
-			}
+			},
+			imageUrl: '/images/encyclopedia/margaret-of-anjou.jpg',
+			images: [
+				{
+					url: '/images/encyclopedia/margaret-of-anjou.jpg',
+					caption: 'Queen Margaret of Anjou from a contemporary illuminated manuscript, shown in royal regalia with the quartered arms of England and France behind her',
+					captionDe: 'Königin Margarete von Anjou aus einer zeitgenössischen illuminierten Handschrift, in königlichen Insignien mit den gevierten Wappen von England und Frankreich hinter ihr',
+					alternateUrl: '/images/encyclopedia/margaret-of-anjou-shewolf.png',
+					alternateCaption: 'The She-Wolf of France revealed! A creative reimagining of Margaret as her enemies saw her—a wolf in queen\'s clothing, ruling under the full moon',
+					alternateCaptionDe: 'Die Wölfin von Frankreich enthüllt! Eine kreative Neuinterpretation von Margarete, wie ihre Feinde sie sahen—ein Wolf in Königinnenkleidern, herrschend unter dem Vollmond'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/03%20She-Wolf%20Queen%20and%20the%20King.mp3'
 	},
 	{
+		id: 'richard-ii-how-this-all-began',
+		title: 'Richard II. How This All Began',
+		trackNumber: 4,
+		duration: '5:45',
+		lyrics: [
+			'[Intro - Spoken]',
+			'How did it come to this?',
+			'Brother against brother, rose against rose...',
+			'To understand the war, we must go back...',
+			'To a king named Richard, and a throne... [pause] betrayed!',
+			'',
+			'[Verse 1]',
+			'He was a King at ten years old',
+			'Dressed in velvet, crowned in gold',
+			'He faced the rebels in the street',
+			'And brought the mob beneath his feet',
+			'But glory fades and hearts grow cold',
+			'The classic story often told',
+			"He thought that he was God's own choice",
+			"And stopped listening to the people's voice",
+			'',
+			'[Pre-Chorus]',
+			'He banished his own family',
+			'To rule the land by his decree',
+			'But the wind begins to turn',
+			'Watch the bridges burn!',
+			'',
+			'[Chorus]',
+			'Hollow Crown!',
+			'The King is going down!',
+			'From the castle to the stone',
+			'He is dying all alone',
+			'Oh, Richard, can you hear the sound?',
+			'The Rose is falling to the ground!',
+			'Yeah, the Rose is falling to the ground!',
+			'',
+			'[Verse 2]',
+			'He sailed away to Irish sand',
+			'While Henry landed on his land',
+			'He seized the wealth of John of Gaunt',
+			'A greed that came back home to haunt',
+			'The Northern Lords betrayed his name',
+			'They played the treasonous power game',
+			'At Flint he gave the crown away',
+			'The price of pride he had to pay',
+			'',
+			'[Pre-Chorus]',
+			'He banished his own family',
+			'But they came back for history',
+			'Now the wind begins to turn',
+			'Watch the bridges burn!',
+			'',
+			'[Chorus]',
+			'Hollow Crown!',
+			'The King is going down!',
+			'From the castle to the stone',
+			'He is dying all alone',
+			'Oh, Richard, can you hear the sound?',
+			'The Rose is falling to the ground!',
+			'',
+			'[Guitar Solo]',
+			'',
+			'[Bridge]',
+			'In Pontefract the silence screams!',
+			'You killed the King! You crushed his dreams!',
+			'You stole the Crown! You broke the Vow!',
+			'',
+			'[Spoken]',
+			'Brace yourself! The war is beginning NOW!',
+			'',
+			'[Final Chorus]',
+			'Hollow Crown!',
+			'The King is going down!',
+			'From the castle to the stone',
+			'He is dying all alone',
+			'Oh, Richard, can you hear the sound?',
+			'The Rose is falling to the ground!',
+			'',
+			'[Outro]',
+			'The White Rose falls...',
+			'The Red Rose rises...',
+			'And so... the war begins.'
+		],
+		historicalContext: {
+			title: 'The Hollow Crown: How the Wars Began',
+			titleDe: 'Die Hohle Krone: Wie die Kriege begannen',
+			description: `To understand the Wars of the Roses, we must look back to 1399 and the fall of King Richard II—and how his "hollow crown" would curse England for generations.
+
+Richard II became king at just ten years old, "dressed in velvet, crowned in gold." His early reign showed promise: during the Peasants' Revolt of 1381, the teenage king courageously faced the rebel mob and brought them "beneath his feet." But glory fades and hearts grow cold. Richard came to believe he was "God's own choice" and stopped listening to anyone who disagreed. He banished his own family members, including his cousin Henry Bolingbroke, to rule by his own decree.
+
+When Richard's uncle John of Gaunt died in 1399, the king made a fatal error: he seized Gaunt's vast wealth and inheritance—a greed that "came back home to haunt." While Richard sailed to Ireland, Henry Bolingbroke landed in England. The northern lords betrayed their king, playing the "treasonous power game." At Flint Castle in Wales, Richard surrendered his crown—the price of pride he had to pay.
+
+In Pontefract Castle, "the silence screams." Richard died there in early 1400, likely starved on Henry's orders. The usurper had killed the king, crushed his dreams, stolen the crown, and broken the sacred vow of loyalty. But in doing so, Henry IV established a terrible precedent: if one anointed king could be overthrown, so could another.
+
+The "hollow crown" passed to Henry IV, then to Henry V (who briefly restored English glory), and finally to Henry VI—whose mental illness and weak rule invited challenge. And so, fifty-six years after Richard's death, the war began. The white rose of York would rise against the red rose of Lancaster, and England would bleed for three decades.`,
+			descriptionDe: `Um die Rosenkriege zu verstehen, müssen wir auf das Jahr 1399 und den Fall von König Richard II. zurückblicken – und wie seine „hohle Krone" England für Generationen verfluchen sollte.
+
+Richard II. wurde mit nur zehn Jahren König, „in Samt gekleidet, mit Gold gekrönt." Seine frühe Regierungszeit zeigte Versprechen: Während des Bauernaufstands von 1381 stellte sich der jugendliche König mutig dem rebellischen Mob und brachte sie „unter seine Füße." Aber Ruhm verblasst und Herzen werden kalt. Richard kam zu dem Glauben, er sei „Gottes eigene Wahl" und hörte auf, jemandem zuzuhören, der widersprach. Er verbannte seine eigenen Familienmitglieder, einschließlich seines Cousins Henry Bolingbroke, um nach seinem eigenen Erlass zu regieren.
+
+Als Richards Onkel John of Gaunt 1399 starb, beging der König einen fatalen Fehler: Er beschlagnahmte Gaunts gewaltigen Reichtum und Erbe – eine Gier, die „nach Hause kam, um zu verfolgen." Während Richard nach Irland segelte, landete Henry Bolingbroke in England. Die nördlichen Lords verrieten ihren König und spielten das „verräterische Machtspiel." Auf Flint Castle in Wales übergab Richard seine Krone – der Preis des Stolzes, den er zahlen musste.
+
+Auf Pontefract Castle „schreit die Stille." Richard starb dort Anfang 1400, wahrscheinlich auf Henrys Befehl verhungert. Der Usurpator hatte den König getötet, seine Träume zerschmettert, die Krone gestohlen und den heiligen Eid der Treue gebrochen. Aber dabei schuf Heinrich IV. einen schrecklichen Präzedenzfall: Wenn ein gesalbter König gestürzt werden konnte, dann auch ein anderer.
+
+Die „hohle Krone" ging an Heinrich IV., dann an Heinrich V. (der kurzzeitig den englischen Ruhm wiederherstellte), und schließlich an Heinrich VI. – dessen Geisteskrankheit und schwache Herrschaft zur Herausforderung einluden. Und so, sechsundfünfzig Jahre nach Richards Tod, begann der Krieg. Die weiße Rose von York würde sich gegen die rote Rose von Lancaster erheben, und England würde drei Jahrzehnte lang bluten.`,
+			year: '1377-1400',
+			keyFigures: [
+				'King Richard II',
+				'Henry Bolingbroke (later Henry IV)',
+				'John of Gaunt, Duke of Lancaster',
+				'The Lords Appellant'
+			],
+			location: {
+				name: 'Flint Castle, Wales',
+				coordinates: { lat: 53.2481, lng: -3.1339 }
+			},
+			imageUrl: '/images/encyclopedia/richard-ii.jpg',
+			images: [
+				{
+					url: '/images/encyclopedia/richard-ii-surrender-flint.png',
+					caption: 'Richard II surrenders to Henry Bolingbroke at Flint Castle in Wales, 1399 (from a medieval manuscript)',
+					captionDe: 'Richard II. ergibt sich Henry Bolingbroke auf Flint Castle in Wales, 1399 (aus einer mittelalterlichen Handschrift)'
+				}
+			]
+		}
+	},
+	{
 		id: 'the-paper-crown',
 		title: 'The Paper Crown',
-		trackNumber: 4,
+		trackNumber: 5,
 		duration: '5:22',
 		lyrics: [
 			'[Verse 1]',
@@ -345,31 +540,39 @@ export const songs: Song[] = [
 			"It's who can feed the chaos, fan the burning flame",
 			'The wisest plan is dust before the turning tide',
 			'But a crown is still a crown, when everything has died',
-			"But a crown is still a crown, a spark to light my son's eyes"
+			'But a crown is still a crown, that makes the Sun of York arise'
 		],
 		historicalContext: {
 			title: 'The Death of York - Pride Before the Fall',
 			titleDe: 'Der Tod Yorks - Stolz vor dem Fall',
-			description: `On December 30, 1460, Richard, Duke of York, made a fatal mistake. Confident in his strength and secure in Sandal Castle, he was lured into battle by Queen Margaret's forces. The song tells the story from York's perspective—his initial confidence, the trap springing shut as enemy banners appeared on the hills, and his final moments surrounded by enemies. After killing York in battle, the Lancastrians committed an act of shocking cruelty: they cut off his head and displayed it on the gates of York city, crowned with a paper crown in mockery of his royal ambitions. This "coronation" fulfilled York's desire for a crown—just not as he'd imagined. The brutal symbolism galvanized his son Edward to avenge him and claim the throne in earnest. The paper crown became one of the war's most infamous images, a reminder that in civil war, even death brings no dignity.`,
-			descriptionDe: `Am 30. Dezember 1460 beging Richard, Herzog von York, einen fatalen Fehler. Selbstsicher in seiner Stärke und sicher in Sandal Castle, wurde er in eine Schlacht von Königin Margaretes Streitkräften gelockt. Das Lied erzählt die Geschichte aus Yorks Perspektive – sein anfängliches Vertrauen, die Falle, die zuschnappt, als feindliche Banner auf den Hügeln erscheinen, und seine letzten Momente, umgeben von Feinden. Nachdem sie York in der Schlacht getötet hatten, begingen die Lancastrianer einen Akt schockierender Grausamkeit: Sie schnitten seinen Kopf ab und stellten ihn an den Toren der Stadt York zur Schau, gekrönt mit einer Papierkrone zur Verspottung seiner königlichen Ambitionen. Diese „Krönung" erfüllte Yorks Wunsch nach einer Krone – nur nicht so, wie er es sich vorgestellt hatte. Die brutale Symbolik mobilisierte seinen Sohn Edward, ihn zu rächen und den Thron ernsthaft zu beanspruchen. Die Papierkrone wurde zu einem der berüchtigtsten Bilder des Krieges, eine Erinnerung daran, dass im Bürgerkrieg selbst der Tod keine Würde bringt.`,
+			description: `On December 30, 1460, Richard, Duke of York, made a fatal mistake. Confident in his strength and secure in Sandal Castle, he was lured into battle by Queen Margaret's forces. Lord Clifford, whose father had been killed by the Yorkists at St Albans, played a key role—allegedly killing York's seventeen-year-old son Edmund on Wakefield Bridge, even as the boy pleaded for mercy. The song tells the story from York's perspective—his initial confidence, the trap springing shut as enemy banners appeared on the hills, and his final moments surrounded by enemies. After killing York in battle, Queen Margaret herself is said to have mocked his corpse, asking "Where is your crown now?" before having his severed head displayed on the gates of York city, crowned with a paper crown in mockery of his royal ambitions. This cruel "coronation" fulfilled York's desire for a crown—just not as he'd imagined. The brutal symbolism galvanized his son Edward to avenge him and claim the throne in earnest. The paper crown became one of the war's most infamous images, a reminder that in civil war, even death brings no dignity.`,
+			descriptionDe: `Am 30. Dezember 1460 beging Richard, Herzog von York, einen fatalen Fehler. Selbstsicher in seiner Stärke und sicher in Sandal Castle, wurde er in eine Schlacht von Königin Margaretes Streitkräften gelockt. Lord Clifford, dessen Vater von den Yorkisten bei St Albans getötet worden war, spielte eine Schlüsselrolle – er tötete angeblich Yorks siebzehnjährigen Sohn Edmund auf der Wakefield-Brücke, selbst als der Junge um Gnade flehte. Das Lied erzählt die Geschichte aus Yorks Perspektive – sein anfängliches Vertrauen, die Falle, die zuschnappt, als feindliche Banner auf den Hügeln erscheinen, und seine letzten Momente, umgeben von Feinden. Nachdem sie York in der Schlacht getötet hatten, soll Königin Margarete selbst seinen Leichnam verspottet haben mit den Worten „Wo ist jetzt Eure Krone?" bevor sie seinen abgetrennten Kopf an den Toren der Stadt York zur Schau stellen ließ, gekrönt mit einer Papierkrone zur Verspottung seiner königlichen Ambitionen. Diese grausame „Krönung" erfüllte Yorks Wunsch nach einer Krone – nur nicht so, wie er es sich vorgestellt hatte. Die brutale Symbolik mobilisierte seinen Sohn Edward, ihn zu rächen und den Thron ernsthaft zu beanspruchen. Die Papierkrone wurde zu einem der berüchtigtsten Bilder des Krieges, eine Erinnerung daran, dass im Bürgerkrieg selbst der Tod keine Würde bringt.`,
 			year: '1460',
 			keyFigures: [
 				'Richard, Duke of York',
 				'Queen Margaret of Anjou',
+				'Lord Clifford (the Butcher)',
 				'Edmund, Earl of Rutland',
 				'Edward, Earl of March (future Edward IV)'
 			],
 			location: {
 				name: 'Wakefield, Yorkshire',
 				coordinates: { lat: 53.6830, lng: -1.4990 }
-			}
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/paper-crown-mockery.png',
+					caption: 'Queen Margaret mocks the Duke of York with a paper crown. After the Battle of Wakefield, the Lancastrians humiliated York\'s corpse by placing a paper crown on his severed head before displaying it on Micklegate Bar in York.',
+					captionDe: 'Königin Margarete verspottet den Herzog von York mit einer Papierkrone. Nach der Schlacht von Wakefield demütigten die Lancastrianer Yorks Leichnam, indem sie eine Papierkrone auf seinen abgetrennten Kopf setzten, bevor sie ihn am Micklegate Bar in York zur Schau stellten.'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/04%20The%20Paper%20Crown.mp3'
 	},
 	{
 		id: 'the-three-suns',
 		title: 'The Three Suns',
-		trackNumber: 5,
+		trackNumber: 6,
 		duration: '5:29',
 		lyrics: [
 			"[Verse]",
@@ -451,14 +654,26 @@ export const songs: Song[] = [
 			location: {
 				name: "Mortimer's Cross, Herefordshire",
 				coordinates: { lat: 52.2667, lng: -2.9167 }
-			}
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/parhelion-three-suns.png',
+					caption: 'The Parhelion at Mortimer\'s Cross - On the morning of February 2, 1461, Edward\'s soldiers witnessed three suns in the sky. Edward declared this the Holy Trinity blessing their cause and adopted the Sun in Splendour as his badge. The Latin text reads "Trium Solis Experientia Bella Rosarum" (The Experience of Three Suns in the Wars of the Roses) and "Unitas Regnante Tudor" (Unity Under Tudor Rule).',
+					captionDe: 'Die Nebensonne bei Mortimer\'s Cross - Am Morgen des 2. Februar 1461 sahen Edwards Soldaten drei Sonnen am Himmel. Edward erklärte dies zur Segnung der Heiligen Dreifaltigkeit für ihre Sache und nahm die Sonne in Pracht als sein Abzeichen an. Der lateinische Text lautet „Trium Solis Experientia Bella Rosarum" (Die Erfahrung der drei Sonnen in den Rosenkriegen) und „Unitas Regnante Tudor" (Einheit unter Tudor-Herrschaft).'
+				},
+				{
+					url: '/images/encyclopedia/sun-in-splendour.jpg',
+					caption: 'The Sun in Splendour - Edward IV\'s personal badge adopted after witnessing the parhelion. This heraldic emblem became one of the most recognizable symbols of the Yorkist cause.',
+					captionDe: 'Die Sonne in Pracht - Edwards IV. persönliches Abzeichen, das er nach der Nebensonne annahm. Dieses heraldische Emblem wurde zu einem der bekanntesten Symbole der yorkistischen Sache.'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/05%20The%20Three%20Suns.mp3'
 	},
 	{
 		id: 'no-ransom-called',
 		title: 'No Ransom Called',
-		trackNumber: 6,
+		trackNumber: 7,
 		duration: '10:16',
 		lyrics: [
 			"(Verse 1) The mud still clings to armour bright, a crimson stain beneath the moon Another battle fought tonight, another promise come too soon We left the fields of France behind, our banners torn, our coffers drained No foreign foe for us to find, just English blood, on English plains! The men I brought from Calais shore, hardened steel and battle-worn Now stand for York, and ask no more, than to see Lancaster forlorn. Oh, the spoils of war, once a king's command!",
@@ -503,7 +718,7 @@ export const songs: Song[] = [
 	{
 		id: 'to-the-gates-of-london',
 		title: 'To the Gates of London',
-		trackNumber: 7,
+		trackNumber: 8,
 		duration: '5:50',
 		lyrics: [
 			"[Verse 1]",
@@ -577,25 +792,50 @@ export const songs: Song[] = [
 		historicalContext: {
 			title: 'The Race for London - Strategic Hesitation',
 			titleDe: 'Das Rennen um London - Strategisches Zögern',
-			description: `After defeating Warwick at the Second Battle of St Albans in February 1461, Queen Margaret had rescued King Henry VI and held the strongest military position. London lay open before her. But the city feared her northern army and hesitated to open its gates. While Margaret waited for assurances, Warwick and young Edward raced south. Edward entered London unopposed while Margaret's army, running low on supplies, had to withdraw. This duet captures both perspectives—Margaret's initial triumph turning to frustration, and the Yorkist desperate gamble that paid off. Control of London meant control of legitimacy, wealth, and the symbolic heart of England. Margaret's delay cost the Lancastrians the crown. Days later, Edward was proclaimed King Edward IV.`,
-			descriptionDe: `Nachdem sie Warwick in der zweiten Schlacht von St Albans im Februar 1461 besiegt hatte, hatte Königin Margarete König Heinrich VI. gerettet und die stärkste militärische Position inne. London lag offen vor ihr. Aber die Stadt fürchtete ihre nördliche Armee und zögerte, ihre Tore zu öffnen. Während Margarete auf Zusicherungen wartete, rasten Warwick und der junge Edward nach Süden. Edward betrat London ungehindert, während Margaretes Armee, die knapp an Vorräten wurde, sich zurückziehen musste. Dieses Duett fängt beide Perspektiven ein – Margaretes anfänglicher Triumph, der sich in Frustration verwandelt, und das verzweifelte Yorkistische Wagnis, das sich auszahlte. Die Kontrolle über London bedeutete Kontrolle über Legitimität, Reichtum und das symbolische Herz Englands. Margaretes Verzögerung kostete die Lancastrianer die Krone. Tage später wurde Edward zum König Eduard IV. proklamiert.`,
+			description: `After defeating Warwick at the Second Battle of St Albans in February 1461, Queen Margaret had rescued King Henry VI and held the strongest military position. London lay open before her—she could see the city gates, so tantalizingly close to total victory.
+
+But the citizens of London feared Margaret's army. Her forces, largely recruited from the north of England and Scotland, had developed a fearsome reputation for looting and pillaging as they marched south, leaving burning villages in their wake. The Lord Mayor and aldermen barred the gates and sent delegations to negotiate, demanding guarantees that the city would not be sacked.
+
+Margaret, ever focused on her son Edward of Westminster's birthright, chose diplomacy over force. She sent terms and waited for their answer. It was the worst decision of her life.
+
+While she negotiated, the defeated Warwick linked up with young Edward of York (fresh from his victory at Mortimer's Cross). Together they made a desperate gamble—racing south with a smaller force while Margaret's army grew hungry and restless. The city that had refused Margaret now threw open its gates to Edward. On March 4, 1461, he was proclaimed King Edward IV.
+
+This moment—Margaret waiting at the gates while her kingdom slipped away—became the "beginning of the end" for the Lancastrian cause. Had she stormed the city immediately after St Albans, the Wars of the Roses might have ended then and there. Instead, her hesitation led to Towton, exile, and eventual destruction.`,
+			descriptionDe: `Nachdem sie Warwick in der zweiten Schlacht von St Albans im Februar 1461 besiegt hatte, hatte Königin Margarete König Heinrich VI. gerettet und die stärkste militärische Position inne. London lag offen vor ihr – sie konnte die Stadttore sehen, so verlockend nah am totalen Sieg.
+
+Aber die Bürger Londons fürchteten Margaretes Armee. Ihre Streitkräfte, hauptsächlich aus dem Norden Englands und Schottland rekrutiert, hatten sich einen furchteinflößenden Ruf für Plünderungen erworben, als sie nach Süden marschierten und brennende Dörfer hinterließen. Der Lord Mayor und die Ratsherren verriegelten die Tore und sandten Delegationen zur Verhandlung, die Garantien forderten, dass die Stadt nicht geplündert würde.
+
+Margarete, stets auf das Geburtsrecht ihres Sohnes Edward von Westminster bedacht, wählte Diplomatie statt Gewalt. Sie übermittelte ihre Bedingungen und wartete auf Antwort. Es war die schlimmste Entscheidung ihres Lebens.
+
+Während sie verhandelte, schloss sich der besiegte Warwick mit dem jungen Edward von York zusammen (frisch von seinem Sieg bei Mortimer's Cross). Gemeinsam wagten sie ein verzweifeltes Spiel – sie rasten mit einer kleineren Truppe nach Süden, während Margaretes Armee hungrig und unruhig wurde. Die Stadt, die Margarete abgewiesen hatte, öffnete nun Edward ihre Tore. Am 4. März 1461 wurde er zum König Eduard IV. proklamiert.
+
+Dieser Moment – Margarete wartend an den Toren, während ihr Königreich entglitt – wurde zum „Anfang vom Ende" für die Lancaster-Sache. Hätte sie die Stadt sofort nach St Albans gestürmt, hätten die Rosenkriege dort enden können. Stattdessen führte ihr Zögern zu Towton, zum Exil und schließlicher Vernichtung.`,
 			year: '1461',
 			keyFigures: [
 				'Queen Margaret of Anjou',
 				'Edward IV',
-				'Richard Neville, Earl of Warwick'
+				'Richard Neville, Earl of Warwick',
+				'Edward of Westminster',
+				'King Henry VI'
 			],
 			location: {
 				name: 'London',
 				coordinates: { lat: 51.5074, lng: -0.1278 }
-			}
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/gates-of-london.png',
+					caption: 'Margaret of Anjou at the Gates of London (1461) - This Baroque allegorical composition shows the pivotal moment when Margaret\'s victory slipped away. The Queen in crimson velvet holds her sword while the city gates remain barred. Her son Edward of Westminster rides beside her. Through the gateway, defenders man the walls while cannons represent the city\'s stance. In the background, burning villages mark her army\'s path south. Above, celestial figures hold the crown and roses—suggesting that fate itself hangs in the balance.',
+					captionDe: 'Margarete von Anjou an den Toren Londons (1461) - Diese barocke allegorische Komposition zeigt den entscheidenden Moment, als Margaretes Sieg entglitt. Die Königin in karmesinrotem Samt hält ihr Schwert, während die Stadttore verriegelt bleiben. Ihr Sohn Edward von Westminster reitet neben ihr. Durch das Tor bemannen Verteidiger die Mauern, während Kanonen die Haltung der Stadt repräsentieren. Im Hintergrund markieren brennende Dörfer den Weg ihrer Armee nach Süden. Oben halten himmlische Figuren Krone und Rosen – was darauf hindeutet, dass das Schicksal selbst in der Schwebe hängt.'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/07%20To%20the%20Gates%20of%20London.mp3'
 	},
 	{
 		id: 'towton-die-by-the-damned',
 		title: 'Towton - Die by the Damned',
-		trackNumber: 8,
+		trackNumber: 9,
 		duration: '7:04',
 		lyrics: [
 			"Die by the Damned",
@@ -680,8 +920,20 @@ export const songs: Song[] = [
 		historicalContext: {
 			title: 'Towton - The Bloodiest Day',
 			titleDe: 'Towton - Der blutigste Tag',
-			description: `Palm Sunday, March 29, 1461. Between 50,000-80,000 men met on a snow-swept field in Yorkshire in the largest battle ever fought on English soil. A blizzard gave the Yorkists a crucial advantage—the south wind carried their arrows farther while Lancastrian arrows fell short. The battle raged for ten hours, ending only when the Duke of Norfolk's reinforcements broke the Lancastrian flank. Casualties reached 28,000—roughly 1% of England's entire population died in a single day. The Cock Beck stream became so choked with bodies that men crossed on bridges of corpses. The song wrestles with a terrible question: is this brutal slaughter the only way to determine who should rule? The Yorkist victory was absolute, but the cost was England's collective trauma—brother killing brother, father killing son.`,
-			descriptionDe: `Palmsonntag, 29. März 1461. Zwischen 50.000 und 80.000 Mann trafen sich auf einem schneebedeckten Feld in Yorkshire in der größten Schlacht, die jemals auf englischem Boden ausgetragen wurde. Ein Schneesturm verschaffte den Yorkisten einen entscheidenden Vorteil – der Südwind trug ihre Pfeile weiter, während lancastrische Pfeile zu kurz fielen. Die Schlacht tobte zehn Stunden lang und endete erst, als die Verstärkungen des Herzogs von Norfolk die lancastrische Flanke durchbrachen. Die Verluste erreichten 28.000 – etwa 1% der gesamten Bevölkerung Englands starb an einem einzigen Tag. Der Cock Beck-Bach wurde so mit Leichen verstopft, dass Männer auf Brücken aus Leichen überquerten. Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der einzige Weg, um zu bestimmen, wer herrschen sollte? Der Yorkistische Sieg war absolut, aber die Kosten waren Englands kollektives Trauma – Bruder tötet Bruder, Vater tötet Sohn.`,
+			description: `Palm Sunday, March 29, 1461. The Battle of Towton would become the largest and bloodiest battle ever fought on English soil. Between 50,000-80,000 men met on a snow-swept field in Yorkshire, with the fate of England hanging in the balance.
+
+A blizzard gave the Yorkists a crucial advantage—the south wind carried their arrows farther while Lancastrian arrows fell short. The battle raged for ten hours, ending only when the Duke of Norfolk's reinforcements broke the Lancastrian flank.
+
+Casualties reached 28,000—roughly 1% of England's entire population died in a single day. The Cock Beck stream became so choked with bodies that men crossed on bridges of corpses. Chronicles tell of fathers killing sons and brothers slaying brothers in the chaos of battle, unable to recognize friend from foe in the blinding snowstorm.
+
+The song wrestles with a terrible question: is this brutal slaughter the only way to determine who should rule? The Yorkist victory was absolute—Edward IV was now unchallenged King of England. But the cost was England's collective trauma, a wound that would take generations to heal.`,
+			descriptionDe: `Palmsonntag, 29. März 1461. Die Schlacht von Towton sollte die größte und blutigste Schlacht werden, die jemals auf englischem Boden ausgetragen wurde. Zwischen 50.000 und 80.000 Mann trafen sich auf einem schneebedeckten Feld in Yorkshire, wobei das Schicksal Englands in der Schwebe hing.
+
+Ein Schneesturm verschaffte den Yorkisten einen entscheidenden Vorteil – der Südwind trug ihre Pfeile weiter, während lancastrische Pfeile zu kurz fielen. Die Schlacht tobte zehn Stunden lang und endete erst, als die Verstärkungen des Herzogs von Norfolk die lancastrische Flanke durchbrachen.
+
+Die Verluste erreichten 28.000 – etwa 1% der gesamten Bevölkerung Englands starb an einem einzigen Tag. Der Cock Beck wurde so mit Leichen verstopft, dass Männer auf Brücken aus Leichen überquerten. Chroniken berichten von Vätern, die Söhne töteten, und Brüdern, die Brüder erschlugen, im Chaos der Schlacht unfähig, Freund von Feind im blendenden Schneesturm zu unterscheiden.
+
+Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der einzige Weg, um zu bestimmen, wer herrschen sollte? Der Yorkistische Sieg war absolut – Eduard IV. war nun unangefochtener König von England. Aber die Kosten waren Englands kollektives Trauma, eine Wunde, die Generationen brauchen würde, um zu heilen.`,
 			year: '1461',
 			keyFigures: [
 				'Edward IV (York)',
@@ -692,14 +944,21 @@ export const songs: Song[] = [
 			location: {
 				name: 'Towton, North Yorkshire',
 				coordinates: { lat: 53.8333, lng: -1.2833 }
-			}
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/battle-of-towton-painting.jpg',
+					caption: 'The Battle of Towton (1461) - The bloodiest day in English history. Fought in a blinding snowstorm on Palm Sunday, an estimated 28,000 men died as the Yorkists crushed the Lancastrian army. The south wind gave Edward\'s archers a decisive advantage, carrying their arrows farther while enemy shots fell short.',
+					captionDe: 'Die Schlacht von Towton (1461) - Der blutigste Tag der englischen Geschichte. Ausgetragen in einem blendenden Schneesturm am Palmsonntag, starben geschätzte 28.000 Mann, als die Yorkisten die Lancaster-Armee vernichteten. Der Südwind gab Edwards Bogenschützen einen entscheidenden Vorteil und trug ihre Pfeile weiter, während feindliche Schüsse zu kurz fielen.'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/08%20Towton%20-%20Die%20by%20the%20Damned.mp3'
 	},
 	{
 		id: 'sacred-lies',
 		title: 'Sacred Lies',
-		trackNumber: 9,
+		trackNumber: 10,
 		duration: '9:06',
 		lyrics: [
 			"[Verse 1] The city's held, the gates are mine The winter’s cold, the Yorkist sign! But steel and blood won't bend the knee They need a word from God, not me. A flock of sheep, they wait for grace A king by might is commonplace I have the sword, the brutal art But he... my brother... holds the heart.",
@@ -736,14 +995,21 @@ export const songs: Song[] = [
 			location: {
 				name: 'England',
 				coordinates: { lat: 52.3555, lng: -1.1743 }
-			}
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/edward-iv-coronation.png',
+					caption: 'The Coronation of Edward IV at Westminster Abbey (1461) - A late Baroque interpretation of the moment when Archbishop George Neville places the crown upon Edward\'s head. The incense smoke billows through the Gothic arches as the sacred ritual transforms the young Yorkist warrior into God\'s anointed king. Warwick the Kingmaker watches from the shadows—the true architect of this holy theater. The ceremony "sanctified the lies" that would legitimize Edward\'s rule.',
+					captionDe: 'Die Krönung Eduards IV. in Westminster Abbey (1461) - Eine spätbarocke Interpretation des Moments, als Erzbischof George Neville die Krone auf Eduards Haupt setzt. Der Weihrauch wallt durch die gotischen Bögen, während das heilige Ritual den jungen yorkistischen Krieger in Gottes gesalbten König verwandelt. Warwick der Königsmacher beobachtet aus dem Schatten – der wahre Architekt dieses heiligen Theaters. Die Zeremonie „heiligte die Lügen", die Eduards Herrschaft legitimieren sollten.'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/09%20Sacred%20Lies.mp3'
 	},
 	{
 		id: 'oh-god-see-our-plight',
 		title: 'Oh, God, see our plight',
-		trackNumber: 10,
+		trackNumber: 11,
 		duration: '4:03',
 		lyrics: [
 			"The White Rose stands in frost La Rose Blanche, si froide The Red Rose counts the cost La Rose Rouge, le roi La Rose Rouge, le roi, le roi",
@@ -789,7 +1055,7 @@ export const songs: Song[] = [
 	{
 		id: 'reaving-river-rats',
 		title: 'Reaving River Rats',
-		trackNumber: 11,
+		trackNumber: 12,
 		duration: '11:48',
 		lyrics: [
 			"[Verse]",
@@ -901,14 +1167,21 @@ export const songs: Song[] = [
 			location: {
 				name: 'River Thames, London',
 				coordinates: { lat: 51.5074, lng: -0.1278 }
-			}
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/reaving-river-rats.png',
+					caption: 'The Reaving River Rats - Thames pirates celebrate on a stolen barge while Execution Dock looms in the distance. In the style of Pieter Bruegel, this scene captures the dark humor of medieval London\'s underworld: rogues drinking stolen wine, an accordion playing, while the gallows remind them of their inevitable fate. "For the Red Rose or the White, we\'ll cheer—as long as we can steal your beer!"',
+					captionDe: 'Die Räuberischen Flussratten - Themse-Piraten feiern auf einer gestohlenen Barke, während der Hinrichtungsdock in der Ferne aufragt. Im Stil von Pieter Bruegel fängt diese Szene den schwarzen Humor der Londoner Unterwelt des Mittelalters ein: Schurken trinken gestohlenen Wein, eine Akkordeon spielt, während der Galgen sie an ihr unvermeidliches Schicksal erinnert. „Für die Rote Rose oder die Weiße, wir jubeln—solange wir euer Bier stehlen können!"'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/11%20Reaving%20River%20Rats.mp3'
 	},
 	{
 		id: 'the-kingmakers-scorn',
 		title: "The Kingmaker's Scorn",
-		trackNumber: 12,
+		trackNumber: 13,
 		duration: '4:42',
 		lyrics: [
 			"[Verse 1]",
@@ -982,7 +1255,7 @@ export const songs: Song[] = [
 	{
 		id: 'le-temple-de-boccace',
 		title: 'Le Temple de Boccace',
-		trackNumber: 13,
+		trackNumber: 14,
 		duration: '6:51',
 		lyrics: [
 			"[Verse]",
@@ -1076,14 +1349,21 @@ export const songs: Song[] = [
 			location: {
 				name: 'England',
 				coordinates: { lat: 52.3555, lng: -1.1743 }
-			}
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/le-temple-de-boccace.png',
+					caption: 'Margaret of Anjou watches over her gentle husband Henry VI as he kneels in prayer. The candlelight illuminates his pious devotion while Margaret, armored in spirit if not in steel, stands as his protector. "A king of peace, a scholar, and a friend, whose gentle reign this age will surely end." The title references Boccaccio\'s "De Casibus Virorum Illustrium" - tales of princes destined to rise and fall.',
+					captionDe: 'Margarete von Anjou wacht über ihren sanften Ehemann Heinrich VI., während er im Gebet kniet. Das Kerzenlicht erleuchtet seine fromme Hingabe, während Margarete, im Geiste wenn nicht im Stahl gepanzert, als seine Beschützerin steht. „Ein König des Friedens, ein Gelehrter und ein Freund, dessen sanfte Herrschaft dieses Zeitalter sicherlich beenden wird." Der Titel bezieht sich auf Boccaccios „De Casibus Virorum Illustrium" – Geschichten von Fürsten, die zum Aufstieg und Fall bestimmt sind.'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/13%20Le%20Temple%20de%20Boccace%20.mp3'
 	},
 	{
 		id: 'melusine',
 		title: 'Melusine',
-		trackNumber: 14,
+		trackNumber: 15,
 		duration: '5:26',
 		lyrics: [
 			"[Intro Verse]",
@@ -1163,7 +1443,7 @@ export const songs: Song[] = [
 	{
 		id: 'the-kingmakers-pawn',
 		title: "The Kingmaker's Pawn",
-		trackNumber: 15,
+		trackNumber: 16,
 		duration: '7:01',
 		lyrics: [
 			"[Verse 1]",
@@ -1255,7 +1535,7 @@ export const songs: Song[] = [
 	{
 		id: 'epic-rap-battle-of-the-roses',
 		title: 'Epic Rap Battle of the Roses',
-		trackNumber: 16,
+		trackNumber: 17,
 		duration: '8:18',
 		lyrics: [
 			"[speaker]",
@@ -1372,8 +1652,8 @@ export const songs: Song[] = [
 		historicalContext: {
 			title: 'The Propaganda War - Words as Weapons',
 			titleDe: 'Warwicks Verrat durch Eduard IV.',
-			description: `Medieval warfare wasn't just fought with swords—it was fought with words. This imagined rap battle between Warwick and Margaret represents the real propaganda war both sides waged. They issued proclamations calling each other traitors, spread rumors about their enemies' legitimacy, and used heralds to deliver insults and challenges. The song captures the personal hatred between these two power brokers who destroyed each other's families. But it also shows something remarkable: by 1470, Warwick and Margaret actually did ally against Edward IV, setting aside their blood feud to restore Henry VI. The song imagines this unlikely partnership forming—two former enemies united by Edward's betrayal. The references to Shakespeare's insults show how these historical figures became immortal characters in English literature.`,
-			descriptionDe: `Im Jahr 1464, während Warwick in Frankreich eine königliche Eheallianz verhandelte, heiratete Eduard IV. heimlich Elizabeth Woodville, eine Witwe eines Bürgerlichen. Das Lied fängt Warwicks Demütigung ein, als er die Nachricht erfuhr – französische Höflinge verspotteten ihn als den Narren, der „Luftschlösser" baut. Warwick hatte bei Towton Blut vergossen, um Edward zu krönen, aber der König hatte ihn für einen „Kuss einer Bürgerlichen" verraten. Schlimmer noch, Edward erhob die Woodville-Familie in Machtpositionen und verteilte Ländereien und Titel, von denen Warwick fühlte, dass sie seiner eigenen Familie gehörten. Das sorgfältig konstruierte politische Gebäude des Königsmachers war „am Fundament gerissen". Dieser persönliche Verrat verwandelte Warwick von Edwards größtem Unterstützer in seinen gefährlichsten Feind. Das Lied endet unheilverkündend: „Ein König ist ein Mann, und ein Mann kann gebrochen werden."`,
+			description: `Inspired by the legendary [Epic Rap Battles of History](https://www.youtube.com/@ERB) YouTube series, this track reimagines medieval propaganda warfare as a verbal showdown. Medieval warfare wasn't just fought with swords—it was fought with words. This imagined rap battle between Warwick and Margaret represents the real propaganda war both sides waged. They issued proclamations calling each other traitors, spread rumors about their enemies' legitimacy, and used heralds to deliver insults and challenges. The song captures the personal hatred between these two power brokers who destroyed each other's families. But it also shows something remarkable: by 1470, Warwick and Margaret actually did ally against Edward IV, setting aside their blood feud to restore Henry VI. The song imagines this unlikely partnership forming—two former enemies united by Edward's betrayal. The references to Shakespeare's insults show how these historical figures became immortal characters in English literature.`,
+			descriptionDe: `Inspiriert von der legendären [Epic Rap Battles of History](https://www.youtube.com/@ERB) YouTube-Serie reimaginiert dieser Track mittelalterliche Propagandakriegsführung als verbalen Showdown. Im Jahr 1464, während Warwick in Frankreich eine königliche Eheallianz verhandelte, heiratete Eduard IV. heimlich Elizabeth Woodville, eine Witwe eines Bürgerlichen. Das Lied fängt Warwicks Demütigung ein, als er die Nachricht erfuhr – französische Höflinge verspotteten ihn als den Narren, der „Luftschlösser" baut. Warwick hatte bei Towton Blut vergossen, um Edward zu krönen, aber der König hatte ihn für einen „Kuss einer Bürgerlichen" verraten. Schlimmer noch, Edward erhob die Woodville-Familie in Machtpositionen und verteilte Ländereien und Titel, von denen Warwick fühlte, dass sie seiner eigenen Familie gehörten. Das sorgfältig konstruierte politische Gebäude des Königsmachers war „am Fundament gerissen". Dieser persönliche Verrat verwandelte Warwick von Edwards größtem Unterstützer in seinen gefährlichsten Feind. Das Lied endet unheilverkündend: „Ein König ist ein Mann, und ein Mann kann gebrochen werden."`,
 			year: '1455-1485',
 			keyFigures: [
 				'House of Lancaster',
@@ -1383,14 +1663,21 @@ export const songs: Song[] = [
 			location: {
 				name: 'England',
 				coordinates: { lat: 52.3555, lng: -1.1743 }
-			}
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/erb-rap-battle.png',
+					caption: 'Epic Rap Battles of History style showdown: Margaret of Anjou vs. The Kingmaker - the She-Wolf faces the man who made and unmade kings',
+					captionDe: 'Epic Rap Battles of History Stil Showdown: Margarete von Anjou vs. Der Königsmacher - die Wölfin trifft auf den Mann, der Könige machte und stürzte'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/16%20Epic%20Rap%20Battle%20of%20the%20Roses.mp3'
 	},
 	{
 		id: 'kaboom-2-0-live-wacken-2025',
 		title: 'Kaboom 2.0 (Live Wacken 2025)',
-		trackNumber: 17,
+		trackNumber: 18,
 		duration: '3:15',
 		lyrics: [
 			"[Chorus]",
@@ -1465,14 +1752,20 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 				name: 'Wacken Open Air, Germany',
 				coordinates: { lat: 54.0167, lng: 9.3667 }
 			},
-			imageUrl: '/images/wacken-2025.png'
+			images: [
+				{
+					url: '/images/wacken-2025.png',
+					caption: 'Uncivil War performs "Kaboom 2.0" with real medieval cannons at Wacken Open Air 2025 - smoke billows across the stage as 85,000 metalheads witness history',
+					captionDe: 'Uncivil War performt "Kaboom 2.0" mit echten mittelalterlichen Kanonen auf dem Wacken Open Air 2025 - Rauch wallt über die Bühne während 85.000 Metalheads Geschichte erleben'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/17%20Kaboom%202.0%20%28Live%20Wacken%202025%29.mp3'
 	},
 	{
 		id: 'the-kingmakers-fall',
 		title: "The Kingmaker's Fall",
-		trackNumber: 18,
+		trackNumber: 19,
 		duration: '6:41',
 		lyrics: [
 			"The Kingmakers Fall",
@@ -1576,7 +1869,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 	{
 		id: 'the-winter-of-all-discontent',
 		title: 'The Winter of all Discontent',
-		trackNumber: 19,
+		trackNumber: 20,
 		duration: '8:04',
 		lyrics: [
 			"[Intro]",
@@ -1663,14 +1956,21 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 			location: {
 				name: 'England',
 				coordinates: { lat: 52.3555, lng: -1.1743 }
-			}
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/richard-iii-music-video.png',
+					caption: 'Richard III from the official music video - Shakespeare\'s most iconic villain brought to life, embodying the winter that never will cease',
+					captionDe: 'Richard III. aus dem offiziellen Musikvideo - Shakespeares ikonischster Schurke zum Leben erweckt, der den Winter verkörpert, der niemals enden wird'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/19%20The%20Winter%20of%20all%20Discontent.mp3'
 	},
 	{
 		id: 'rejoice',
 		title: 'Rejoice!',
-		trackNumber: 20,
+		trackNumber: 21,
 		duration: '9:53',
 		lyrics: [
 			"[Intro]",
@@ -1751,7 +2051,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 	{
 		id: 'happy-birthday-stomp',
 		title: 'Happy Birthday Stomp',
-		trackNumber: 21,
+		trackNumber: 22,
 		duration: '4:59',
 		lyrics: [
 			"(Verse 1)",
@@ -1799,7 +2099,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 	{
 		id: 'virgin-queen',
 		title: 'Virgin Queen (Bonus Track)',
-		trackNumber: 22,
+		trackNumber: 23,
 		duration: '4:30',
 		lyrics: [
 			"[Verse 1]",

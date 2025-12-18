@@ -20,6 +20,56 @@ export interface EncyclopediaEntry {
 }
 
 export const encyclopediaEntries: Record<string, EncyclopediaEntry> = {
+	'richard-ii': {
+		id: 'richard-ii',
+		title: 'King Richard II',
+		titleDe: 'König Richard II.',
+		type: 'person',
+		dates: '1367-1400',
+		shortDescription: 'The deposed king whose fall set the stage for the Wars of the Roses',
+		shortDescriptionDe: 'Der abgesetzte König, dessen Sturz die Bühne für die Rosenkriege bereitete',
+		fullDescription: `Richard II, born in Bordeaux in 1367, became King of England at just ten years old after his father, Edward the Black Prince, died. His early reign was dominated by his uncles, particularly John of Gaunt, Duke of Lancaster. The young king showed remarkable courage during the Peasants' Revolt of 1381, personally confronting the rebels at Smithfield and famously declaring "I am your captain now!" However, Richard's dependence on unpopular favorites and his belief in absolute royal authority created bitter enemies among the nobility.
+
+In 1387, a group of nobles called the Lords Appellant seized control of government and executed or exiled Richard's closest advisors. Richard appeared to reconcile with his enemies for eight years, but in 1397 he took brutal revenge—arresting, executing, or exiling the Appellants. His final years became increasingly tyrannical.
+
+When John of Gaunt died in 1399, Richard made a fatal mistake: he confiscated the inheritance of Gaunt's exiled son, Henry Bolingbroke. While Richard was campaigning in Ireland, Bolingbroke invaded England to reclaim his lands—or so he claimed. At Flint Castle in Wales, Richard surrendered to his cousin. Within months, Richard was forced to abdicate, and Bolingbroke was crowned Henry IV.
+
+Richard died in Pontefract Castle in early 1400, likely starved to death on Henry's orders. His deposition established a dangerous precedent that haunted the Lancastrian dynasty: if one anointed king could be overthrown, so could another. Shakespeare later dramatized Richard's fall in his play "Richard II," depicting him as a poetic but ineffective ruler whose deposition ultimately led to the Wars of the Roses.`,
+		fullDescriptionDe: `Richard II., 1367 in Bordeaux geboren, wurde mit nur zehn Jahren König von England, nachdem sein Vater, Eduard der Schwarze Prinz, gestorben war. Seine frühe Regierungszeit wurde von seinen Onkeln dominiert, insbesondere von John of Gaunt, Herzog von Lancaster. Der junge König zeigte während des Bauernaufstands von 1381 bemerkenswerten Mut, als er sich persönlich den Rebellen in Smithfield stellte und berühmt erklärte: „Ich bin jetzt euer Anführer!" Richards Abhängigkeit von unbeliebten Günstlingen und sein Glaube an absolute königliche Autorität schufen jedoch erbitterte Feinde unter dem Adel.
+
+1387 übernahm eine Gruppe von Adligen namens Lords Appellant die Kontrolle über die Regierung und richtete Richards engste Berater hin oder verbannte sie. Richard schien sich acht Jahre lang mit seinen Feinden zu versöhnen, aber 1397 übte er brutale Rache – er verhaftete, richtete hin oder verbannte die Appellanten. Seine letzten Jahre wurden zunehmend tyrannisch.
+
+Als John of Gaunt 1399 starb, beging Richard einen fatalen Fehler: Er konfiszierte das Erbe von Gaunts verbanntem Sohn, Henry Bolingbroke. Während Richard in Irland Krieg führte, fiel Bolingbroke in England ein, um seine Ländereien zurückzufordern – so behauptete er zumindest. Auf Flint Castle in Wales ergab sich Richard seinem Cousin. Innerhalb weniger Monate wurde Richard zur Abdankung gezwungen, und Bolingbroke wurde als Heinrich IV. gekrönt.
+
+Richard starb Anfang 1400 auf Pontefract Castle, wahrscheinlich auf Heinrichs Befehl verhungert. Seine Absetzung schuf einen gefährlichen Präzedenzfall, der die Lancaster-Dynastie verfolgte: Wenn ein gesalbter König gestürzt werden konnte, dann auch ein anderer. Shakespeare dramatisierte später Richards Fall in seinem Stück „Richard II." und stellte ihn als poetischen, aber ineffektiven Herrscher dar, dessen Absetzung letztlich zu den Rosenkriegen führte.`,
+		relatedEntries: ['henry-iv', 'henry-vi', 'house-of-lancaster', 'wars-of-the-roses'],
+		imageUrl: '/images/encyclopedia/richard-ii.jpg'
+	},
+	'henry-iv': {
+		id: 'henry-iv',
+		title: 'King Henry IV (Henry Bolingbroke)',
+		titleDe: 'König Heinrich IV. (Henry Bolingbroke)',
+		type: 'person',
+		dates: '1367-1413',
+		shortDescription: 'The usurper who founded the Lancastrian dynasty and cursed his line',
+		shortDescriptionDe: 'Der Usurpator, der die Lancaster-Dynastie gründete und seine Linie verfluchte',
+		fullDescription: `Henry Bolingbroke, born in 1367, was the son of John of Gaunt, Duke of Lancaster, the most powerful nobleman in England and uncle to King Richard II. Henry was one of the Lords Appellant who challenged Richard II in 1387, but was later exiled by the king in 1398. When his father John of Gaunt died in 1399, Richard II confiscated Henry's inheritance—a fateful decision that would cost him his crown.
+
+Henry invaded England while Richard was in Ireland, initially claiming he only sought to reclaim his duchy of Lancaster. But as nobles flocked to his banner, his ambitions grew. At Flint Castle, Richard surrendered, and within months Henry had forced Richard to abdicate. On September 30, 1399, Henry was crowned Henry IV, the first Lancastrian king—but his claim to the throne was weaker than that of Edmund Mortimer, whose descent from Edward III came through an older son.
+
+Henry's reign was plagued by rebellions, including those of Owen Glendower in Wales and the Percy family in the north. His health deteriorated, possibly from a skin disease that many believed was divine punishment for usurping the throne. He died in 1413, having spent much of his reign fighting to hold what he had taken.
+
+Henry IV's usurpation cast a long shadow over English history. He had proven that kings could be deposed, a lesson his descendants would learn to their cost. His grandson Henry VI's mental illness and weak rule would invite Richard, Duke of York, to challenge the Lancastrian right to rule—and the Wars of the Roses would finally settle the question Henry IV had raised: could a usurper's line ever truly be legitimate?`,
+		fullDescriptionDe: `Henry Bolingbroke, 1367 geboren, war der Sohn von John of Gaunt, Herzog von Lancaster, dem mächtigsten Adligen in England und Onkel von König Richard II. Henry war einer der Lords Appellant, die Richard II. 1387 herausforderten, wurde aber später 1398 vom König ins Exil geschickt. Als sein Vater John of Gaunt 1399 starb, konfiszierte Richard II. Henrys Erbe – eine schicksalhafte Entscheidung, die ihn seine Krone kosten sollte.
+
+Henry fiel in England ein, während Richard in Irland war, und behauptete zunächst, er wolle nur sein Herzogtum Lancaster zurückfordern. Aber als Adlige zu seinem Banner strömten, wuchsen seine Ambitionen. Auf Flint Castle ergab sich Richard, und innerhalb weniger Monate hatte Henry Richard zur Abdankung gezwungen. Am 30. September 1399 wurde Henry als Heinrich IV. gekrönt, der erste Lancaster-König – aber sein Anspruch auf den Thron war schwächer als der von Edmund Mortimer, dessen Abstammung von Eduard III. durch einen älteren Sohn kam.
+
+Heinrichs Regierungszeit war von Rebellionen geplagt, darunter die von Owen Glendower in Wales und der Percy-Familie im Norden. Seine Gesundheit verschlechterte sich, möglicherweise durch eine Hautkrankheit, die viele als göttliche Strafe für die Usurpation des Throns ansahen. Er starb 1413, nachdem er einen Großteil seiner Regierungszeit damit verbracht hatte, das zu verteidigen, was er genommen hatte.
+
+Heinrich IV.s Usurpation warf einen langen Schatten über die englische Geschichte. Er hatte bewiesen, dass Könige abgesetzt werden konnten, eine Lektion, die seine Nachkommen zu ihrem Schaden lernen sollten. Die Geisteskrankheit und schwache Herrschaft seines Enkels Heinrich VI. würden Richard, Herzog von York, einladen, das Lancaster-Recht auf die Herrschaft in Frage zu stellen – und die Rosenkriege würden schließlich die Frage klären, die Heinrich IV. aufgeworfen hatte: Konnte die Linie eines Usurpators jemals wirklich legitim sein?`,
+		relatedEntries: ['richard-ii', 'henry-vi', 'house-of-lancaster', 'richard-duke-of-york'],
+		imageUrl: '/images/encyclopedia/richard-ii-surrender-flint.png'
+	},
 	'wars-of-the-roses': {
 		id: 'wars-of-the-roses',
 		title: 'The Wars of the Roses',
@@ -414,6 +464,72 @@ Das Haus Lusignan beanspruchte Abstammung von Melusine, und durch sie auch das H
 		},
 		relatedEntries: ['edward-iv', 'margaret-of-anjou', 'edward-of-westminster', 'battle-of-barnet']
 	},
+	'gates-of-london': {
+		id: 'gates-of-london',
+		title: 'Margaret at the Gates of London',
+		titleDe: 'Margarete an den Toren Londons',
+		type: 'event',
+		dates: 'February 1461',
+		shortDescription: 'The fatal hesitation that cost Margaret the crown',
+		shortDescriptionDe: 'Das verhängnisvolle Zögern, das Margarete die Krone kostete',
+		fullDescription: `After her triumphant victory at the Second Battle of St Albans on February 17, 1461, Queen Margaret of Anjou stood at the pinnacle of her power. She had rescued her husband King Henry VI from captivity, defeated the mighty Warwick, and London—the heart of the kingdom—lay just 20 miles away with no army to defend it.
+
+But London refused to open its gates. The citizens had heard terrifying reports of Margaret's northern army—tales of pillaging, burning, and looting as they marched south. The Lord Mayor and aldermen barricaded the city and sent nervous delegations to negotiate, demanding assurances that the capital would not be sacked.
+
+Margaret faced an impossible choice. Storm the city and confirm every rumor about her "barbaric" army, potentially turning all of England against her son's cause? Or wait, negotiate, and trust in her overwhelming military advantage?
+
+She chose to wait. It was the worst mistake of her life.
+
+While Margaret's army grew hungry and restless outside the walls, while her negotiations dragged on for precious days, the defeated Warwick had linked up with young Edward of York at the Cotswolds. Together they made a desperate gamble—racing toward London with a smaller but disciplined force.
+
+The city that had barred its gates to Margaret now threw them open for Edward. On March 4, 1461, he was acclaimed King Edward IV by the citizens and lords. Margaret, learning of this disaster, had no choice but to retreat north. Weeks later, Edward crushed her army at Towton in the bloodiest battle ever fought on English soil.
+
+Historians still debate whether Margaret could have taken London by force. What is certain is that her hesitation transformed a total Lancastrian victory into catastrophic defeat. Had she stormed the city immediately after St Albans, there might never have been a King Edward IV, no Battle of Towton, no decade of exile for the Lancastrian queen. This moment—Margaret waiting at the gates while her kingdom slipped away—became one of history's great "what ifs."`,
+		fullDescriptionDe: `Nach ihrem triumphalen Sieg in der Zweiten Schlacht von St Albans am 17. Februar 1461 stand Königin Margarete von Anjou auf dem Höhepunkt ihrer Macht. Sie hatte ihren Ehemann König Heinrich VI. aus der Gefangenschaft befreit, den mächtigen Warwick besiegt, und London – das Herz des Königreichs – lag nur 30 Kilometer entfernt ohne Armee zur Verteidigung.
+
+Aber London weigerte sich, seine Tore zu öffnen. Die Bürger hatten erschreckende Berichte über Margaretes nördliche Armee gehört – Geschichten von Plünderung, Brandschatzung und Raub auf ihrem Marsch nach Süden. Der Lord Mayor und die Ratsherren verbarrikadierten die Stadt und sandten nervöse Delegationen zur Verhandlung, die Zusicherungen forderten, dass die Hauptstadt nicht geplündert würde.
+
+Margarete stand vor einer unmöglichen Wahl. Die Stadt stürmen und jedes Gerücht über ihre „barbarische" Armee bestätigen, was möglicherweise ganz England gegen die Sache ihres Sohnes aufbringen würde? Oder warten, verhandeln und auf ihren überwältigenden militärischen Vorteil vertrauen?
+
+Sie entschied sich zu warten. Es war der schlimmste Fehler ihres Lebens.
+
+Während Margaretes Armee vor den Mauern hungrig und unruhig wurde, während sich ihre Verhandlungen über kostbare Tage hinzogen, hatte sich der besiegte Warwick mit dem jungen Edward von York in den Cotswolds zusammengeschlossen. Gemeinsam wagten sie ein verzweifeltes Spiel – sie rasten mit einer kleineren, aber disziplinierten Truppe auf London zu.
+
+Die Stadt, die Margarete ihre Tore verschlossen hatte, öffnete sie nun für Edward. Am 4. März 1461 wurde er von den Bürgern und Lords als König Eduard IV. akklamiert. Margarete, die von diesem Desaster erfuhr, hatte keine andere Wahl, als sich nach Norden zurückzuziehen. Wochen später vernichtete Edward ihre Armee bei Towton in der blutigsten Schlacht, die je auf englischem Boden geschlagen wurde.
+
+Historiker debattieren noch immer, ob Margarete London mit Gewalt hätte nehmen können. Was sicher ist: Ihr Zögern verwandelte einen totalen Lancaster-Sieg in eine katastrophale Niederlage. Hätte sie die Stadt sofort nach St Albans gestürmt, hätte es vielleicht nie einen König Eduard IV. gegeben, keine Schlacht von Towton, kein Jahrzehnt des Exils für die Lancaster-Königin. Dieser Moment – Margarete wartend an den Toren, während ihr Königreich entglitt – wurde zu einem der großen „Was wäre wenn" der Geschichte.`,
+		location: {
+			name: 'London',
+			coordinates: { lat: 51.5074, lng: -0.1278 }
+		},
+		relatedEntries: ['margaret-of-anjou', 'edward-iv', 'warwick-the-kingmaker', 'second-battle-of-st-albans', 'battle-of-towton'],
+		imageUrl: '/images/encyclopedia/gates-of-london.png'
+	},
+	'the-three-suns': {
+		id: 'the-three-suns',
+		title: 'The Three Suns (Parhelion)',
+		titleDe: 'Die Drei Sonnen (Nebensonne)',
+		type: 'event',
+		dates: 'February 2, 1461',
+		shortDescription: 'The miraculous omen that inspired Edward IV\'s Sun in Splendour badge',
+		shortDescriptionDe: 'Das wundersame Omen, das Edwards IV. Abzeichen der Sonne in Pracht inspirierte',
+		fullDescription: `On the freezing morning of February 2, 1461, just before the Battle of Mortimer's Cross, Edward of York's soldiers witnessed a terrifying sight in the sky: three suns appeared to rise simultaneously. This rare atmospheric phenomenon, known as a parhelion or "sun dog," occurs when ice crystals in the atmosphere refract sunlight, creating bright spots on either side of the sun.
+
+The superstitious medieval soldiers were frightened by this unnatural sight, fearing it was a bad omen. But the eighteen-year-old Edward, showing the charisma that would make him king, seized the moment. He declared that the three suns represented the Holy Trinity—Father, Son, and Holy Spirit—blessing their cause. More personally, he proclaimed they symbolized the three sons of York: himself, his brother Edmund (recently murdered at Wakefield), and his brother George.
+
+"This is a sign from God!" Edward reportedly cried. "The heavens themselves declare our righteous cause!"
+
+Inspired by this divine interpretation, his troops fought with renewed vigor and crushed the Lancastrian army. Edward adopted the "Sun in Splendour" as his personal badge, a radiant sun with a face that became one of the most recognizable symbols of the Yorkist dynasty. The parhelion transformed a moment of fear into a propaganda triumph that Edward would use for the rest of his reign.`,
+		fullDescriptionDe: `Am eisigen Morgen des 2. Februar 1461, kurz vor der Schlacht von Mortimer's Cross, erlebten die Soldaten von Edward von York einen erschreckenden Anblick am Himmel: Drei Sonnen schienen gleichzeitig aufzugehen. Dieses seltene atmosphärische Phänomen, bekannt als Nebensonne oder „Sonnenhund", entsteht, wenn Eiskristalle in der Atmosphäre das Sonnenlicht brechen und helle Flecken auf beiden Seiten der Sonne erzeugen.
+
+Die abergläubischen mittelalterlichen Soldaten waren von diesem unnatürlichen Anblick verängstigt und fürchteten, es sei ein schlechtes Omen. Aber der achtzehnjährige Edward, der das Charisma zeigte, das ihn zum König machen sollte, nutzte den Moment. Er erklärte, dass die drei Sonnen die Heilige Dreifaltigkeit darstellten – Vater, Sohn und Heiliger Geist – die ihre Sache segneten. Persönlicher verkündete er, sie symbolisierten die drei Söhne von York: ihn selbst, seinen Bruder Edmund (kürzlich in Wakefield ermordet) und seinen Bruder George.
+
+„Dies ist ein Zeichen Gottes!" soll Edward gerufen haben. „Der Himmel selbst verkündet unsere gerechte Sache!"
+
+Inspiriert von dieser göttlichen Interpretation kämpften seine Truppen mit erneuerter Kraft und vernichteten die Lancaster-Armee. Edward nahm die „Sonne in Pracht" als sein persönliches Abzeichen an, eine strahlende Sonne mit einem Gesicht, die zu einem der bekanntesten Symbole der Yorkshire-Dynastie wurde. Die Nebensonne verwandelte einen Moment der Angst in einen Propagandatriumph, den Edward für den Rest seiner Regierungszeit nutzen sollte.`,
+		relatedEntries: ['edward-iv', 'battle-of-mortimers-cross', 'richard-duke-of-york', 'house-of-york'],
+		imageUrl: '/images/encyclopedia/parhelion-three-suns.png'
+	},
 	'battle-of-mortimers-cross': {
 		id: 'battle-of-mortimers-cross',
 		title: "Battle of Mortimer's Cross",
@@ -428,12 +544,40 @@ Das Haus Lusignan beanspruchte Abstammung von Melusine, und durch sie auch das H
 			name: "Mortimer's Cross, Herefordshire",
 			coordinates: { lat: 52.2667, lng: -2.9167 }
 		},
-		relatedEntries: ['edward-iv', 'jasper-tudor', 'owen-tudor', 'richard-duke-of-york']
+		relatedEntries: ['edward-iv', 'jasper-tudor', 'owen-tudor', 'richard-duke-of-york'],
+		imageUrl: '/images/encyclopedia/sun-in-splendour.jpg'
+	},
+	'lord-clifford': {
+		id: 'lord-clifford',
+		title: 'Lord Clifford (The Butcher)',
+		titleDe: 'Lord Clifford (Der Schlächter)',
+		type: 'person',
+		dates: '1435-1461',
+		shortDescription: 'Lancastrian lord notorious for killing York\'s young son Edmund at Wakefield',
+		shortDescriptionDe: 'Lancaster-Lord, berüchtigt für die Tötung von Yorks jungem Sohn Edmund bei Wakefield',
+		fullDescription: `John Clifford, 9th Baron Clifford, earned his infamous nickname "The Butcher" at the Battle of Wakefield in 1460. His father, Thomas Clifford, had been killed by the Yorkists at the First Battle of St Albans in 1455, and the younger Clifford harbored a burning desire for revenge.
+
+At Wakefield, Clifford allegedly intercepted the fleeing Edmund, Earl of Rutland—the seventeen-year-old son of Richard, Duke of York. According to chronicles, young Edmund begged for mercy on Wakefield Bridge, but Clifford is said to have declared "By God's blood, thy father slew mine, and so will I do thee and all thy kin!" before stabbing the boy. This act of revenge killing, combined with his role in defeating York's army, made Clifford one of the most hated figures among the Yorkists.
+
+Clifford's brutality helped fuel Edward IV's campaign of vengeance. At the Battle of Ferrybridge, just before Towton in 1461, Clifford was killed by an arrow to the throat—poetic justice, some said, for a man who had shown no mercy. His death was celebrated by the Yorkists, and he became a symbol of the war's pitiless cruelty. Shakespeare later dramatized his murder of Rutland in "Henry VI, Part 3," cementing his villainous reputation for centuries.`,
+		fullDescriptionDe: `John Clifford, 9. Baron Clifford, erhielt seinen berüchtigten Spitznamen „Der Schlächter" in der Schlacht von Wakefield 1460. Sein Vater, Thomas Clifford, war 1455 in der Ersten Schlacht von St. Albans von den Yorkisten getötet worden, und der jüngere Clifford hegte einen brennenden Wunsch nach Rache.
+
+Bei Wakefield fing Clifford angeblich den fliehenden Edmund, Earl of Rutland, ab – den siebzehnjährigen Sohn von Richard, Herzog von York. Laut Chroniken flehte der junge Edmund auf der Wakefield-Brücke um Gnade, aber Clifford soll erklärt haben: „Bei Gottes Blut, dein Vater erschlug meinen, und so werde ich es dir und all deinen Verwandten antun!" bevor er den Jungen erstach. Diese Rache-Tat, kombiniert mit seiner Rolle bei der Niederlage von Yorks Armee, machte Clifford zu einer der meistgehassten Figuren unter den Yorkisten.
+
+Cliffords Brutalität half, Edwards IV. Rachefeldzug anzuheizen. In der Schlacht von Ferrybridge, kurz vor Towton 1461, wurde Clifford von einem Pfeil in den Hals getötet – poetische Gerechtigkeit, sagten manche, für einen Mann, der keine Gnade gezeigt hatte. Sein Tod wurde von den Yorkisten gefeiert, und er wurde zu einem Symbol für die gnadenlose Grausamkeit des Krieges. Shakespeare dramatisierte später seinen Mord an Rutland in „Heinrich VI., Teil 3" und festigte seinen Ruf als Schurke für Jahrhunderte.`,
+		relatedEntries: ['richard-duke-of-york', 'margaret-of-anjou', 'battle-of-wakefield', 'edward-iv']
 	}
 };
 
 // Terms to automatically link in historical context descriptions
 export const linkableTerms: Record<string, string> = {
+	'King Richard II': 'richard-ii',
+	'Richard II': 'richard-ii',
+	'King Henry IV': 'henry-iv',
+	'Henry IV': 'henry-iv',
+	'Henry Bolingbroke': 'henry-iv',
+	'Bolingbroke': 'henry-iv',
+	'John of Gaunt': 'henry-iv',
 	'King Henry VI': 'henry-vi',
 	'Henry VI': 'henry-vi',
 	'Richard, Duke of York': 'richard-duke-of-york',
@@ -488,7 +632,16 @@ export const linkableTerms: Record<string, string> = {
 	'Tewkesbury': 'battle-of-tewkesbury',
 	"Battle of Mortimer's Cross": 'battle-of-mortimers-cross',
 	"Mortimer's Cross": 'battle-of-mortimers-cross',
-	'Wars of the Roses': 'wars-of-the-roses'
+	'Wars of the Roses': 'wars-of-the-roses',
+	'Lord Clifford': 'lord-clifford',
+	'Clifford': 'lord-clifford',
+	'the Butcher': 'lord-clifford',
+	'three suns': 'the-three-suns',
+	'Three Suns': 'the-three-suns',
+	'parhelion': 'the-three-suns',
+	'Sun in Splendour': 'the-three-suns',
+	'Gates of London': 'gates-of-london',
+	'gates of London': 'gates-of-london'
 };
 
 export function getEncyclopediaEntry(id: string): EncyclopediaEntry | undefined {

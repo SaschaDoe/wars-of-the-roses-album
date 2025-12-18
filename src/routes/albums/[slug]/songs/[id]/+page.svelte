@@ -14,6 +14,29 @@
 	const albumTitle = $derived($language === 'de' ? album.titleDe : album.title);
 
 	let activeTab = $state<'lyrics' | 'history'>('lyrics');
+	let toggledImages = $state<Record<number, boolean>>({});
+
+	// Fullscreen lightbox state
+	let lightboxImage = $state<string | null>(null);
+	let lightboxCaption = $state<string>('');
+
+	function openLightbox(url: string, caption: string) {
+		lightboxImage = url;
+		lightboxCaption = caption;
+		document.body.style.overflow = 'hidden';
+	}
+
+	function closeLightbox() {
+		lightboxImage = null;
+		lightboxCaption = '';
+		document.body.style.overflow = '';
+	}
+
+	function handleKeydown(e: KeyboardEvent) {
+		if (e.key === 'Escape' && lightboxImage) {
+			closeLightbox();
+		}
+	}
 
 	const isCurrentSong = $derived($audioPlayer.currentSong?.id === song.id);
 	const isPlaying = $derived(isCurrentSong && $audioPlayer.isPlaying);
@@ -42,6 +65,27 @@
 <svelte:head>
 	<title>{song.title} - {albumTitle}</title>
 </svelte:head>
+
+<svelte:window onkeydown={handleKeydown} />
+
+<!-- Fullscreen Lightbox -->
+{#if lightboxImage}
+	<div
+		class="lightbox-overlay"
+		onclick={closeLightbox}
+		role="dialog"
+		aria-modal="true"
+		aria-label="Image lightbox"
+	>
+		<button class="lightbox-close" onclick={closeLightbox} aria-label="Close lightbox">×</button>
+		<div class="lightbox-content" onclick={(e) => e.stopPropagation()}>
+			<img src={lightboxImage} alt={lightboxCaption} class="lightbox-image" />
+			{#if lightboxCaption}
+				<p class="lightbox-caption">{lightboxCaption}</p>
+			{/if}
+		</div>
+	</div>
+{/if}
 
 <div class="song-page">
 	<a href="/albums/{album.slug}/songs" class="back-link">{$currentTranslations.song.backToSongs}</a>
@@ -119,7 +163,15 @@
 			<div class="history-section animate-fade-in">
 				<div class="history-header">
 					{#if song.historicalContext.imageUrl}
-						<img src={song.historicalContext.imageUrl} alt={getHistoricalTitle()} class="history-thumbnail" />
+						<img
+							src={song.historicalContext.imageUrl}
+							alt={getHistoricalTitle()}
+							class="history-thumbnail clickable"
+							onclick={() => openLightbox(song.historicalContext.imageUrl!, getHistoricalTitle())}
+							role="button"
+							tabindex="0"
+							onkeydown={(e) => e.key === 'Enter' && openLightbox(song.historicalContext.imageUrl!, getHistoricalTitle())}
+						/>
 					{/if}
 					<div class="history-header-text">
 						<h2>{getHistoricalTitle()}</h2>
@@ -133,11 +185,64 @@
 
 				{#if song.historicalContext.images && song.historicalContext.images.length > 0}
 					<div class="history-gallery">
-						{#each song.historicalContext.images as image}
-							<figure class="gallery-item">
-								<img src={image.url} alt={$language === 'de' ? image.captionDe : image.caption} />
-								<figcaption>{$language === 'de' ? image.captionDe : image.caption}</figcaption>
-							</figure>
+						{#each song.historicalContext.images as image, index}
+							{#if image.alternateUrl}
+								<div class="secret-card" class:revealed={toggledImages[index]}>
+									<div
+										class="secret-card-image"
+										onclick={() => toggledImages[index] = !toggledImages[index]}
+										role="button"
+										tabindex="0"
+										onkeydown={(e) => e.key === 'Enter' && (toggledImages[index] = !toggledImages[index])}
+									>
+										<img
+											src={toggledImages[index] ? image.alternateUrl : image.url}
+											alt={$language === 'de' ? image.captionDe : image.caption}
+										/>
+										<div class="secret-card-corner">
+											<span>{toggledImages[index] ? '↩' : '?'}</span>
+										</div>
+									</div>
+									<div class="secret-card-content">
+										<div class="secret-card-label">
+											{toggledImages[index]
+												? ($language === 'de' ? 'Enthüllt' : 'Revealed')
+												: ($language === 'de' ? 'Propaganda?' : 'Propaganda?')}
+										</div>
+										<div class="secret-card-title">
+											{toggledImages[index]
+												? ($language === 'de' ? 'Die Wölfin enthüllt' : 'The She-Wolf revealed')
+												: ($language === 'de' ? 'Margaretes großes Geheimnis' : "Margaret's dark secret")}
+										</div>
+										<div class="secret-card-description">
+											{toggledImages[index]
+												? ($language === 'de' ? image.alternateCaptionDe : image.alternateCaption)
+												: ($language === 'de' ? image.captionDe : image.caption)}
+										</div>
+										<button
+											class="secret-card-button"
+											onclick={() => toggledImages[index] = !toggledImages[index]}
+										>
+											{toggledImages[index]
+												? ($language === 'de' ? 'Zurück zum Original' : 'Back to original')
+												: ($language === 'de' ? 'Die Wahrheit erfahren' : 'Find out the truth')}
+										</button>
+									</div>
+								</div>
+							{:else}
+								<figure class="gallery-item">
+									<img
+										src={image.url}
+										alt={$language === 'de' ? image.captionDe : image.caption}
+										class="clickable"
+										onclick={() => openLightbox(image.url, $language === 'de' ? image.captionDe : image.caption)}
+										role="button"
+										tabindex="0"
+										onkeydown={(e) => e.key === 'Enter' && openLightbox(image.url, $language === 'de' ? image.captionDe : image.caption)}
+									/>
+									<figcaption>{$language === 'de' ? image.captionDe : image.caption}</figcaption>
+								</figure>
+							{/if}
 						{/each}
 					</div>
 				{/if}
@@ -161,7 +266,22 @@
 		{/if}
 	</div>
 
-	<div class="song-navigation">
+	<!-- Side navigation for desktop -->
+	{#if prevSong}
+		<a href="/albums/{album.slug}/songs/{prevSong.id}" class="side-nav side-nav-prev" title={prevSong.title}>
+			<span class="side-nav-arrow">‹</span>
+			<span class="side-nav-label">{prevSong.trackNumber}</span>
+		</a>
+	{/if}
+	{#if nextSong}
+		<a href="/albums/{album.slug}/songs/{nextSong.id}" class="side-nav side-nav-next" title={nextSong.title}>
+			<span class="side-nav-arrow">›</span>
+			<span class="side-nav-label">{nextSong.trackNumber}</span>
+		</a>
+	{/if}
+
+	<!-- Bottom navigation for mobile -->
+	<div class="song-navigation-mobile">
 		{#if prevSong}
 			<a href="/albums/{album.slug}/songs/{prevSong.id}" class="nav-button prev">
 				{$currentTranslations.song.previousSong}
@@ -360,6 +480,7 @@
 		object-fit: cover;
 		flex-shrink: 0;
 		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
 	}
 
 	.history-header-text {
@@ -390,9 +511,162 @@
 
 	.gallery-item img {
 		width: 100%;
-		height: 250px;
-		object-fit: cover;
+		height: auto;
+		max-height: 500px;
+		object-fit: contain;
 		display: block;
+		background: rgba(0, 0, 0, 0.3);
+		transition: transform 0.3s ease;
+	}
+
+	/* Clickable images */
+	.clickable {
+		cursor: pointer;
+	}
+
+	.clickable:hover {
+		transform: scale(1.02);
+	}
+
+	.history-thumbnail.clickable:hover {
+		box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+	}
+
+	/* Secret Card Styles */
+	.secret-card {
+		display: flex;
+		gap: 2rem;
+		background: linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.95));
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.secret-card-image {
+		position: relative;
+		flex: 0 0 280px;
+		cursor: pointer;
+		overflow: hidden;
+	}
+
+	.secret-card-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.4s ease;
+	}
+
+	.secret-card-image:hover img {
+		transform: scale(1.05);
+	}
+
+	.secret-card-corner {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 50px;
+		height: 50px;
+		background: var(--color-accent);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		clip-path: polygon(100% 0, 0 0, 100% 100%);
+		transition: background 0.3s ease;
+	}
+
+	.secret-card-corner span {
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		font-size: 1.2rem;
+		color: white;
+		font-weight: bold;
+	}
+
+	.secret-card:not(.revealed) .secret-card-corner {
+		background: var(--color-accent);
+	}
+
+	.secret-card.revealed .secret-card-corner {
+		background: #2d5a27;
+	}
+
+	.secret-card-content {
+		flex: 1;
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.secret-card-label {
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: var(--color-accent);
+		margin-bottom: 0.5rem;
+		font-weight: 600;
+	}
+
+	.secret-card.revealed .secret-card-label {
+		color: #4a9c4a;
+	}
+
+	.secret-card-title {
+		font-family: var(--font-heading);
+		font-size: 1.5rem;
+		color: var(--color-text);
+		margin-bottom: 0.75rem;
+	}
+
+	.secret-card-description {
+		font-size: 0.95rem;
+		color: var(--color-text-secondary);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.secret-card-button {
+		align-self: flex-start;
+		padding: 0.75rem 1.5rem;
+		background: transparent;
+		border: 2px solid var(--color-accent);
+		color: var(--color-text);
+		border-radius: 6px;
+		font-size: 0.9rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.secret-card-button:hover {
+		background: var(--color-accent);
+		color: white;
+	}
+
+	.secret-card.revealed .secret-card-button {
+		border-color: rgba(255, 255, 255, 0.3);
+	}
+
+	.secret-card.revealed .secret-card-button:hover {
+		background: rgba(255, 255, 255, 0.1);
+		border-color: rgba(255, 255, 255, 0.5);
+	}
+
+	@media (max-width: 768px) {
+		.secret-card {
+			flex-direction: column;
+		}
+
+		.secret-card-image {
+			flex: none;
+			height: 250px;
+		}
+
+		.secret-card-content {
+			padding: 1.25rem;
+		}
 	}
 
 	.gallery-item figcaption {
@@ -453,7 +727,67 @@
 		margin-bottom: 1rem;
 	}
 
-	.song-navigation {
+	/* Side navigation - desktop only */
+	.side-nav {
+		display: none;
+		position: fixed;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 100;
+		padding: 1.25rem 0.75rem;
+		background: rgba(30, 30, 30, 0.85);
+		backdrop-filter: blur(8px);
+		border: 1px solid rgba(139, 0, 0, 0.3);
+		color: var(--color-text);
+		text-decoration: none;
+		transition: all 0.3s ease;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	.side-nav-prev {
+		left: 0;
+		border-radius: 0 8px 8px 0;
+		border-left: none;
+	}
+
+	.side-nav-next {
+		right: 0;
+		border-radius: 8px 0 0 8px;
+		border-right: none;
+	}
+
+	.side-nav:hover {
+		background: rgba(139, 0, 0, 0.6);
+		color: white;
+		border-color: rgba(139, 0, 0, 0.5);
+		padding: 1.25rem 1rem;
+	}
+
+	.side-nav-arrow {
+		font-size: 1.8rem;
+		line-height: 1;
+		opacity: 0.8;
+		transition: all 0.3s ease;
+	}
+
+	.side-nav:hover .side-nav-arrow {
+		opacity: 1;
+	}
+
+	.side-nav-label {
+		font-size: 0.75rem;
+		opacity: 0.6;
+		font-weight: 600;
+	}
+
+	.side-nav:hover .side-nav-label {
+		opacity: 1;
+	}
+
+	/* Mobile bottom navigation */
+	.song-navigation-mobile {
 		display: flex;
 		justify-content: space-between;
 		margin-top: 4rem;
@@ -477,6 +811,17 @@
 
 	.nav-button.next {
 		margin-left: auto;
+	}
+
+	/* Show side nav on larger screens */
+	@media (min-width: 1200px) {
+		.side-nav {
+			display: flex;
+		}
+
+		.song-navigation-mobile {
+			display: none;
+		}
 	}
 
 	@media (max-width: 768px) {
@@ -540,7 +885,7 @@
 			height: 44px;
 		}
 
-		.song-navigation {
+		.song-navigation-mobile {
 			flex-direction: column;
 			gap: 1rem;
 		}
@@ -555,7 +900,95 @@
 		}
 
 		.gallery-item img {
-			height: 200px;
+			max-height: 300px;
+		}
+	}
+
+	/* Lightbox styles */
+	.lightbox-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.95);
+		z-index: 9999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+		animation: fadeIn 0.2s ease;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	.lightbox-close {
+		position: absolute;
+		top: 1rem;
+		right: 1.5rem;
+		background: none;
+		border: none;
+		color: white;
+		font-size: 3rem;
+		cursor: pointer;
+		opacity: 0.7;
+		transition: opacity 0.2s ease, transform 0.2s ease;
+		line-height: 1;
+		padding: 0.5rem;
+		z-index: 10000;
+	}
+
+	.lightbox-close:hover {
+		opacity: 1;
+		transform: scale(1.1);
+	}
+
+	.lightbox-content {
+		max-width: 95vw;
+		max-height: 95vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.lightbox-image {
+		max-width: 100%;
+		max-height: 85vh;
+		object-fit: contain;
+		border-radius: 4px;
+		box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+	}
+
+	.lightbox-caption {
+		margin-top: 1rem;
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 1rem;
+		text-align: center;
+		max-width: 800px;
+		line-height: 1.6;
+	}
+
+	@media (max-width: 768px) {
+		.lightbox-overlay {
+			padding: 1rem;
+		}
+
+		.lightbox-close {
+			top: 0.5rem;
+			right: 0.5rem;
+			font-size: 2.5rem;
+		}
+
+		.lightbox-image {
+			max-height: 75vh;
+		}
+
+		.lightbox-caption {
+			font-size: 0.9rem;
+			padding: 0 1rem;
 		}
 	}
 </style>

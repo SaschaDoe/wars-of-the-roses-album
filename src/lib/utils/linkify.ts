@@ -4,15 +4,15 @@ export interface TextSegment {
 	text: string;
 	isLink: boolean;
 	linkId?: string;
+	externalUrl?: string;
 }
 
 /**
  * Parse text and convert encyclopedia terms into linkable segments
+ * Also handles markdown-style external links like [text](url)
  */
 export function linkifyText(text: string): TextSegment[] {
 	const segments: TextSegment[] = [];
-	let remainingText = text;
-	let lastIndex = 0;
 
 	// Sort terms by length (longest first) to match longer phrases first
 	const sortedTerms = Object.keys(linkableTerms).sort((a, b) => b.length - a.length);
@@ -20,8 +20,30 @@ export function linkifyText(text: string): TextSegment[] {
 	// Track which positions have already been matched
 	const matchedPositions = new Set<number>();
 
-	// Find all matches
-	const matches: Array<{ start: number; end: number; term: string; id: string }> = [];
+	// Find all matches (encyclopedia links and external markdown links)
+	const matches: Array<{ start: number; end: number; term: string; id?: string; externalUrl?: string }> = [];
+
+	// First, find markdown-style external links [text](url)
+	const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+	let markdownMatch;
+	while ((markdownMatch = markdownLinkRegex.exec(text)) !== null) {
+		const start = markdownMatch.index;
+		const end = start + markdownMatch[0].length;
+		const linkText = markdownMatch[1];
+		const url = markdownMatch[2];
+
+		matches.push({
+			start,
+			end,
+			term: linkText,
+			externalUrl: url
+		});
+
+		// Mark positions as matched
+		for (let i = start; i < end; i++) {
+			matchedPositions.add(i);
+		}
+	}
 
 	for (const term of sortedTerms) {
 		// Create regex to match the term (case insensitive, whole word)
@@ -76,7 +98,8 @@ export function linkifyText(text: string): TextSegment[] {
 		segments.push({
 			text: match.term,
 			isLink: true,
-			linkId: match.id
+			linkId: match.id,
+			externalUrl: match.externalUrl
 		});
 
 		currentPos = match.end;
