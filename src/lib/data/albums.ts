@@ -44,7 +44,7 @@ export const albums: Album[] = [
 		historicalPeriodDe: '1455-1487',
 		hasEncyclopedia: true,
 		hasTimeline: true,
-		downloadUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/Uncivil-War-Full-Album.zip'
+		downloadUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/Wars%20of%20the%20Roses.zip'
 	},
 	{
 		id: 'a-hundred-years-of-glory',

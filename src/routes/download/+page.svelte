@@ -3,7 +3,7 @@
 	import { language, currentTranslations } from '$lib/i18n';
 
 	const r2BaseUrl = 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev';
-	const albumZipUrl = `${r2BaseUrl}/Uncivil-War-Full-Album.zip`;
+	const albumZipUrl = `${r2BaseUrl}/WarsOfTheRoses/Wars%20of%20the%20Roses.zip`;
 </script>
 
 <svelte:head>

@@ -88,7 +88,7 @@
 		<h3>{$currentTranslations.songs.downloadAlbum}</h3>
 		<p>{$currentTranslations.songs.downloadDescription}</p>
 		<a
-			href="https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/Uncivil-War-Full-Album.zip"
+			href="https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/Wars%20of%20the%20Roses.zip"
 			download
 			class="download-album-button"
 		>

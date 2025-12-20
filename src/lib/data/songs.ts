@@ -109,7 +109,7 @@ export const songs: Song[] = [
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/01%20White%20Rose%2C%20Red%20Rose.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/01%20White%20Rose%2C%20Red%20Rose.mp3'
 	},
 	{
 		id: 'the-kingmakers-dawn',
@@ -238,7 +238,7 @@ Warwicks taktische Brillanz bei St Albans begründete seine Karriere als mächti
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/02%20The%20Kingmaker%27s%20Dawn.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/02%20The%20Kingmaker%27s%20Dawn.mp3'
 	},
 	{
 		id: 'she-wolf-queen-and-the-king',
@@ -349,7 +349,7 @@ Shakespeare verewigte sie als fluchende, rachsüchtige Königin, aber die Geschi
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/03%20She-Wolf%20Queen%20and%20the%20King.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/03%20Wolf%20Queen%20and%20the%20King.mp3'
 	},
 	{
 		id: 'richard-ii-how-this-all-began',
@@ -475,7 +475,8 @@ Die „hohle Krone" ging an Heinrich IV., dann an Heinrich V. (der kurzzeitig de
 					captionDe: 'Richard II. ergibt sich Henry Bolingbroke auf Flint Castle in Wales, 1399 (aus einer mittelalterlichen Handschrift)'
 				}
 			]
-		}
+		},
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/04%20Richard%20II%20How%20it%20all%20began.mp3'
 	},
 	{
 		id: 'the-paper-crown',
@@ -567,7 +568,7 @@ Die „hohle Krone" ging an Heinrich IV., dann an Heinrich V. (der kurzzeitig de
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/04%20The%20Paper%20Crown.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/05%20Paper%20Crown.mp3'
 	},
 	{
 		id: 'the-three-suns',
@@ -668,7 +669,7 @@ Die „hohle Krone" ging an Heinrich IV., dann an Heinrich V. (der kurzzeitig de
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/05%20The%20Three%20Suns.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/06%20The%20Three%20Suns.mp3'
 	},
 	{
 		id: 'no-ransom-called',
@@ -713,7 +714,7 @@ Die „hohle Krone" ging an Heinrich IV., dann an Heinrich V. (der kurzzeitig de
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/06%20No%20Ransom%20Called.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/07%20No%20Ransom%20Called.mp3'
 	},
 	{
 		id: 'to-the-gates-of-london',
@@ -830,7 +831,7 @@ Dieser Moment – Margarete wartend an den Toren, während ihr Königreich entgl
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/07%20To%20the%20Gates%20of%20London.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/08%20To%20the%20Gates%20of%20London.mp3'
 	},
 	{
 		id: 'towton-die-by-the-damned',
@@ -953,7 +954,7 @@ Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der ei
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/08%20Towton%20-%20Die%20by%20the%20Damned.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/09%20Towton%20-%20Die%20by%20the%20Damned.mp3'
 	},
 	{
 		id: 'sacred-lies',
@@ -1004,7 +1005,7 @@ Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der ei
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/09%20Sacred%20Lies.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/10%20Sacred%20Lies.mp3'
 	},
 	{
 		id: 'oh-god-see-our-plight',
@@ -1050,7 +1051,7 @@ Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der ei
 				'Common people of England'
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/10%20Oh%2C%20God%2C%20see%20our%20plight.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/11%20Oh%2C%20God%2C%20see%20our%20plight.mp3'
 	},
 	{
 		id: 'reaving-river-rats',
@@ -1176,7 +1177,7 @@ Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der ei
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/11%20Reaving%20River%20Rats.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/12%20Reaving%20River%20Rats.mp3'
 	},
 	{
 		id: 'the-kingmakers-scorn',
@@ -1250,7 +1251,7 @@ Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der ei
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/12%20The%20Kingmakers%20Scorn.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/13%20The%20Kingmakers%20Scorn.mp3'
 	},
 	{
 		id: 'le-temple-de-boccace',
@@ -1358,7 +1359,7 @@ Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der ei
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/13%20Le%20Temple%20de%20Boccace%20.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/14%20Le%20Temple%20de%20Boccace%20.mp3'
 	},
 	{
 		id: 'melusine',
@@ -1438,7 +1439,7 @@ Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der ei
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/14%20Melusine.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/15%20Melusine.mp3'
 	},
 	{
 		id: 'the-kingmakers-pawn',
@@ -1530,7 +1531,7 @@ Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der ei
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/15%20The%20Kingmakers%20Pawn.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/16%20The%20Kingmakers%20Pawn.mp3'
 	},
 	{
 		id: 'epic-rap-battle-of-the-roses',
@@ -1672,7 +1673,7 @@ Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der ei
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/16%20Epic%20Rap%20Battle%20of%20the%20Roses.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/17%20Epic%20Rap%20Battle%20of%20the%20Roses.mp3'
 	},
 	{
 		id: 'kaboom-2-0-live-wacken-2025',
@@ -1760,7 +1761,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/17%20Kaboom%202.0%20%28Live%20Wacken%202025%29.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/18%20Kaboom%202.0%20%28Live%20Wacken%202025%29.mp3'
 	},
 	{
 		id: 'the-kingmakers-fall',
@@ -1864,7 +1865,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 				coordinates: { lat: 51.6514, lng: -0.2013 }
 			}
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/18%20The%20Kingmakers%20Fall.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/19%20Kingmakers%20Fall.mp3'
 	},
 	{
 		id: 'the-winter-of-all-discontent',
@@ -1965,7 +1966,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/19%20The%20Winter%20of%20all%20Discontent.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/20%20The%20Winter%20of%20all%20Discontent.mp3'
 	},
 	{
 		id: 'rejoice',
@@ -2046,7 +2047,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 				coordinates: { lat: 51.4994, lng: -0.1273 }
 			}
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/20%20Rejoice%21.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/21%20Rejoice%21.mp3'
 	},
 	{
 		id: 'happy-birthday-stomp',
@@ -2094,7 +2095,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 				coordinates: { lat: 52.3555, lng: -1.1743 }
 			}
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/21%20Happy%20Birthday%20Stomp.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/22%20Happy%20Birthday%20Stomp.mp3'
 	},
 	{
 		id: 'virgin-queen',
@@ -2184,7 +2185,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 				coordinates: { lat: 51.5074, lng: -0.1278 }
 			}
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/Bonus%20Preview%20Song%20-%20Virgin%20Queen%20.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/23%20Preview%20Bonus%20Track%20-%20Virgin%20Queen.mp3'
 	}
 ];
 
