@@ -2183,7 +2183,14 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 			location: {
 				name: 'England',
 				coordinates: { lat: 51.5074, lng: -0.1278 }
-			}
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/elizabeth.jpeg',
+					caption: 'Queen Elizabeth I (1533-1603), known as the "Virgin Queen" and "Gloriana." This portrait shows her in the characteristic style of the Elizabethan era, wearing an elaborate black gown adorned with pearls and jewels. Her 45-year reign (1558-1603) transformed England into a major European power and ushered in a golden age of arts, exploration, and naval supremacy.',
+					captionDe: 'Königin Elisabeth I. (1533-1603), bekannt als die "Jungfräuliche Königin" und "Gloriana." Dieses Porträt zeigt sie im charakteristischen Stil der elisabethanischen Ära, in einem aufwendigen schwarzen Kleid mit Perlen und Juwelen geschmückt. Ihre 45-jährige Herrschaft (1558-1603) verwandelte England in eine europäische Großmacht und leitete ein goldenes Zeitalter der Kunst, Entdeckungen und Seemacht ein.'
+				}
+			]
 		},
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/23%20Preview%20Bonus%20Track%20-%20Virgin%20Queen.mp3'
 	}
