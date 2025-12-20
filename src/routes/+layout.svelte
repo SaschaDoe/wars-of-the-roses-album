@@ -52,6 +52,11 @@
 				<span></span>
 			</button>
 
+			<!-- Mobile menu backdrop -->
+			{#if mobileMenuOpen}
+				<div class="mobile-backdrop" onclick={closeMobileMenu}></div>
+			{/if}
+
 			<ul class="nav-links" class:open={mobileMenuOpen}>
 				<li><a href="/" class:active={$page.url.pathname === '/'} onclick={closeMobileMenu}>{$currentTranslations.nav.home}</a></li>
 				<li class="dropdown">
@@ -290,6 +295,10 @@
 		padding-bottom: 5rem;
 	}
 
+	.mobile-backdrop {
+		display: none;
+	}
+
 	@media (max-width: 768px) {
 		.nav {
 			padding: 0.75rem 1rem;
@@ -299,17 +308,38 @@
 			display: flex;
 		}
 
+		.mobile-backdrop {
+			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.6);
+			backdrop-filter: blur(4px);
+			z-index: 999;
+			animation: fadeIn 0.3s ease;
+		}
+
+		@keyframes fadeIn {
+			from { opacity: 0; }
+			to { opacity: 1; }
+		}
+
 		.nav-links {
 			position: fixed;
 			top: 0;
 			right: -100%;
 			height: 100vh;
-			width: 250px;
+			width: 280px;
+			max-width: 85vw;
 			background: rgba(10, 10, 10, 0.98);
 			flex-direction: column;
 			padding: 100px 2rem 2rem;
 			transition: right 0.3s ease;
 			overflow-y: auto;
+			z-index: 1000;
+			box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
 		}
 
 		.nav-links a {
