@@ -2137,8 +2137,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 			"You know that we are living in an imperial world",
 			"And I am an imperial boy",
 			"",
-			"(Bridge - The Brutal \"Sabaton\" Breakdown)",
-			"(Joakim Brodén voice: \"TO THE RACK!\")",
+			"(Bridge - The Brutal Breakdown)",
 			"I've got the axe, I've got the spike",
 			"And that's all right you see",
 			"I'll take your head and mount it high",
@@ -2158,12 +2157,11 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 		historicalContext: {
 			title: 'Material Girl Goes Medieval',
 			titleDe: 'Material Girl wird mittelalterlich',
-			description: `A parody of Madonna's iconic 1984 hit "Material Girl," reimagined through the lens of medieval power politics. The original song, released during the height of 1980s excess, celebrated the pursuit of wealth and the men who could provide it. Here, that materialism transforms into imperial ambition—instead of diamonds, our protagonist demands proper homage; instead of wealthy suitors, they execute rivals. The "Sabaton breakdown" bridge takes the song in an unexpectedly brutal direction, channeling the Swedish power metal band's signature style to describe medieval torture and conquest. It's a darkly comedic mashup that asks: what if Madonna had been a medieval king instead of an '80s pop star? The answer involves significantly more executions.`,
-			descriptionDe: `Eine Parodie auf Madonnas ikonischen Hit "Material Girl" von 1984, neu interpretiert durch die Linse mittelalterlicher Machtpolitik. Das Originallied, das auf dem Höhepunkt des Exzesses der 1980er Jahre veröffentlicht wurde, feierte das Streben nach Reichtum und die Männer, die ihn bieten konnten. Hier verwandelt sich dieser Materialismus in imperiale Ambitionen – statt Diamanten verlangt unser Protagonist angemessene Huldigung; statt wohlhabender Verehrer werden Rivalen hingerichtet. Die "Sabaton-Breakdown"-Bridge nimmt das Lied in eine unerwartet brutale Richtung und kanalisiert den charakteristischen Stil der schwedischen Power-Metal-Band, um mittelalterliche Folter und Eroberung zu beschreiben.`,
+			description: `A parody of Madonna's iconic 1984 hit "Material Girl," reimagined through the lens of medieval power politics. The original song, released during the height of 1980s excess, celebrated the pursuit of wealth and the men who could provide it. Here, that materialism transforms into imperial ambition—instead of diamonds, our protagonist demands proper homage; instead of wealthy suitors, they execute rivals. The brutal breakdown bridge takes the song in an unexpectedly dark direction, describing medieval torture and conquest with power metal intensity. It's a darkly comedic mashup that asks: what if Madonna had been a medieval king instead of an '80s pop star? The answer involves significantly more executions.`,
+			descriptionDe: `Eine Parodie auf Madonnas ikonischen Hit "Material Girl" von 1984, neu interpretiert durch die Linse mittelalterlicher Machtpolitik. Das Originallied, das auf dem Höhepunkt des Exzesses der 1980er Jahre veröffentlicht wurde, feierte das Streben nach Reichtum und die Männer, die ihn bieten konnten. Hier verwandelt sich dieser Materialismus in imperiale Ambitionen – statt Diamanten verlangt unser Protagonist angemessene Huldigung; statt wohlhabender Verehrer werden Rivalen hingerichtet. Die brutale Breakdown-Bridge nimmt das Lied in eine unerwartet dunkle Richtung und beschreibt mittelalterliche Folter und Eroberung mit Power-Metal-Intensität.`,
 			year: '1984/Medieval',
 			keyFigures: [
 				'Madonna',
-				'Sabaton',
 				'Medieval Kings'
 			],
 			location: {
