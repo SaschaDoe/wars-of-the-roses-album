@@ -2098,9 +2098,85 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/22%20Happy%20Birthday%20Stomp.mp3'
 	},
 	{
+		id: 'imperial-boy',
+		title: 'Imperial Boy (Madonna Cover)',
+		trackNumber: 23,
+		duration: '4:30',
+		lyrics: [
+			"(Verse 1)",
+			"Some lords kiss me, some lords hug me",
+			"I think they're okay",
+			"If they don't give me proper homage",
+			"I just end their day",
+			"",
+			"They can beg and they can plead",
+			"But they can't see the light (That's right)",
+			"'Cause the Earl with the cold hard steel",
+			"Is always Mister Right",
+			"",
+			"(Chorus)",
+			"'Cause we are living in an imperial world",
+			"And I am an imperial boy",
+			"You know that we are living in an imperial world",
+			"And I am an imperial boy",
+			"",
+			"(Verse 2)",
+			"Some kings romance, some kings slow dance",
+			"That's all right with me",
+			"If they can't raise my interest then I",
+			"Send them to the sea (or: Hang them from a tree)",
+			"",
+			"Some lords try and some lords lie",
+			"But I don't let them play (No way)",
+			"Only kings who wear my crown",
+			"Make my rainy day",
+			"",
+			"(Chorus)",
+			"'Cause we are living in an imperial world",
+			"And I am an imperial boy",
+			"You know that we are living in an imperial world",
+			"And I am an imperial boy",
+			"",
+			"(Bridge - The Brutal \"Sabaton\" Breakdown)",
+			"(Joakim Brodén voice: \"TO THE RACK!\")",
+			"I've got the axe, I've got the spike",
+			"And that's all right you see",
+			"I'll take your head and mount it high",
+			"For everyone to see!",
+			"",
+			"I'll burn your fields and salt your earth",
+			"To show you who is king",
+			"I'll pull your limbs and watch you stretch",
+			"While the choir starts to sing!",
+			"",
+			"(Chorus)",
+			"'Cause we are living in an imperial world",
+			"And I am an imperial boy",
+			"You know that we are living in an imperial world",
+			"And I am an imperial boy"
+		],
+		historicalContext: {
+			title: 'Material Girl Goes Medieval',
+			titleDe: 'Material Girl wird mittelalterlich',
+			description: `A parody of Madonna's iconic 1984 hit "Material Girl," reimagined through the lens of medieval power politics. The original song, released during the height of 1980s excess, celebrated the pursuit of wealth and the men who could provide it. Here, that materialism transforms into imperial ambition—instead of diamonds, our protagonist demands proper homage; instead of wealthy suitors, they execute rivals. The "Sabaton breakdown" bridge takes the song in an unexpectedly brutal direction, channeling the Swedish power metal band's signature style to describe medieval torture and conquest. It's a darkly comedic mashup that asks: what if Madonna had been a medieval king instead of an '80s pop star? The answer involves significantly more executions.`,
+			descriptionDe: `Eine Parodie auf Madonnas ikonischen Hit "Material Girl" von 1984, neu interpretiert durch die Linse mittelalterlicher Machtpolitik. Das Originallied, das auf dem Höhepunkt des Exzesses der 1980er Jahre veröffentlicht wurde, feierte das Streben nach Reichtum und die Männer, die ihn bieten konnten. Hier verwandelt sich dieser Materialismus in imperiale Ambitionen – statt Diamanten verlangt unser Protagonist angemessene Huldigung; statt wohlhabender Verehrer werden Rivalen hingerichtet. Die "Sabaton-Breakdown"-Bridge nimmt das Lied in eine unerwartet brutale Richtung und kanalisiert den charakteristischen Stil der schwedischen Power-Metal-Band, um mittelalterliche Folter und Eroberung zu beschreiben.`,
+			year: '1984/Medieval',
+			keyFigures: [
+				'Madonna',
+				'Sabaton',
+				'Medieval Kings'
+			],
+			location: {
+				name: 'The Imperial Court',
+				coordinates: { lat: 51.5074, lng: -0.1278 }
+			}
+		},
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/23%20Imperial%20Boy%20(Madonna%20Cover).mp3'
+	},
+	{
 		id: 'virgin-queen',
 		title: 'Virgin Queen (Bonus Track)',
-		trackNumber: 23,
+		trackNumber: 24,
 		duration: '4:30',
 		lyrics: [
 			"[Verse 1]",
@@ -2192,7 +2268,7 @@ Auf dem Wacken erlebten 85.000 Metalheads dieses Chaos hautnah, als der Boden be
 				}
 			]
 		},
-		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/23%20Preview%20Bonus%20Track%20-%20Virgin%20Queen.mp3'
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/24%20Preview%20Bonus%20Track%20-%20Virgin%20Queen.mp3'
 	}
 ];
 
