@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { audioPlayer, isPlayerVisible } from '$lib/stores/audioPlayer';
 	import { language } from '$lib/i18n';
+	import { songs } from '$lib/data/songs';
 
 	let audioElement: HTMLAudioElement;
 	let progressBar: HTMLDivElement;
@@ -127,7 +128,7 @@
 				<button
 					class="control-btn"
 					onclick={() => audioPlayer.nextSong()}
-					disabled={$audioPlayer.currentSong.trackNumber >= 22}
+					disabled={$audioPlayer.currentSong.trackNumber >= songs.length}
 					aria-label="Next song"
 				>
 					<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
