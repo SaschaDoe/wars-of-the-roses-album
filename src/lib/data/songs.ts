@@ -834,8 +834,122 @@ Dieser Moment – Margarete wartend an den Toren, während ihr Königreich entgl
 		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/08%20To%20the%20Gates%20of%20London.mp3'
 	},
 	{
+		id: 'towton-bridge-of-the-broken',
+		title: 'Towton - The Bridge of the Broken',
+		trackNumber: 9,
+		duration: '7:32',
+		lyrics: [
+			"Choir (Chanted):",
+			"Cruor in nive... Cruor in terra... Cruor in aqua...",
+			"",
+			"[Verse 1]",
+			"(Rhythm: A swaying, sinister 3/4 waltz. Bass-heavy.)",
+			"Marching through the frost of March, a kingdom split in two",
+			"The sky is gray, the wind is sharp, the morning light is blue",
+			"Edward stands with omens bright, three suns are in the sky",
+			"While Henry's men are blinded as the frozen arrows fly",
+			"The Lord of Fauconberg commands, \"Release the iron rain!\"",
+			"The wind will carry every shaft to harvest every vein",
+			"They cannot see, they cannot breathe, the blizzard is their shroud",
+			"As twenty thousand voices scream a prayer to the cloud!",
+			"",
+			"[Pre-Chorus]",
+			"(Tempo speeds up. Classic Sabaton \"gallop\" begins.)",
+			"Look to the heavens, the Sun Dog is high!",
+			"A sign for the living, a sign for the die!",
+			"The ground is a carpet of ivory white",
+			"Waiting for someone to bleed out the light!",
+			"",
+			"[Chorus]",
+			"WHITE ROSE! RED SNOW!",
+			"STOMP ON THE BODIES IN THE RIVER BELOW!",
+			"BONE UPON BONE, WE ARE CROSSING THE DEAD!",
+			"THE COCK BECK IS RISING, THE WATER IS RED!",
+			"",
+			"HEW THROUGH THE ARMOR! KILL OR BE KILLED!",
+			"THE PROPHECY OF THE THREE SUNS FULFILLED!",
+			"PALM SUNDAY MASSACRE! HELL IS UNLEASHED!",
+			"ON THE BRIDGE OF THE BROKEN, THE CROWS WILL FEAST!",
+			"",
+			"[Verse 2]",
+			"(Back to the 3/4 waltz feel. Grittier vocals.)",
+			"The line is smashed, the panic spreads, they turn their backs to run",
+			"But there is no salvation when the butchery's begun",
+			"The Cock Beck is a narrow stream, but now it's deep and wide",
+			"Choked with steel and padded wool, there is no place to hide",
+			"The Lancastrians are falling, they are piling in the deep",
+			"A harvest for the Reaper that the crown of York will reap!",
+			"",
+			"[Bridge]",
+			"(The \"Twist\": The music drops to a heavy, \"Doom Metal\" sludge. Very slow and crushing.)",
+			"(Narrative spoken voice, Joakim style:)",
+			"\"They say the water ran red for miles. They say the survivors didn't swim... they walked.",
+			"They walked across the backs of their brothers, a bridge of the broken, to escape the slaughter.\"",
+			"",
+			"(Build up with double-kick drums)",
+			"NO WOOD! NO STONE! A BRIDGE OF FLESH AND BONE!",
+			"NO MERCY! NO PEACE! THE WINTER WILL NOT CEASE!",
+			"",
+			"[Guitar & Hurdy-Gurdy Solo]",
+			"(A duel between a shredding electric guitar and a distorted, high-speed Hurdy-Gurdy solo that sounds like a screaming wind.)",
+			"",
+			"[Final Chorus]",
+			"WHITE ROSE! RED SNOW!",
+			"STOMP ON THE BODIES IN THE RIVER BELOW!",
+			"BONE UPON BONE, WE ARE CROSSING THE DEAD!",
+			"THE COCK BECK IS RISING, THE WATER IS RED!",
+			"",
+			"HEW THROUGH THE ARMOR! KILL OR BE KILLED!",
+			"THE PROPHECY OF THE THREE SUNS FULFILLED!",
+			"PALM SUNDAY MASSACRE! HELL IS UNLEASHED!",
+			"ON THE BRIDGE OF THE BROKEN, THE CROWS WILL FEAST!"
+		],
+		historicalContext: {
+			title: 'Towton - The Bridge of the Broken',
+			titleDe: 'Towton - Die Brücke der Gebrochenen',
+			description: `Palm Sunday, March 29, 1461. The Battle of Towton became the bloodiest single day in English history—a frozen apocalypse where approximately 28,000 men perished in a blinding snowstorm. But the battle's most haunting legacy lies in what happened at the Cock Beck.
+
+As the Yorkist forces shattered the Lancastrian line, the retreating army fled toward the small stream called Cock Beck. What should have been a minor obstacle became a death trap. The panicked soldiers, weighed down by armor and exhausted from ten hours of brutal combat, plunged into the icy waters. They fell upon each other in their desperation to escape, trampling and drowning their own comrades.
+
+The bodies piled so high that the stream became dammed with the dead. Chronicles record that the water ran red for miles downstream. And then came the most macabre detail of all: those who survived the initial rout didn't swim across the blood-choked stream—they walked. They walked across the backs of their fallen brothers, using the corpses as a bridge of flesh and bone to escape the slaughter.
+
+This "Bridge of the Broken" became a symbol of the war's utter brutality. The parhelion—the three suns seen that morning, which Edward IV would later adopt as his emblem—seemed less like divine favor and more like heaven's horror at what was to come. Lord Fauconberg's tactical genius with the wind-carried arrow volleys, the ten-hour slog of close-quarters killing, the Duke of Norfolk's flank attack that broke the Lancastrian line—all of it led to this grim crossing.
+
+The song captures both the martial fury of the battle and its doom-laden aftermath, with the bridge of bodies serving as the war's most visceral metaphor for England's self-destruction.`,
+			descriptionDe: `Palmsonntag, 29. März 1461. Die Schlacht von Towton wurde zum blutigsten einzelnen Tag in der englischen Geschichte—eine gefrorene Apokalypse, bei der etwa 28.000 Mann in einem blendenden Schneesturm umkamen. Aber das gespenstischste Vermächtnis der Schlacht liegt in dem, was am Cock Beck geschah.
+
+Als die Yorkisten die Lancaster-Linie durchbrachen, floh die sich zurückziehende Armee zum kleinen Bach namens Cock Beck. Was ein kleines Hindernis hätte sein sollen, wurde zu einer Todesfalle. Die panischen Soldaten, beschwert durch Rüstungen und erschöpft von zehn Stunden brutalen Kampfes, stürzten in das eisige Wasser. Sie fielen übereinander in ihrer Verzweiflung zu entkommen, trampelten und ertränkten ihre eigenen Kameraden.
+
+Die Leichen türmten sich so hoch, dass der Bach durch die Toten aufgestaut wurde. Chroniken berichten, dass das Wasser meilenweit flussabwärts rot lief. Und dann kam das makaberste Detail von allem: Die Überlebenden des ersten Zusammenbruchs schwammen nicht über den blutgetränkten Bach—sie gingen. Sie gingen über die Rücken ihrer gefallenen Brüder und nutzten die Leichen als Brücke aus Fleisch und Knochen, um dem Gemetzel zu entkommen.
+
+Diese "Brücke der Gebrochenen" wurde zum Symbol der völligen Brutalität des Krieges. Das Parhelion—die drei Sonnen, die an diesem Morgen gesehen wurden und die Edward IV. später als sein Emblem übernahm—schienen weniger wie göttliche Gunst und mehr wie das Entsetzen des Himmels über das, was kommen würde. Lord Fauconbergs taktisches Genie mit den windgetragenen Pfeilsalven, das zehnstündige Ringen im Nahkampf, der Flankenangriff des Herzogs von Norfolk, der die Lancaster-Linie durchbrach—all dies führte zu dieser grimmigen Überquerung.
+
+Das Lied fängt sowohl die kriegerische Wut der Schlacht als auch ihre unheilvolle Nachwirkung ein, wobei die Brücke aus Leichen als die eindringlichste Metapher des Krieges für Englands Selbstzerstörung dient.`,
+			year: '1461',
+			keyFigures: [
+				'Edward IV (York)',
+				'Henry VI (Lancaster)',
+				'Lord Fauconberg',
+				'Duke of Norfolk',
+				'Duke of Somerset'
+			],
+			location: {
+				name: 'Towton, North Yorkshire',
+				coordinates: { lat: 53.8333, lng: -1.2833 }
+			},
+			images: [
+				{
+					url: '/images/encyclopedia/towton-bridge-of-broken.png',
+					caption: 'The Bridge of the Broken at Towton (1461) - As the Lancastrian army fled across the Cock Beck, the bodies piled so high that survivors walked across their fallen comrades to escape. The stream ran red with blood for miles.',
+					captionDe: 'Die Brücke der Gebrochenen bei Towton (1461) - Als die Lancaster-Armee über den Cock Beck floh, türmten sich die Leichen so hoch, dass Überlebende über ihre gefallenen Kameraden gingen, um zu entkommen. Der Bach lief meilenweit rot vor Blut.'
+				}
+			]
+		},
+		audioUrl: 'https://pub-b01755924f3846e0904075a05c92bf74.r2.dev/WarsOfTheRoses/09%20Towton%20-%20The%20Bridge%20of%20the%20Broken.mp3'
+	},
+	{
 		id: 'towton-die-by-the-damned',
-		title: 'Towton - Die by the Damned',
+		title: 'Towton - Die by the Damned (Original Version)',
 		trackNumber: 9,
 		duration: '7:04',
 		lyrics: [

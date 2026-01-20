@@ -26,6 +26,10 @@
 	function isPlaying(song: Song): boolean {
 		return $audioPlayer.currentSong?.id === song.id && $audioPlayer.isPlaying;
 	}
+
+	function isOriginalVersion(song: Song): boolean {
+		return song.title.includes('(Original Version)');
+	}
 </script>
 
 <svelte:head>
@@ -53,7 +57,10 @@
 
 	<div class="tracklist">
 		{#each songs as song, index}
-			<div class="track-item" style="animation-delay: {index * 0.1}s" class:is-playing={isPlaying(song)}>
+			<div class="track-item" style="animation-delay: {index * 0.1}s" class:is-playing={isPlaying(song)} class:is-original-version={isOriginalVersion(song)}>
+				{#if isOriginalVersion(song)}
+					<span class="original-version-badge">{$language === 'de' ? 'Ältere Version' : 'Earlier Version'}</span>
+				{/if}
 				<button
 					class="track-play-btn"
 					onclick={(e) => handlePlayClick(e, song)}
@@ -365,6 +372,47 @@
 		color: var(--color-text-secondary);
 	}
 
+	/* Original Version styling */
+	.track-item.is-original-version {
+		position: relative;
+		margin-left: 2rem;
+		background: rgba(26, 26, 26, 0.15);
+		border-left: 3px solid rgba(212, 175, 55, 0.3);
+		opacity: 0.7;
+	}
+
+	.track-item.is-original-version:hover {
+		opacity: 1;
+		background: rgba(26, 26, 26, 0.5);
+	}
+
+	.track-item.is-original-version .track-title {
+		font-size: 1.3rem;
+		color: var(--color-text-secondary);
+	}
+
+	.track-item.is-original-version:hover .track-title {
+		color: var(--color-text);
+	}
+
+	.track-item.is-original-version .track-play-btn {
+		color: var(--color-text-secondary);
+	}
+
+	.original-version-badge {
+		position: absolute;
+		top: -8px;
+		left: 1rem;
+		background: rgba(139, 0, 0, 0.8);
+		color: var(--color-text-secondary);
+		font-size: 0.7rem;
+		padding: 2px 8px;
+		border-radius: 3px;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		font-weight: 500;
+	}
+
 	@media (max-width: 768px) {
 		.page-title {
 			font-size: 2.5rem;
@@ -385,6 +433,10 @@
 			padding: 1rem;
 		}
 
+		.track-item.is-original-version {
+			margin-left: 1rem;
+		}
+
 		.track-duration,
 		.track-link-icon {
 			display: none;
@@ -397,6 +449,10 @@
 
 		.track-title {
 			font-size: 1.2rem;
+		}
+
+		.track-item.is-original-version .track-title {
+			font-size: 1rem;
 		}
 	}
 </style>
