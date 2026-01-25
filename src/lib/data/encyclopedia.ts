@@ -641,7 +641,27 @@ export const linkableTerms: Record<string, string> = {
 	'parhelion': 'the-three-suns',
 	'Sun in Splendour': 'the-three-suns',
 	'Gates of London': 'gates-of-london',
-	'gates of London': 'gates-of-london'
+	'gates of London': 'gates-of-london',
+	// German term variants (for linkification in German lyric translations)
+	'Heinrich VI': 'henry-vi',
+	'Heinrich IV': 'henry-iv',
+	'König Heinrich': 'henry-vi',
+	'Margarete': 'margaret-of-anjou',
+	'Wölfin': 'margaret-of-anjou',
+	'Königsmacher': 'warwick-the-kingmaker',
+	'Königsmachers': 'warwick-the-kingmaker',
+	'Richard Neville': 'warwick-the-kingmaker',
+	'Sankt Albans': 'st-albans',
+	'Pontefract': 'richard-ii',
+	'Rosenkriege': 'wars-of-the-roses',
+	'Haus Lancaster': 'house-of-lancaster',
+	'Lancasteraner': 'house-of-lancaster',
+	'Haus York': 'house-of-york',
+	'Yorkisten': 'house-of-york',
+	'Tudor-Rose': 'tudor-rose',
+	'Sandal': 'battle-of-wakefield',
+	'Drei Sonnen': 'the-three-suns',
+	'Sonne in Pracht': 'the-three-suns',
 };
 
 export function getEncyclopediaEntry(id: string): EncyclopediaEntry | undefined {

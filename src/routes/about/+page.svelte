@@ -17,7 +17,7 @@
 			quote: '"I don\'t just sing about history - I resurrect it, give it a voice, and let it scream through the ages."',
 			websiteTitle: 'This Website',
 			websiteDesc: 'More than just a music site, this is your gateway to medieval history:',
-			feature1Desc: 'Stream and download all our albums',
+			feature1Desc: 'Stream and download all the albums',
 			feature2Desc: 'Full lyrics for every song',
 			feature3Desc: 'In-depth historical context for each track',
 			feature4Desc: 'Explore battle sites on interactive maps',

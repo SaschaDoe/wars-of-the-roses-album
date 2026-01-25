@@ -5,6 +5,7 @@
 	import { getSongByTrackNumber, songs } from '$lib/data/songs';
 	import { language, currentTranslations } from '$lib/i18n';
 	import { audioPlayer } from '$lib/stores/audioPlayer';
+	import { getLyricsWithTranslations } from '$lib/utils/lyricsProcessor';
 
 	let { data }: { data: PageData } = $props();
 	let song = $derived(data.song);
@@ -13,6 +14,11 @@
 
 	const isCurrentSong = $derived($audioPlayer.currentSong?.id === song.id);
 	const isPlaying = $derived(isCurrentSong && $audioPlayer.isPlaying);
+
+	// Process lyrics: remove annotations and get translations when in German mode
+	const processedLyrics = $derived(
+		getLyricsWithTranslations(song.id, song.lyrics, $language === 'de')
+	);
 
 	function handlePlay() {
 		if (isCurrentSong) {
@@ -100,13 +106,16 @@
 		{#if activeTab === 'lyrics'}
 			<div class="lyrics-section animate-fade-in">
 				<div class="lyrics-container">
-					{#each song.lyrics as line}
-						{#if line.startsWith('[')}
-							<p class="lyrics-section-title">{line}</p>
-						{:else if line === ''}
+					{#each processedLyrics as line}
+						{#if line.isSection}
+							<p class="lyrics-section-title">{line.english}</p>
+						{:else if line.isEmpty}
 							<br />
 						{:else}
-							<p class="lyrics-line">{line}</p>
+							<p class="lyrics-line">{line.english}</p>
+							{#if line.german}
+								<p class="lyrics-line lyrics-translation"><LinkifiedText text={line.german} /></p>
+							{/if}
 						{/if}
 					{/each}
 				</div>
@@ -336,6 +345,15 @@
 		line-height: 1.8;
 		margin: 0.5rem 0;
 		padding-left: 1rem;
+	}
+
+	.lyrics-translation {
+		font-style: italic;
+		color: var(--color-text-secondary);
+		font-size: 1.05rem;
+		opacity: 0.85;
+		margin-top: -0.25rem;
+		margin-bottom: 0.75rem;
 	}
 
 	.history-section {

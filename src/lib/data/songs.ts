@@ -1847,12 +1847,12 @@ Das Lied ringt mit einer schrecklichen Frage: Ist dieses brutale Gemetzel der ei
 		historicalContext: {
 			title: 'Live at Wacken 2025 - Real Medieval Cannons on Stage',
 			titleDe: 'Live auf Wacken 2025 - Echte mittelalterliche Kanonen auf der Bühne',
-			description: `This live recording captures Uncivil War's legendary performance at Wacken Open Air 2025, where we became the only band in metal history to use real medieval cannons on stage. When we performed "Kaboom 2.0", the audience witnessed actual 15th-century replica cannons firing across the stage, recreating the chaos of the Battle of Barnet.
+			description: `This live recording captures Uncivil War's legendary performance at Wacken Open Air 2025, becoming the only band in metal history to use real medieval cannons on stage. During "Kaboom 2.0", the audience witnessed actual 15th-century replica cannons firing across the stage, recreating the chaos of the Battle of Barnet.
 
 The song itself tells the darkly comic story of Warwick's gunpowder folly at Barnet in 1471. Warwick brought French cannons, confident that modern artillery would defeat Edward IV. But the battle was fought in thick fog on Easter morning. His gunners fired blindly into the mist, hitting nothing but cows, barns, and eventually their own allies when they mistook Oxford's banner for Edward's in the fog.
 
 At Wacken, 85,000 metalheads experienced this chaos firsthand as the ground shook and smoke billowed across the stage. Technology doesn't automatically bring victory—but it makes for one hell of a show.`,
-			descriptionDe: `Diese Live-Aufnahme fängt Uncivil Wars legendäre Performance beim Wacken Open Air 2025 ein, bei der wir als einzige Band in der Metal-Geschichte echte mittelalterliche Kanonen auf der Bühne einsetzten. Als wir "Kaboom 2.0" spielten, erlebte das Publikum echte Nachbildungen von Kanonen aus dem 15. Jahrhundert, die über die Bühne feuerten und das Chaos der Schlacht von Barnet nachstellten.
+			descriptionDe: `Diese Live-Aufnahme fängt Uncivil Wars legendäre Performance beim Wacken Open Air 2025 ein - die einzige Band in der Metal-Geschichte, die echte mittelalterliche Kanonen auf der Bühne einsetzte. Bei "Kaboom 2.0" erlebte das Publikum echte Nachbildungen von Kanonen aus dem 15. Jahrhundert, die über die Bühne feuerten und das Chaos der Schlacht von Barnet nachstellten.
 
 Das Lied selbst erzählt die schwarz-humorige Geschichte von Warwicks Schießpulver-Torheit bei Barnet 1471. Warwick brachte französische Kanonen mit, überzeugt, dass moderne Artillerie Eduard IV. besiegen würde. Aber die Schlacht wurde im dichten Nebel am Ostermorgen geschlagen. Seine Kanoniere feuerten blind in den Nebel und trafen nur Kühe, Scheunen und schließlich ihre eigenen Verbündeten, als sie Oxfords Banner im Nebel mit Edwards verwechselten.
 
