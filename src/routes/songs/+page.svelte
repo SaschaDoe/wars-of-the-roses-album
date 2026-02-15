@@ -28,7 +28,7 @@
 	}
 
 	function isOriginalVersion(song: Song): boolean {
-		return song.title.includes('(Original Version)');
+		return song.title.includes('(Earlier Version)') || song.title.includes('(Original Version)');
 	}
 </script>
 

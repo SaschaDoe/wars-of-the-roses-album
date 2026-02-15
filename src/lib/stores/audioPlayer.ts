@@ -1,6 +1,7 @@
 import { writable, derived } from 'svelte/store';
 import type { Song } from '$lib/data/songs';
-import { songs, getSongByTrackNumber } from '$lib/data/songs';
+import { songs as warsOfRosesSongs } from '$lib/data/songs';
+import { songsHundredYears } from '$lib/data/songs-hundred-years';
 
 interface AudioPlayerState {
 	currentSong: Song | null;
@@ -17,6 +18,16 @@ const initialState: AudioPlayerState = {
 	duration: 0,
 	volume: 1
 };
+
+const allAlbumSongs: Song[][] = [warsOfRosesSongs, songsHundredYears];
+
+function findSongContext(songId: string): { songs: Song[]; index: number } | null {
+	for (const albumSongs of allAlbumSongs) {
+		const index = albumSongs.findIndex(s => s.id === songId);
+		if (index !== -1) return { songs: albumSongs, index };
+	}
+	return null;
+}
 
 function createAudioPlayer() {
 	const { subscribe, set, update } = writable<AudioPlayerState>(initialState);
@@ -53,13 +64,11 @@ function createAudioPlayer() {
 		nextSong: () => {
 			update(state => {
 				if (!state.currentSong) return state;
-				const nextTrack = state.currentSong.trackNumber + 1;
-				if (nextTrack > songs.length) return state;
-				const nextSong = getSongByTrackNumber(nextTrack);
-				if (!nextSong) return state;
+				const ctx = findSongContext(state.currentSong.id);
+				if (!ctx || ctx.index >= ctx.songs.length - 1) return state;
 				return {
 					...state,
-					currentSong: nextSong,
+					currentSong: ctx.songs[ctx.index + 1],
 					isPlaying: true,
 					currentTime: 0,
 					duration: 0
@@ -69,13 +78,11 @@ function createAudioPlayer() {
 		prevSong: () => {
 			update(state => {
 				if (!state.currentSong) return state;
-				const prevTrack = state.currentSong.trackNumber - 1;
-				if (prevTrack < 1) return state;
-				const prevSong = getSongByTrackNumber(prevTrack);
-				if (!prevSong) return state;
+				const ctx = findSongContext(state.currentSong.id);
+				if (!ctx || ctx.index <= 0) return state;
 				return {
 					...state,
-					currentSong: prevSong,
+					currentSong: ctx.songs[ctx.index - 1],
 					isPlaying: true,
 					currentTime: 0,
 					duration: 0
@@ -91,3 +98,5 @@ function createAudioPlayer() {
 export const audioPlayer = createAudioPlayer();
 
 export const isPlayerVisible = derived(audioPlayer, $player => $player.currentSong !== null);
+
+export { findSongContext };

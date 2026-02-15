@@ -1,7 +1,6 @@
 <script lang="ts">
-	import { audioPlayer, isPlayerVisible } from '$lib/stores/audioPlayer';
+	import { audioPlayer, isPlayerVisible, findSongContext } from '$lib/stores/audioPlayer';
 	import { language } from '$lib/i18n';
-	import { songs } from '$lib/data/songs';
 
 	let audioElement: HTMLAudioElement;
 	let progressBar: HTMLDivElement;
@@ -72,6 +71,9 @@
 	}
 
 	const progress = $derived($audioPlayer.duration > 0 ? ($audioPlayer.currentTime / $audioPlayer.duration) * 100 : 0);
+	const songContext = $derived($audioPlayer.currentSong ? findSongContext($audioPlayer.currentSong.id) : null);
+	const isFirstSong = $derived(!songContext || songContext.index <= 0);
+	const isLastSong = $derived(!songContext || songContext.index >= songContext.songs.length - 1);
 </script>
 
 <!-- Hidden audio element that persists -->
@@ -101,7 +103,7 @@
 				<button
 					class="control-btn"
 					onclick={() => audioPlayer.prevSong()}
-					disabled={$audioPlayer.currentSong.trackNumber <= 1}
+					disabled={isFirstSong}
 					aria-label="Previous song"
 				>
 					<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
@@ -128,7 +130,7 @@
 				<button
 					class="control-btn"
 					onclick={() => audioPlayer.nextSong()}
-					disabled={$audioPlayer.currentSong.trackNumber >= songs.length}
+					disabled={isLastSong}
 					aria-label="Next song"
 				>
 					<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">

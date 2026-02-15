@@ -7,7 +7,6 @@ const lyricsFileMap: Record<string, string> = {
 	'the-three-suns': 'three suns.txt',
 	'no-ransom-called': 'No Ransom Called.txt',
 	'to-the-gates-of-london': 'to the gates of london.txt',
-	'towton-die-by-the-damned': 'Die by the Damned.txt',
 	'sacred-lies': 'The Sacred Lie.txt',
 	'oh-god-see-our-plight': 'Oh, God, See our plight.txt',
 	'reaving-river-rats': 'Reaving River Rats.txt',
